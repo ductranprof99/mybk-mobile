@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		528958A129AA036B0049EE07 /* SubjectScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5289589F29AA036B0049EE07 /* SubjectScheduleCell.xib */; };
+		528958A229AA036B0049EE07 /* SubjectScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528958A029AA036B0049EE07 /* SubjectScheduleCell.swift */; };
+		528958A829AA094E0049EE07 /* TestScheduleBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528958A729AA094E0049EE07 /* TestScheduleBottom.swift */; };
+		528958AA29AA0A090049EE07 /* TestScheduleBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528958A929AA0A090049EE07 /* TestScheduleBottomView.xib */; };
 		528FF61229A9E13E00C25137 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FF61129A9E13E00C25137 /* AppDelegate.swift */; };
 		528FF61429A9E13E00C25137 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FF61329A9E13E00C25137 /* SceneDelegate.swift */; };
 		528FF61629A9E13E00C25137 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FF61529A9E13E00C25137 /* ViewController.swift */; };
@@ -19,8 +23,6 @@
 		528FF65129A9EC7C00C25137 /* BottomBarItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528FF65029A9EC7C00C25137 /* BottomBarItem.xib */; };
 		528FF65329A9EF8B00C25137 /* BottomBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FF65229A9EF8B00C25137 /* BottomBarItem.swift */; };
 		528FF65729A9F11F00C25137 /* Constrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FF65629A9F11F00C25137 /* Constrain.swift */; };
-		528FF65D29A9FBD100C25137 /* SubjectScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FF65B29A9FBD100C25137 /* SubjectScheduleCell.swift */; };
-		528FF65E29A9FBD100C25137 /* SubjectScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528FF65C29A9FBD100C25137 /* SubjectScheduleCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5289589F29AA036B0049EE07 /* SubjectScheduleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubjectScheduleCell.xib; sourceTree = "<group>"; };
+		528958A029AA036B0049EE07 /* SubjectScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectScheduleCell.swift; sourceTree = "<group>"; };
+		528958A729AA094E0049EE07 /* TestScheduleBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScheduleBottom.swift; sourceTree = "<group>"; };
+		528958A929AA0A090049EE07 /* TestScheduleBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestScheduleBottomView.xib; sourceTree = "<group>"; };
 		528FF60E29A9E13E00C25137 /* MybkMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MybkMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		528FF61129A9E13E00C25137 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		528FF61329A9E13E00C25137 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,8 +63,6 @@
 		528FF65029A9EC7C00C25137 /* BottomBarItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomBarItem.xib; sourceTree = "<group>"; };
 		528FF65229A9EF8B00C25137 /* BottomBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarItem.swift; sourceTree = "<group>"; };
 		528FF65629A9F11F00C25137 /* Constrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constrain.swift; sourceTree = "<group>"; };
-		528FF65B29A9FBD100C25137 /* SubjectScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectScheduleCell.swift; sourceTree = "<group>"; };
-		528FF65C29A9FBD100C25137 /* SubjectScheduleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectScheduleCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,12 +90,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5289589E29AA035C0049EE07 /* SubjectCell */ = {
+			isa = PBXGroup;
+			children = (
+				528958A329AA037D0049EE07 /* BottomCellView */,
+				528958A029AA036B0049EE07 /* SubjectScheduleCell.swift */,
+				5289589F29AA036B0049EE07 /* SubjectScheduleCell.xib */,
+			);
+			path = SubjectCell;
+			sourceTree = "<group>";
+		};
+		528958A329AA037D0049EE07 /* BottomCellView */ = {
+			isa = PBXGroup;
+			children = (
+				528958A629AA066E0049EE07 /* ScoreBottom */,
+				528958A529AA06500049EE07 /* TestScheduleBottom */,
+				528958A429AA06450049EE07 /* LearnScheduleBottom */,
+			);
+			path = BottomCellView;
+			sourceTree = "<group>";
+		};
+		528958A429AA06450049EE07 /* LearnScheduleBottom */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LearnScheduleBottom;
+			sourceTree = "<group>";
+		};
+		528958A529AA06500049EE07 /* TestScheduleBottom */ = {
+			isa = PBXGroup;
+			children = (
+				528958A729AA094E0049EE07 /* TestScheduleBottom.swift */,
+				528958A929AA0A090049EE07 /* TestScheduleBottomView.xib */,
+			);
+			path = TestScheduleBottom;
+			sourceTree = "<group>";
+		};
+		528958A629AA066E0049EE07 /* ScoreBottom */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ScoreBottom;
+			sourceTree = "<group>";
+		};
+		528958AC29AA13120049EE07 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		528FF60529A9E13E00C25137 = {
 			isa = PBXGroup;
 			children = (
+				528FF64329A9E20000C25137 /* DataObjects */,
+				528958AC29AA13120049EE07 /* Models */,
 				528FF65529A9F11000C25137 /* Utils */,
 				528FF64829A9E2BD00C25137 /* SubUIComponent */,
-				528FF64329A9E20000C25137 /* Models */,
 				528FF64229A9E1F100C25137 /* ViewControllers */,
 				528FF64129A9E14800C25137 /* UIComponents */,
 				528FF61029A9E13E00C25137 /* MybkMobile */,
@@ -145,15 +200,10 @@
 		528FF64129A9E14800C25137 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				528FF64729A9E2AB00C25137 /* SubjectScheduleCell */,
-				528FF65A29A9FAD100C25137 /* SubjectResultCell */,
-				528FF65929A9FAA900C25137 /* SubjectTestCell */,
+				5289589E29AA035C0049EE07 /* SubjectCell */,
 				528FF64F29A9E58E00C25137 /* BottomBarItem */,
-				528FF64E29A9E57C00C25137 /* WeekView */,
 				528FF64C29A9E3A500C25137 /* SpecialDetailInfoInListInfoCell */,
-				528FF64B29A9E34200C25137 /* SettingToggleCell */,
-				528FF64A29A9E33100C25137 /* SettingCell */,
-				528FF64929A9E2F400C25137 /* DetailInfoInListInfoCell */,
+				528FF64929A9E2F400C25137 /* DetailInforCell */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -165,11 +215,11 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		528FF64329A9E20000C25137 /* Models */ = {
+		528FF64329A9E20000C25137 /* DataObjects */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Models;
+			path = DataObjects;
 			sourceTree = "<group>";
 		};
 		528FF64429A9E24C00C25137 /* TextField */ = {
@@ -186,43 +236,21 @@
 			path = Toggle;
 			sourceTree = "<group>";
 		};
-		528FF64729A9E2AB00C25137 /* SubjectScheduleCell */ = {
-			isa = PBXGroup;
-			children = (
-				528FF65B29A9FBD100C25137 /* SubjectScheduleCell.swift */,
-				528FF65C29A9FBD100C25137 /* SubjectScheduleCell.xib */,
-			);
-			path = SubjectScheduleCell;
-			sourceTree = "<group>";
-		};
 		528FF64829A9E2BD00C25137 /* SubUIComponent */ = {
 			isa = PBXGroup;
 			children = (
+				528FF64E29A9E57C00C25137 /* NumberCell */,
 				528FF64529A9E27300C25137 /* Toggle */,
 				528FF64429A9E24C00C25137 /* TextField */,
 			);
 			path = SubUIComponent;
 			sourceTree = "<group>";
 		};
-		528FF64929A9E2F400C25137 /* DetailInfoInListInfoCell */ = {
+		528FF64929A9E2F400C25137 /* DetailInforCell */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = DetailInfoInListInfoCell;
-			sourceTree = "<group>";
-		};
-		528FF64A29A9E33100C25137 /* SettingCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SettingCell;
-			sourceTree = "<group>";
-		};
-		528FF64B29A9E34200C25137 /* SettingToggleCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SettingToggleCell;
+			path = DetailInforCell;
 			sourceTree = "<group>";
 		};
 		528FF64C29A9E3A500C25137 /* SpecialDetailInfoInListInfoCell */ = {
@@ -232,11 +260,11 @@
 			path = SpecialDetailInfoInListInfoCell;
 			sourceTree = "<group>";
 		};
-		528FF64E29A9E57C00C25137 /* WeekView */ = {
+		528FF64E29A9E57C00C25137 /* NumberCell */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = WeekView;
+			path = NumberCell;
 			sourceTree = "<group>";
 		};
 		528FF64F29A9E58E00C25137 /* BottomBarItem */ = {
@@ -254,20 +282,6 @@
 				528FF65629A9F11F00C25137 /* Constrain.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		528FF65929A9FAA900C25137 /* SubjectTestCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SubjectTestCell;
-			sourceTree = "<group>";
-		};
-		528FF65A29A9FAD100C25137 /* SubjectResultCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SubjectResultCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,7 +388,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				528FF65E29A9FBD100C25137 /* SubjectScheduleCell.xib in Resources */,
+				528958AA29AA0A090049EE07 /* TestScheduleBottomView.xib in Resources */,
+				528958A129AA036B0049EE07 /* SubjectScheduleCell.xib in Resources */,
 				528FF61E29A9E13F00C25137 /* LaunchScreen.storyboard in Resources */,
 				528FF61B29A9E13F00C25137 /* Assets.xcassets in Resources */,
 				528FF61929A9E13E00C25137 /* Main.storyboard in Resources */,
@@ -406,9 +421,10 @@
 				528FF61629A9E13E00C25137 /* ViewController.swift in Sources */,
 				528FF61229A9E13E00C25137 /* AppDelegate.swift in Sources */,
 				528FF61429A9E13E00C25137 /* SceneDelegate.swift in Sources */,
+				528958A829AA094E0049EE07 /* TestScheduleBottom.swift in Sources */,
 				528FF65729A9F11F00C25137 /* Constrain.swift in Sources */,
 				528FF65329A9EF8B00C25137 /* BottomBarItem.swift in Sources */,
-				528FF65D29A9FBD100C25137 /* SubjectScheduleCell.swift in Sources */,
+				528958A229AA036B0049EE07 /* SubjectScheduleCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
