@@ -16,6 +16,11 @@
 		528FF62929A9E13F00C25137 /* MybkMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FF62829A9E13F00C25137 /* MybkMobileTests.swift */; };
 		528FF63329A9E14000C25137 /* MybkMobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FF63229A9E14000C25137 /* MybkMobileUITests.swift */; };
 		528FF63529A9E14000C25137 /* MybkMobileUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FF63429A9E14000C25137 /* MybkMobileUITestsLaunchTests.swift */; };
+		528FF65129A9EC7C00C25137 /* BottomBarItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528FF65029A9EC7C00C25137 /* BottomBarItem.xib */; };
+		528FF65329A9EF8B00C25137 /* BottomBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FF65229A9EF8B00C25137 /* BottomBarItem.swift */; };
+		528FF65729A9F11F00C25137 /* Constrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FF65629A9F11F00C25137 /* Constrain.swift */; };
+		528FF65D29A9FBD100C25137 /* SubjectScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FF65B29A9FBD100C25137 /* SubjectScheduleCell.swift */; };
+		528FF65E29A9FBD100C25137 /* SubjectScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528FF65C29A9FBD100C25137 /* SubjectScheduleCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		528FF62E29A9E14000C25137 /* MybkMobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MybkMobileUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		528FF63229A9E14000C25137 /* MybkMobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MybkMobileUITests.swift; sourceTree = "<group>"; };
 		528FF63429A9E14000C25137 /* MybkMobileUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MybkMobileUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		528FF65029A9EC7C00C25137 /* BottomBarItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomBarItem.xib; sourceTree = "<group>"; };
+		528FF65229A9EF8B00C25137 /* BottomBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarItem.swift; sourceTree = "<group>"; };
+		528FF65629A9F11F00C25137 /* Constrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constrain.swift; sourceTree = "<group>"; };
+		528FF65B29A9FBD100C25137 /* SubjectScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectScheduleCell.swift; sourceTree = "<group>"; };
+		528FF65C29A9FBD100C25137 /* SubjectScheduleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectScheduleCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +89,11 @@
 		528FF60529A9E13E00C25137 = {
 			isa = PBXGroup;
 			children = (
+				528FF65529A9F11000C25137 /* Utils */,
+				528FF64829A9E2BD00C25137 /* SubUIComponent */,
+				528FF64329A9E20000C25137 /* Models */,
+				528FF64229A9E1F100C25137 /* ViewControllers */,
+				528FF64129A9E14800C25137 /* UIComponents */,
 				528FF61029A9E13E00C25137 /* MybkMobile */,
 				528FF62729A9E13F00C25137 /* MybkMobileTests */,
 				528FF63129A9E14000C25137 /* MybkMobileUITests */,
@@ -125,6 +140,134 @@
 				528FF63429A9E14000C25137 /* MybkMobileUITestsLaunchTests.swift */,
 			);
 			path = MybkMobileUITests;
+			sourceTree = "<group>";
+		};
+		528FF64129A9E14800C25137 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				528FF64729A9E2AB00C25137 /* SubjectScheduleCell */,
+				528FF65A29A9FAD100C25137 /* SubjectResultCell */,
+				528FF65929A9FAA900C25137 /* SubjectTestCell */,
+				528FF64F29A9E58E00C25137 /* BottomBarItem */,
+				528FF64E29A9E57C00C25137 /* WeekView */,
+				528FF64C29A9E3A500C25137 /* SpecialDetailInfoInListInfoCell */,
+				528FF64B29A9E34200C25137 /* SettingToggleCell */,
+				528FF64A29A9E33100C25137 /* SettingCell */,
+				528FF64929A9E2F400C25137 /* DetailInfoInListInfoCell */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		528FF64229A9E1F100C25137 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		528FF64329A9E20000C25137 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		528FF64429A9E24C00C25137 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		528FF64529A9E27300C25137 /* Toggle */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Toggle;
+			sourceTree = "<group>";
+		};
+		528FF64729A9E2AB00C25137 /* SubjectScheduleCell */ = {
+			isa = PBXGroup;
+			children = (
+				528FF65B29A9FBD100C25137 /* SubjectScheduleCell.swift */,
+				528FF65C29A9FBD100C25137 /* SubjectScheduleCell.xib */,
+			);
+			path = SubjectScheduleCell;
+			sourceTree = "<group>";
+		};
+		528FF64829A9E2BD00C25137 /* SubUIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				528FF64529A9E27300C25137 /* Toggle */,
+				528FF64429A9E24C00C25137 /* TextField */,
+			);
+			path = SubUIComponent;
+			sourceTree = "<group>";
+		};
+		528FF64929A9E2F400C25137 /* DetailInfoInListInfoCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailInfoInListInfoCell;
+			sourceTree = "<group>";
+		};
+		528FF64A29A9E33100C25137 /* SettingCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SettingCell;
+			sourceTree = "<group>";
+		};
+		528FF64B29A9E34200C25137 /* SettingToggleCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SettingToggleCell;
+			sourceTree = "<group>";
+		};
+		528FF64C29A9E3A500C25137 /* SpecialDetailInfoInListInfoCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SpecialDetailInfoInListInfoCell;
+			sourceTree = "<group>";
+		};
+		528FF64E29A9E57C00C25137 /* WeekView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WeekView;
+			sourceTree = "<group>";
+		};
+		528FF64F29A9E58E00C25137 /* BottomBarItem */ = {
+			isa = PBXGroup;
+			children = (
+				528FF65029A9EC7C00C25137 /* BottomBarItem.xib */,
+				528FF65229A9EF8B00C25137 /* BottomBarItem.swift */,
+			);
+			path = BottomBarItem;
+			sourceTree = "<group>";
+		};
+		528FF65529A9F11000C25137 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				528FF65629A9F11F00C25137 /* Constrain.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		528FF65929A9FAA900C25137 /* SubjectTestCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SubjectTestCell;
+			sourceTree = "<group>";
+		};
+		528FF65A29A9FAD100C25137 /* SubjectResultCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SubjectResultCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +374,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				528FF65E29A9FBD100C25137 /* SubjectScheduleCell.xib in Resources */,
 				528FF61E29A9E13F00C25137 /* LaunchScreen.storyboard in Resources */,
 				528FF61B29A9E13F00C25137 /* Assets.xcassets in Resources */,
 				528FF61929A9E13E00C25137 /* Main.storyboard in Resources */,
+				528FF65129A9EC7C00C25137 /* BottomBarItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +406,9 @@
 				528FF61629A9E13E00C25137 /* ViewController.swift in Sources */,
 				528FF61229A9E13E00C25137 /* AppDelegate.swift in Sources */,
 				528FF61429A9E13E00C25137 /* SceneDelegate.swift in Sources */,
+				528FF65729A9F11F00C25137 /* Constrain.swift in Sources */,
+				528FF65329A9EF8B00C25137 /* BottomBarItem.swift in Sources */,
+				528FF65D29A9FBD100C25137 /* SubjectScheduleCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +514,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +568,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -440,6 +588,7 @@
 				DEVELOPMENT_TEAM = M494F4824Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MybkMobile/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -468,6 +617,7 @@
 				DEVELOPMENT_TEAM = M494F4824Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MybkMobile/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
