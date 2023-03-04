@@ -9,14 +9,11 @@
 /* Begin PBXBuildFile section */
 		528958A129AA036B0049EE07 /* SubjectScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5289589F29AA036B0049EE07 /* SubjectScheduleCell.xib */; };
 		528958A229AA036B0049EE07 /* SubjectScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528958A029AA036B0049EE07 /* SubjectScheduleCell.swift */; };
-		528958A829AA094E0049EE07 /* TestScheduleBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528958A729AA094E0049EE07 /* TestScheduleBottom.swift */; };
+		528958A829AA094E0049EE07 /* TestScheduleBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528958A729AA094E0049EE07 /* TestScheduleBottomView.swift */; };
 		528958AA29AA0A090049EE07 /* TestScheduleBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528958A929AA0A090049EE07 /* TestScheduleBottomView.xib */; };
 		528958B029AA14160049EE07 /* ScoreBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528958AE29AA14160049EE07 /* ScoreBottomView.xib */; };
 		528958B129AA14160049EE07 /* ScoreBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528958AF29AA14160049EE07 /* ScoreBottomView.swift */; };
 		528FF61229A9E13E00C25137 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FF61129A9E13E00C25137 /* AppDelegate.swift */; };
-		528FF61429A9E13E00C25137 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FF61329A9E13E00C25137 /* SceneDelegate.swift */; };
-		528FF61629A9E13E00C25137 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FF61529A9E13E00C25137 /* ViewController.swift */; };
-		528FF61929A9E13E00C25137 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528FF61729A9E13E00C25137 /* Main.storyboard */; };
 		528FF61B29A9E13F00C25137 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 528FF61A29A9E13F00C25137 /* Assets.xcassets */; };
 		528FF61E29A9E13F00C25137 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528FF61C29A9E13F00C25137 /* LaunchScreen.storyboard */; };
 		528FF62929A9E13F00C25137 /* MybkMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FF62829A9E13F00C25137 /* MybkMobileTests.swift */; };
@@ -25,6 +22,28 @@
 		528FF65129A9EC7C00C25137 /* BottomBarItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528FF65029A9EC7C00C25137 /* BottomBarItem.xib */; };
 		528FF65329A9EF8B00C25137 /* BottomBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FF65229A9EF8B00C25137 /* BottomBarItem.swift */; };
 		528FF65729A9F11F00C25137 /* Constrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FF65629A9F11F00C25137 /* Constrain.swift */; };
+		52C9A25B29AA19B700F2B8C1 /* LearnScheduleBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52C9A25A29AA19B700F2B8C1 /* LearnScheduleBottomView.xib */; };
+		52C9A25D29AA3DA700F2B8C1 /* LearnScheduleBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A25C29AA3DA700F2B8C1 /* LearnScheduleBottomView.swift */; };
+		52C9A25F29AA434D00F2B8C1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A25E29AA434D00F2B8C1 /* UIView.swift */; };
+		52C9A26129AA43D600F2B8C1 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A26029AA43D600F2B8C1 /* UICollectionView.swift */; };
+		52C9A26329AA480C00F2B8C1 /* SubjectCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A26229AA480C00F2B8C1 /* SubjectCellModel.swift */; };
+		52C9A26729AA559400F2B8C1 /* DotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A26529AA559400F2B8C1 /* DotCell.swift */; };
+		52C9A26829AA559400F2B8C1 /* DotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52C9A26629AA559400F2B8C1 /* DotCell.xib */; };
+		52C9A26B29AA55AC00F2B8C1 /* NumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A26929AA55AC00F2B8C1 /* NumberCell.swift */; };
+		52C9A26C29AA55AC00F2B8C1 /* NumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52C9A26A29AA55AC00F2B8C1 /* NumberCell.xib */; };
+		52C9A26E29AA561000F2B8C1 /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A26D29AA561000F2B8C1 /* CustomToggle.swift */; };
+		52C9A27029AA567300F2B8C1 /* CustomThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A26F29AA567300F2B8C1 /* CustomThumbView.swift */; };
+		52C9A27329AACD2700F2B8C1 /* InfoDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A27129AACD2700F2B8C1 /* InfoDetailCell.swift */; };
+		52C9A27429AACD2700F2B8C1 /* InfoDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52C9A27229AACD2700F2B8C1 /* InfoDetailCell.xib */; };
+		52C9A27629AACDF900F2B8C1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A27529AACDF900F2B8C1 /* CustomTextField.swift */; };
+		52ED1A9B29B37E3700DC1429 /* SpecialScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED1A9929B37E3700DC1429 /* SpecialScoreCell.swift */; };
+		52ED1A9C29B37E3700DC1429 /* SpecialScoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52ED1A9A29B37E3700DC1429 /* SpecialScoreCell.xib */; };
+		52ED1AA029B3803F00DC1429 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED1A9E29B3803F00DC1429 /* SettingCell.swift */; };
+		52ED1AA129B3803F00DC1429 /* SettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52ED1A9F29B3803F00DC1429 /* SettingCell.xib */; };
+		52ED1AA629B3B55800DC1429 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED1AA529B3B55800DC1429 /* SceneDelegate.swift */; };
+		52ED1AAB29B3B6B800DC1429 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED1AA929B3B6B800DC1429 /* LoginViewController.swift */; };
+		52ED1AAC29B3B6B800DC1429 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52ED1AAA29B3B6B800DC1429 /* LoginViewController.xib */; };
+		52ED1AAE29B3B6ED00DC1429 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED1AAD29B3B6ED00DC1429 /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,15 +66,12 @@
 /* Begin PBXFileReference section */
 		5289589F29AA036B0049EE07 /* SubjectScheduleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubjectScheduleCell.xib; sourceTree = "<group>"; };
 		528958A029AA036B0049EE07 /* SubjectScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectScheduleCell.swift; sourceTree = "<group>"; };
-		528958A729AA094E0049EE07 /* TestScheduleBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScheduleBottom.swift; sourceTree = "<group>"; };
+		528958A729AA094E0049EE07 /* TestScheduleBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScheduleBottomView.swift; sourceTree = "<group>"; };
 		528958A929AA0A090049EE07 /* TestScheduleBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestScheduleBottomView.xib; sourceTree = "<group>"; };
 		528958AE29AA14160049EE07 /* ScoreBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoreBottomView.xib; sourceTree = "<group>"; };
 		528958AF29AA14160049EE07 /* ScoreBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreBottomView.swift; sourceTree = "<group>"; };
 		528FF60E29A9E13E00C25137 /* MybkMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MybkMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		528FF61129A9E13E00C25137 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		528FF61329A9E13E00C25137 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		528FF61529A9E13E00C25137 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		528FF61829A9E13E00C25137 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		528FF61A29A9E13F00C25137 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		528FF61D29A9E13F00C25137 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		528FF61F29A9E13F00C25137 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +83,28 @@
 		528FF65029A9EC7C00C25137 /* BottomBarItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomBarItem.xib; sourceTree = "<group>"; };
 		528FF65229A9EF8B00C25137 /* BottomBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarItem.swift; sourceTree = "<group>"; };
 		528FF65629A9F11F00C25137 /* Constrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constrain.swift; sourceTree = "<group>"; };
+		52C9A25A29AA19B700F2B8C1 /* LearnScheduleBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnScheduleBottomView.xib; sourceTree = "<group>"; };
+		52C9A25C29AA3DA700F2B8C1 /* LearnScheduleBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnScheduleBottomView.swift; sourceTree = "<group>"; };
+		52C9A25E29AA434D00F2B8C1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		52C9A26029AA43D600F2B8C1 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		52C9A26229AA480C00F2B8C1 /* SubjectCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCellModel.swift; sourceTree = "<group>"; };
+		52C9A26529AA559400F2B8C1 /* DotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotCell.swift; sourceTree = "<group>"; };
+		52C9A26629AA559400F2B8C1 /* DotCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DotCell.xib; sourceTree = "<group>"; };
+		52C9A26929AA55AC00F2B8C1 /* NumberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCell.swift; sourceTree = "<group>"; };
+		52C9A26A29AA55AC00F2B8C1 /* NumberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberCell.xib; sourceTree = "<group>"; };
+		52C9A26D29AA561000F2B8C1 /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
+		52C9A26F29AA567300F2B8C1 /* CustomThumbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomThumbView.swift; sourceTree = "<group>"; };
+		52C9A27129AACD2700F2B8C1 /* InfoDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDetailCell.swift; sourceTree = "<group>"; };
+		52C9A27229AACD2700F2B8C1 /* InfoDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoDetailCell.xib; sourceTree = "<group>"; };
+		52C9A27529AACDF900F2B8C1 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		52ED1A9929B37E3700DC1429 /* SpecialScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialScoreCell.swift; sourceTree = "<group>"; };
+		52ED1A9A29B37E3700DC1429 /* SpecialScoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialScoreCell.xib; sourceTree = "<group>"; };
+		52ED1A9E29B3803F00DC1429 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		52ED1A9F29B3803F00DC1429 /* SettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCell.xib; sourceTree = "<group>"; };
+		52ED1AA529B3B55800DC1429 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		52ED1AA929B3B6B800DC1429 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		52ED1AAA29B3B6B800DC1429 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		52ED1AAD29B3B6ED00DC1429 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +155,8 @@
 		528958A429AA06450049EE07 /* LearnScheduleBottom */ = {
 			isa = PBXGroup;
 			children = (
+				52C9A25A29AA19B700F2B8C1 /* LearnScheduleBottomView.xib */,
+				52C9A25C29AA3DA700F2B8C1 /* LearnScheduleBottomView.swift */,
 			);
 			path = LearnScheduleBottom;
 			sourceTree = "<group>";
@@ -124,7 +164,7 @@
 		528958A529AA06500049EE07 /* TestScheduleBottom */ = {
 			isa = PBXGroup;
 			children = (
-				528958A729AA094E0049EE07 /* TestScheduleBottom.swift */,
+				528958A729AA094E0049EE07 /* TestScheduleBottomView.swift */,
 				528958A929AA0A090049EE07 /* TestScheduleBottomView.xib */,
 			);
 			path = TestScheduleBottom;
@@ -142,6 +182,7 @@
 		528958AC29AA13120049EE07 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				52C9A26229AA480C00F2B8C1 /* SubjectCellModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -149,6 +190,8 @@
 		528958AD29AA13C00049EE07 /* DotCell */ = {
 			isa = PBXGroup;
 			children = (
+				52C9A26529AA559400F2B8C1 /* DotCell.swift */,
+				52C9A26629AA559400F2B8C1 /* DotCell.xib */,
 			);
 			path = DotCell;
 			sourceTree = "<group>";
@@ -183,9 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				528FF61129A9E13E00C25137 /* AppDelegate.swift */,
-				528FF61329A9E13E00C25137 /* SceneDelegate.swift */,
-				528FF61529A9E13E00C25137 /* ViewController.swift */,
-				528FF61729A9E13E00C25137 /* Main.storyboard */,
+				52ED1AA529B3B55800DC1429 /* SceneDelegate.swift */,
 				528FF61A29A9E13F00C25137 /* Assets.xcassets */,
 				528FF61C29A9E13F00C25137 /* LaunchScreen.storyboard */,
 				528FF61F29A9E13F00C25137 /* Info.plist */,
@@ -213,9 +254,12 @@
 		528FF64129A9E14800C25137 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				52ED1A9D29B3800000DC1429 /* SettingCell */,
+				52ED1A9829B37E1D00DC1429 /* SpecialScoreCell */,
+				52C9A26429AA54EF00F2B8C1 /* CurrentWeekView */,
 				5289589E29AA035C0049EE07 /* SubjectCell */,
 				528FF64F29A9E58E00C25137 /* BottomBarItem */,
-				528FF64929A9E2F400C25137 /* DetailInforCell */,
+				528FF64929A9E2F400C25137 /* InfoDetailCell */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -223,6 +267,8 @@
 		528FF64229A9E1F100C25137 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				52ED1AA829B3B66300DC1429 /* DashboardViewController */,
+				52ED1AA729B3B65600DC1429 /* LoginViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -237,6 +283,7 @@
 		528FF64429A9E24C00C25137 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
+				52C9A27529AACDF900F2B8C1 /* CustomTextField.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -244,6 +291,8 @@
 		528FF64529A9E27300C25137 /* Toggle */ = {
 			isa = PBXGroup;
 			children = (
+				52C9A26D29AA561000F2B8C1 /* CustomToggle.swift */,
+				52C9A26F29AA567300F2B8C1 /* CustomThumbView.swift */,
 			);
 			path = Toggle;
 			sourceTree = "<group>";
@@ -259,16 +308,20 @@
 			path = SubUIComponent;
 			sourceTree = "<group>";
 		};
-		528FF64929A9E2F400C25137 /* DetailInforCell */ = {
+		528FF64929A9E2F400C25137 /* InfoDetailCell */ = {
 			isa = PBXGroup;
 			children = (
+				52C9A27129AACD2700F2B8C1 /* InfoDetailCell.swift */,
+				52C9A27229AACD2700F2B8C1 /* InfoDetailCell.xib */,
 			);
-			path = DetailInforCell;
+			path = InfoDetailCell;
 			sourceTree = "<group>";
 		};
 		528FF64E29A9E57C00C25137 /* NumberCell */ = {
 			isa = PBXGroup;
 			children = (
+				52C9A26929AA55AC00F2B8C1 /* NumberCell.swift */,
+				52C9A26A29AA55AC00F2B8C1 /* NumberCell.xib */,
 			);
 			path = NumberCell;
 			sourceTree = "<group>";
@@ -286,8 +339,52 @@
 			isa = PBXGroup;
 			children = (
 				528FF65629A9F11F00C25137 /* Constrain.swift */,
+				52C9A25E29AA434D00F2B8C1 /* UIView.swift */,
+				52C9A26029AA43D600F2B8C1 /* UICollectionView.swift */,
+				52ED1AAD29B3B6ED00DC1429 /* UIViewController.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		52C9A26429AA54EF00F2B8C1 /* CurrentWeekView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CurrentWeekView;
+			sourceTree = "<group>";
+		};
+		52ED1A9829B37E1D00DC1429 /* SpecialScoreCell */ = {
+			isa = PBXGroup;
+			children = (
+				52ED1A9929B37E3700DC1429 /* SpecialScoreCell.swift */,
+				52ED1A9A29B37E3700DC1429 /* SpecialScoreCell.xib */,
+			);
+			path = SpecialScoreCell;
+			sourceTree = "<group>";
+		};
+		52ED1A9D29B3800000DC1429 /* SettingCell */ = {
+			isa = PBXGroup;
+			children = (
+				52ED1A9E29B3803F00DC1429 /* SettingCell.swift */,
+				52ED1A9F29B3803F00DC1429 /* SettingCell.xib */,
+			);
+			path = SettingCell;
+			sourceTree = "<group>";
+		};
+		52ED1AA729B3B65600DC1429 /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				52ED1AA929B3B6B800DC1429 /* LoginViewController.swift */,
+				52ED1AAA29B3B6B800DC1429 /* LoginViewController.xib */,
+			);
+			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		52ED1AA829B3B66300DC1429 /* DashboardViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DashboardViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,12 +491,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52C9A26C29AA55AC00F2B8C1 /* NumberCell.xib in Resources */,
 				528958AA29AA0A090049EE07 /* TestScheduleBottomView.xib in Resources */,
+				52ED1A9C29B37E3700DC1429 /* SpecialScoreCell.xib in Resources */,
 				528958B029AA14160049EE07 /* ScoreBottomView.xib in Resources */,
+				52C9A26829AA559400F2B8C1 /* DotCell.xib in Resources */,
 				528958A129AA036B0049EE07 /* SubjectScheduleCell.xib in Resources */,
+				52C9A27429AACD2700F2B8C1 /* InfoDetailCell.xib in Resources */,
+				52C9A25B29AA19B700F2B8C1 /* LearnScheduleBottomView.xib in Resources */,
 				528FF61E29A9E13F00C25137 /* LaunchScreen.storyboard in Resources */,
+				52ED1AAC29B3B6B800DC1429 /* LoginViewController.xib in Resources */,
 				528FF61B29A9E13F00C25137 /* Assets.xcassets in Resources */,
-				528FF61929A9E13E00C25137 /* Main.storyboard in Resources */,
+				52ED1AA129B3803F00DC1429 /* SettingCell.xib in Resources */,
 				528FF65129A9EC7C00C25137 /* BottomBarItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,13 +528,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				528FF61629A9E13E00C25137 /* ViewController.swift in Sources */,
+				52ED1AAB29B3B6B800DC1429 /* LoginViewController.swift in Sources */,
+				52C9A25F29AA434D00F2B8C1 /* UIView.swift in Sources */,
+				52ED1A9B29B37E3700DC1429 /* SpecialScoreCell.swift in Sources */,
 				528FF61229A9E13E00C25137 /* AppDelegate.swift in Sources */,
-				528FF61429A9E13E00C25137 /* SceneDelegate.swift in Sources */,
-				528958A829AA094E0049EE07 /* TestScheduleBottom.swift in Sources */,
+				52C9A27329AACD2700F2B8C1 /* InfoDetailCell.swift in Sources */,
+				52C9A26729AA559400F2B8C1 /* DotCell.swift in Sources */,
+				52C9A26329AA480C00F2B8C1 /* SubjectCellModel.swift in Sources */,
+				52C9A27029AA567300F2B8C1 /* CustomThumbView.swift in Sources */,
+				52C9A27629AACDF900F2B8C1 /* CustomTextField.swift in Sources */,
+				52C9A26B29AA55AC00F2B8C1 /* NumberCell.swift in Sources */,
+				528958A829AA094E0049EE07 /* TestScheduleBottomView.swift in Sources */,
 				528FF65729A9F11F00C25137 /* Constrain.swift in Sources */,
 				528958B129AA14160049EE07 /* ScoreBottomView.swift in Sources */,
+				52ED1AAE29B3B6ED00DC1429 /* UIViewController.swift in Sources */,
 				528FF65329A9EF8B00C25137 /* BottomBarItem.swift in Sources */,
+				52C9A25D29AA3DA700F2B8C1 /* LearnScheduleBottomView.swift in Sources */,
+				52ED1AA629B3B55800DC1429 /* SceneDelegate.swift in Sources */,
+				52C9A26E29AA561000F2B8C1 /* CustomToggle.swift in Sources */,
+				52C9A26129AA43D600F2B8C1 /* UICollectionView.swift in Sources */,
+				52ED1AA029B3803F00DC1429 /* SettingCell.swift in Sources */,
 				528958A229AA036B0049EE07 /* SubjectScheduleCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,14 +585,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		528FF61729A9E13E00C25137 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				528FF61829A9E13E00C25137 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		528FF61C29A9E13F00C25137 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -612,10 +720,11 @@
 				DEVELOPMENT_TEAM = M494F4824Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MybkMobile/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyBKMobile;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -641,10 +750,11 @@
 				DEVELOPMENT_TEAM = M494F4824Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MybkMobile/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyBKMobile;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

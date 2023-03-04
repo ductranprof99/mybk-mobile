@@ -31,7 +31,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oh1-KD-XJo">
                     <rect key="frame" x="21.666666666666664" y="29.999999999999996" width="28.666666666666664" height="14.333333333333332"/>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" red="0.066666666669999999" green="0.25882352939999997" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>

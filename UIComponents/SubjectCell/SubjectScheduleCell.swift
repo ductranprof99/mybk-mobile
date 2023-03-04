@@ -7,6 +7,12 @@
 
 import UIKit
 
+enum SubjectCellType {
+    case scoreBottot(data: SubjectCellModel)
+    case testBottom(data: SubjectCellModel)
+    case schedBottom(data: SubjectCellModel)
+}
+
 final class SubjectScheduleCell: UICollectionViewCell {
     
     static let cellHeight: CGFloat = 200
@@ -23,9 +29,45 @@ final class SubjectScheduleCell: UICollectionViewCell {
     
     @IBOutlet private weak var bottomContainerView: UIView!
     
+    private lazy var learningSchedBottomView: LearnScheduleBottomView = {
+        return .fromNib()
+    }()
+    
+    private lazy var testSceduleBottomView: TestScheduleBottomView = {
+        return .fromNib()
+    }()
+    
+    private lazy var scoreBottomView: ScoreBottomView = {
+        return .fromNib()
+    }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    public func setCellContent(cellData: SubjectCellType) {
+        switch cellData {
+        case .scoreBottot:
+            addBottomView(view: scoreBottomView)
+            scoreBottomView.setContent(data: cellData)
+        case .testBottom:
+            addBottomView(view: testSceduleBottomView)
+            testSceduleBottomView.setContent(data: cellData)
+        case .schedBottom:
+            addBottomView(view: learningSchedBottomView)
+            learningSchedBottomView.setContent(data: cellData)
+        }
+    }
+    
+    private func addBottomView(view: UIView) {
+        bottomContainerView.addSubview(view)
+        view.setConstrain(to: bottomContainerView) { make in
+            make.append(.leading(leading: 0))
+            make.append(.trailing(trailing: 0))
+            make.append(.bottom(bottom: 0))
+            make.append(.top(top: 0))
+        }
+    }
+    
 }
