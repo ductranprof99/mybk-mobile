@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MainTabBarController-->
+        <scene sceneID="Zc6-jv-23L">
+            <objects>
+                <tabBarController storyboardIdentifier="MainTabBarController" title="MainTabBarController" id="msf-tE-WGr" customClass="MainTabBarController" customModule="MybkMobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" itemPositioning="fill" id="iVg-aq-zw6">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.066666666669999999" green="0.25882352939999997" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.066666666669999999" green="0.25882352939999997" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="initialIndex">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="Pdg-4U-Gr5" kind="relationship" relationship="viewControllers" id="PvI-6p-5jj"/>
+                        <segue destination="pVO-XS-Bvy" kind="relationship" relationship="viewControllers" id="Iu4-uX-pZK"/>
+                        <segue destination="qJf-6g-CQm" kind="relationship" relationship="viewControllers" id="PkY-gy-h1b"/>
+                        <segue destination="L9W-4b-bU6" kind="relationship" relationship="viewControllers" id="REA-zY-0ih"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VMP-MC-dVW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1523" y="-566"/>
+        </scene>
+        <!--Bảng điểm-->
+        <scene sceneID="pP1-fx-RZe">
+            <objects>
+                <viewController id="qJf-6g-CQm" customClass="TranscriptViewController" customModule="MybkMobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8pZ-ah-3FJ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="S8G-ew-FZf"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Bảng điểm" image="nav_icon_scoreboard" selectedImage="nav_icon_scoreboard.fill" id="Krg-25-jgy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6k4-CF-62H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2811" y="-930"/>
+        </scene>
+        <!--Giờ học-->
+        <scene sceneID="Sas-P1-O8S">
+            <objects>
+                <viewController id="Pdg-4U-Gr5" customClass="ScheduleViewController" customModule="MybkMobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Ed-il-QQQ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="HDU-uL-cMe"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Giờ học" image="nav_icon_calendar" selectedImage="nav_icon_calendar.fill" id="qUx-hM-8wn">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4FJ-Rm-bRu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-416" y="-930"/>
+        </scene>
+        <!--Lịch thi-->
+        <scene sceneID="w4H-q2-zvn">
+            <objects>
+                <viewController id="pVO-XS-Bvy" customClass="ExamViewController" customModule="MybkMobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k05-9E-1TS">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="3Qr-aJ-Ci5"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Lịch thi" image="nav_icon_test" selectedImage="nav_icon_test.fill" id="80K-gC-f5g"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="opb-CT-7Xt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-416" y="-212"/>
+        </scene>
+        <!--Cá nhân-->
+        <scene sceneID="DwK-hb-6BP">
+            <objects>
+                <viewController id="L9W-4b-bU6" customClass="ProfileViewController" customModule="MybkMobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hjX-xc-c9b">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="csf-qO-Hhp"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Cá nhân" image="nav_icon_profile" selectedImage="nav_icon_profile.bold" id="s3v-5Z-G2n"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wms-tB-Kb9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2811" y="-103"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="nav_icon_calendar" width="25" height="24"/>
+        <image name="nav_icon_calendar.fill" width="24" height="24"/>
+        <image name="nav_icon_profile" width="25" height="24"/>
+        <image name="nav_icon_profile.bold" width="24" height="24"/>
+        <image name="nav_icon_scoreboard" width="25" height="24"/>
+        <image name="nav_icon_scoreboard.fill" width="24" height="24"/>
+        <image name="nav_icon_test" width="24" height="24"/>
+        <image name="nav_icon_test.fill" width="24" height="24"/>
+    </resources>
+</document>

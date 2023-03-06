@@ -17,7 +17,9 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var policyLabel: UILabel!
     
     @IBAction func signUpHandler(_ sender: Any) {
-        
+        let storyboard = UIStoryboard(name: "MainTabBarController", bundle: nil)
+        let tabbarVC = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
+        self.navigationController?.pushViewController(tabbarVC, animated: false)
     }
     
     @objc func navigateToPolicy() {
