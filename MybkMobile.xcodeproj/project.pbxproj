@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5214923429B4370000A7522B /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214923229B4370000A7522B /* ScheduleViewController.swift */; };
+		52373E9E29B795CB00AA4383 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52373E9D29B795CB00AA4383 /* UIColor.swift */; };
+		52373EA029B79CA700AA4383 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52373E9F29B79CA700AA4383 /* CustomButton.swift */; };
 		528958A129AA036B0049EE07 /* SubjectScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5289589F29AA036B0049EE07 /* SubjectScheduleCell.xib */; };
 		528958A229AA036B0049EE07 /* SubjectScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528958A029AA036B0049EE07 /* SubjectScheduleCell.swift */; };
 		528958A829AA094E0049EE07 /* TestScheduleBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528958A729AA094E0049EE07 /* TestScheduleBottomView.swift */; };
@@ -71,6 +73,8 @@
 
 /* Begin PBXFileReference section */
 		5214923229B4370000A7522B /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		52373E9D29B795CB00AA4383 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		52373E9F29B79CA700AA4383 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		5289589F29AA036B0049EE07 /* SubjectScheduleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubjectScheduleCell.xib; sourceTree = "<group>"; };
 		528958A029AA036B0049EE07 /* SubjectScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectScheduleCell.swift; sourceTree = "<group>"; };
 		528958A729AA094E0049EE07 /* TestScheduleBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScheduleBottomView.swift; sourceTree = "<group>"; };
@@ -354,6 +358,8 @@
 				52C9A25E29AA434D00F2B8C1 /* UIView.swift */,
 				52C9A26029AA43D600F2B8C1 /* UICollectionView.swift */,
 				52ED1AAD29B3B6ED00DC1429 /* UIViewController.swift */,
+				52373E9D29B795CB00AA4383 /* UIColor.swift */,
+				52373E9F29B79CA700AA4383 /* CustomButton.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -551,6 +557,7 @@
 				52C9A25F29AA434D00F2B8C1 /* UIView.swift in Sources */,
 				52ED1A9B29B37E3700DC1429 /* SpecialScoreCell.swift in Sources */,
 				528FF61229A9E13E00C25137 /* AppDelegate.swift in Sources */,
+				52373EA029B79CA700AA4383 /* CustomButton.swift in Sources */,
 				52C9A27329AACD2700F2B8C1 /* InfoDetailCell.swift in Sources */,
 				52C9A26729AA559400F2B8C1 /* DotCell.swift in Sources */,
 				52C9A26329AA480C00F2B8C1 /* SubjectCellModel.swift in Sources */,
@@ -569,6 +576,7 @@
 				52ED1AA629B3B55800DC1429 /* SceneDelegate.swift in Sources */,
 				52A0D00D29B48E5C003B8952 /* MainTabBarController.swift in Sources */,
 				52C9A26E29AA561000F2B8C1 /* CustomToggle.swift in Sources */,
+				52373E9E29B795CB00AA4383 /* UIColor.swift in Sources */,
 				52C9A26129AA43D600F2B8C1 /* UICollectionView.swift in Sources */,
 				52ED1AA029B3803F00DC1429 /* SettingCell.swift in Sources */,
 				528958A229AA036B0049EE07 /* SubjectScheduleCell.swift in Sources */,
