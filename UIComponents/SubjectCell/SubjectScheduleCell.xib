@@ -110,6 +110,7 @@
                 <outlet property="detailButton" destination="I31-Ze-Huv" id="5p9-43-8Hr"/>
                 <outlet property="subjectCodeLabel" destination="Ycz-tR-e83" id="DcI-is-TjU"/>
                 <outlet property="subjectNameLabel" destination="HGx-BD-gu7" id="Mhg-3J-rJt"/>
+                <outlet property="topContainerView" destination="qRS-Ch-Eh5" id="IqP-nE-Zj7"/>
             </connections>
             <point key="canvasLocation" x="382.44274809160305" y="-84.507042253521135"/>
         </collectionViewCell>
