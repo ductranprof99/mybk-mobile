@@ -11,11 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LearnScheduleBottomView" customModule="MybkMobile" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="8Ii-bu-OUd" id="ZlQ-Jg-mWh"/>
-                <outlet property="containerView" destination="iN0-l3-epB" id="Yur-gn-mts"/>
-                <outlet property="hoursLabel" destination="YmA-r8-gvB" id="Jkh-zw-YWa"/>
-                <outlet property="locationLabel" destination="MbG-Sx-QrN" id="3Gi-sa-aWi"/>
-                <outlet property="weekDayLabel" destination="yEp-xc-nkr" id="Om8-mS-Awo"/>
+                <outlet property="collectionView" destination="8Ii-bu-OUd" id="A6R-SY-Wfe"/>
+                <outlet property="containerView" destination="iN0-l3-epB" id="gxn-7p-GTH"/>
+                <outlet property="hoursLabel" destination="YmA-r8-gvB" id="AZl-Wb-n1C"/>
+                <outlet property="locationLabel" destination="MbG-Sx-QrN" id="iiQ-nx-5iU"/>
+                <outlet property="weekDayLabel" destination="yEp-xc-nkr" id="PKX-l7-8pa"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -35,6 +35,10 @@
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="xyU-g3-Ei4"/>
+                        <outlet property="delegate" destination="-1" id="eFu-BR-x2S"/>
+                    </connections>
                 </collectionView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEp-xc-nkr">
                     <rect key="frame" x="60" y="14" width="42" height="21"/>

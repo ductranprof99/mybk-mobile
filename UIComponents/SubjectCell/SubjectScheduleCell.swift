@@ -30,7 +30,7 @@ final class SubjectScheduleCell: UICollectionViewCell {
     @IBOutlet private weak var bottomContainerView: UIView!
     
     private lazy var learningSchedBottomView: LearnScheduleBottomView = {
-        return .fromNib()
+        return .init(frame: self.bottomContainerView.bounds)
     }()
     
     private lazy var testSceduleBottomView: TestScheduleBottomView = {
@@ -68,6 +68,18 @@ final class SubjectScheduleCell: UICollectionViewCell {
             make.append(.bottom(bottom: 0))
             make.append(.top(top: 0))
         }
+    }
+    
+    
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        //Exhibit A - We need to cache our calculation to prevent a crash.
+        setNeedsLayout()
+        layoutIfNeeded()
+        let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)
+        var newFrame = layoutAttributes.frame
+        newFrame.size.width = CGFloat(ceilf(Float(size.width)))
+        layoutAttributes.frame = newFrame
+        return layoutAttributes
     }
     
 }

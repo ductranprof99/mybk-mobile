@@ -52,6 +52,7 @@
 		52ED1AAB29B3B6B800DC1429 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED1AA929B3B6B800DC1429 /* LoginViewController.swift */; };
 		52ED1AAC29B3B6B800DC1429 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52ED1AAA29B3B6B800DC1429 /* LoginViewController.xib */; };
 		52ED1AAE29B3B6ED00DC1429 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED1AAD29B3B6ED00DC1429 /* UIViewController.swift */; };
+		52F064EE29BA29B500D07D72 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F064ED29BA29B500D07D72 /* ScheduleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		52ED1AA929B3B6B800DC1429 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		52ED1AAA29B3B6B800DC1429 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		52ED1AAD29B3B6ED00DC1429 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		52F064ED29BA29B500D07D72 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,6 +366,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		529A2B2629B953DC004631C5 /* ScheduleView */ = {
+			isa = PBXGroup;
+			children = (
+				5214923229B4370000A7522B /* ScheduleViewController.swift */,
+				52F064ED29BA29B500D07D72 /* ScheduleViewModel.swift */,
+			);
+			path = ScheduleView;
+			sourceTree = "<group>";
+		};
 		52C9A26429AA54EF00F2B8C1 /* CurrentWeekView */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,8 +412,8 @@
 		52ED1AA829B3B66300DC1429 /* TabViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				529A2B2629B953DC004631C5 /* ScheduleView */,
 				52A0D00429B46405003B8952 /* MainTabBarController.storyboard */,
-				5214923229B4370000A7522B /* ScheduleViewController.swift */,
 				52A0D00629B46470003B8952 /* ExamViewController.swift */,
 				52A0D00829B46C60003B8952 /* TranscriptViewController.swift */,
 				52A0D00A29B47002003B8952 /* ProfileViewController.swift */,
@@ -561,6 +572,7 @@
 				52C9A27329AACD2700F2B8C1 /* InfoDetailCell.swift in Sources */,
 				52C9A26729AA559400F2B8C1 /* DotCell.swift in Sources */,
 				52C9A26329AA480C00F2B8C1 /* SubjectCellModel.swift in Sources */,
+				52F064EE29BA29B500D07D72 /* ScheduleViewModel.swift in Sources */,
 				52C9A27029AA567300F2B8C1 /* CustomThumbView.swift in Sources */,
 				52C9A27629AACDF900F2B8C1 /* CustomTextField.swift in Sources */,
 				5214923429B4370000A7522B /* ScheduleViewController.swift in Sources */,

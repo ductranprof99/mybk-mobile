@@ -17,6 +17,15 @@ final class LearnScheduleBottomView: UIView {
     
     @IBOutlet private var collectionView: UICollectionView!
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        Bundle.main.loadNibNamed("LearnScheduleBottomView", owner: self)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.addSubview(containerView)
@@ -28,14 +37,15 @@ final class LearnScheduleBottomView: UIView {
         }
         
         // TODO: add register
+//        collectionView.register(UICollectionViewCell.self)
     }
     
     // TODO: fix type here
     var data: SubjectCellModel? {
         didSet {
-            collectionView.performBatchUpdates {
-                collectionView.reloadData()
-            }
+//            collectionView.performBatchUpdates {
+//                collectionView.reloadData()
+//            }
         }
     }
     
@@ -50,17 +60,18 @@ final class LearnScheduleBottomView: UIView {
     
 }
 
-//extension LearnScheduleBottomView: UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        <#code#>
-//    }
-//    
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return 1
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return self.data?.activeWeek.count ?? 0
-//    }
-//    
-//}
+extension LearnScheduleBottomView: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueCell(for: indexPath)
+        return cell
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.data?.activeWeek.count ?? 0
+    }
+    
+}
