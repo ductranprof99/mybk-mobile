@@ -84,7 +84,7 @@ extension ScheduleViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.safeAreaLayoutGuide.layoutFrame.width, height: 210)
+        return CGSize(width: collectionView.safeAreaLayoutGuide.layoutFrame.width - 30, height: 210)
     }
     
 }

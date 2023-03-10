@@ -13,7 +13,7 @@ enum SubjectCellType {
     case schedBottom(data: SubjectCellModel)
 }
 
-final class SubjectScheduleCell: UICollectionViewCell {
+final class SubjectScheduleCell: CustomCell {
     
     static let cellHeight: CGFloat = 200
 
@@ -49,6 +49,7 @@ final class SubjectScheduleCell: UICollectionViewCell {
     }
 
     public func setCellContent(cellData: SubjectCellType) {
+        setTopView(data: cellData)
         switch cellData {
         case .scoreBottot:
             addBottomView(view: scoreBottomView)
@@ -72,6 +73,20 @@ final class SubjectScheduleCell: UICollectionViewCell {
         }
     }
     
+    private func setTopView(data: SubjectCellType) {
+        switch data {
+        case .scoreBottot(let data), .testBottom(let data):
+            self.subjectNameLabel.text = data.subjectName
+            self.subjectCodeLabel.text = data.subjectCode
+            self.classLabel.text = data.classRoomCode
+            self.creditLabel.isHidden = true
+        case .schedBottom(let data):
+            self.subjectNameLabel.text = data.subjectName
+            self.subjectCodeLabel.text = data.subjectCode
+            self.classLabel.text = data.classRoomCode
+            self.creditLabel.text = data.credit
+        }
+    }
     
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
         return CGSize(
