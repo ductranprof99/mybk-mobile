@@ -90,10 +90,10 @@
                                     <constraint firstAttribute="width" secondItem="LiP-CN-eUz" secondAttribute="height" multiplier="1:1" id="cFj-rg-gr1"/>
                                 </constraints>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="R5U-yp-uGz">
-                                <rect key="frame" x="0.0" y="193" width="393" height="532"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="R5U-yp-uGz">
+                                <rect key="frame" x="20" y="193" width="353" height="532"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ajm-Q5-XUt">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="20" minimumInteritemSpacing="20" id="ajm-Q5-XUt">
                                     <size key="itemSize" width="300" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -110,14 +110,14 @@
                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="R5U-yp-uGz" firstAttribute="top" secondItem="x0o-me-Tru" secondAttribute="bottom" constant="12" id="0lz-0y-Nej"/>
-                            <constraint firstItem="HDU-uL-cMe" firstAttribute="trailing" secondItem="R5U-yp-uGz" secondAttribute="trailing" id="4B0-rg-74Z"/>
+                            <constraint firstItem="HDU-uL-cMe" firstAttribute="trailing" secondItem="R5U-yp-uGz" secondAttribute="trailing" constant="20" id="4B0-rg-74Z"/>
                             <constraint firstItem="HDU-uL-cMe" firstAttribute="bottom" secondItem="R5U-yp-uGz" secondAttribute="bottom" constant="44" id="58u-iz-bdO"/>
                             <constraint firstItem="x0o-me-Tru" firstAttribute="leading" secondItem="HDU-uL-cMe" secondAttribute="leading" constant="12" id="5u9-Jw-eHb"/>
                             <constraint firstItem="x0o-me-Tru" firstAttribute="top" secondItem="sC7-Mz-IHS" secondAttribute="bottom" constant="24" id="6Tn-hh-Pl9"/>
                             <constraint firstItem="sC7-Mz-IHS" firstAttribute="leading" secondItem="HDU-uL-cMe" secondAttribute="leading" constant="12" id="7RE-Hd-G9h"/>
                             <constraint firstItem="x0o-me-Tru" firstAttribute="centerX" secondItem="7Ed-il-QQQ" secondAttribute="centerX" id="Irc-46-3uE"/>
                             <constraint firstItem="x0o-me-Tru" firstAttribute="trailing" secondItem="LiP-CN-eUz" secondAttribute="trailing" constant="15" id="Uz4-lt-FZa"/>
-                            <constraint firstItem="R5U-yp-uGz" firstAttribute="leading" secondItem="HDU-uL-cMe" secondAttribute="leading" id="bLC-Sd-Dox"/>
+                            <constraint firstItem="R5U-yp-uGz" firstAttribute="leading" secondItem="HDU-uL-cMe" secondAttribute="leading" constant="20" id="bLC-Sd-Dox"/>
                             <constraint firstItem="sC7-Mz-IHS" firstAttribute="top" secondItem="HDU-uL-cMe" secondAttribute="top" constant="24" id="lLF-Sz-ccf"/>
                             <constraint firstItem="LiP-CN-eUz" firstAttribute="centerY" secondItem="x0o-me-Tru" secondAttribute="centerY" id="vKh-S7-cM6"/>
                         </constraints>

@@ -31,9 +31,7 @@ final class SubjectScheduleCell: CustomCell {
     
     @IBOutlet private weak var topContainerView: UIView!
     
-    private lazy var learningSchedBottomView: LearnScheduleBottomView = {
-        return .init(frame: self.bottomContainerView.bounds)
-    }()
+    private var learningSchedBottomView: LearnScheduleBottomView = .fromNib()
     
     private lazy var testSceduleBottomView: TestScheduleBottomView = {
         return .fromNib()
@@ -46,6 +44,7 @@ final class SubjectScheduleCell: CustomCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        topContainerView.addBorder(position: .bottom, color: .init(rgb: 0xF7F7F7), width: 1)
     }
 
     public func setCellContent(cellData: SubjectCellType) {
@@ -91,7 +90,7 @@ final class SubjectScheduleCell: CustomCell {
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
         return CGSize(
             width: targetSize.width,
-            height: 210
+            height: 180
         )
     }
     

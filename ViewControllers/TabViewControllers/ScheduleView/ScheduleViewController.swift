@@ -20,14 +20,14 @@ final class ScheduleViewController: UIViewController {
         let pickerView = UIPickerView(frame: .init(x: 0,
                                                    y: 0,
                                                    width: view.bounds.width,
-                                                   height: 300))
+                                                   height: 200))
         pickerView.dataSource = self
         pickerView.delegate = self
         vc.view.addSubview(pickerView)
         pickerView.centerXAnchor.constraint(equalTo: vc.view.centerXAnchor).isActive = true
         pickerView.centerYAnchor.constraint(equalTo: vc.view.centerYAnchor).isActive = true
         
-        let alert = UIAlertController(title: "Select Background Colour", message: "", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: nil, message: "", preferredStyle: .actionSheet)
         
         alert.popoverPresentationController?.sourceView = pickerButton
         alert.popoverPresentationController?.sourceRect = pickerButton.bounds
@@ -59,8 +59,11 @@ final class ScheduleViewController: UIViewController {
     
     private func setupCollectionView() {
         // layout
-        let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
-        flowLayout?.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 10, right: 20)
+        layout.itemSize = CGSize(width: collectionView.safeAreaLayoutGuide.layoutFrame.width, height: 185)
+        layout.minimumLineSpacing = 15
+        collectionView!.collectionViewLayout = layout
         // cell
         collectionView.register(SubjectScheduleCell.self)
     }
@@ -68,7 +71,7 @@ final class ScheduleViewController: UIViewController {
     public let viewModel = ScheduleViewModel()
 }
 
-extension ScheduleViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension ScheduleViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
@@ -81,10 +84,6 @@ extension ScheduleViewController: UICollectionViewDataSource, UICollectionViewDe
         let cell = collectionView.dequeueCell(SubjectScheduleCell.self,for: indexPath)
         cell.setCellContent(cellData: .schedBottom(data: .init()))
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.safeAreaLayoutGuide.layoutFrame.width - 30, height: 210)
     }
     
 }

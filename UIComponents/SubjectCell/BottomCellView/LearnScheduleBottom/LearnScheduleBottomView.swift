@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 final class LearnScheduleBottomView: UIView {
-    @IBOutlet private var containerView: UIView!
     
     @IBOutlet private var weekDayLabel:UILabel!
     @IBOutlet private var hoursLabel: UILabel!
@@ -17,27 +16,9 @@ final class LearnScheduleBottomView: UIView {
     
     @IBOutlet private var collectionView: UICollectionView!
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        Bundle.main.loadNibNamed("LearnScheduleBottomView", owner: self)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.addSubview(containerView)
-        containerView.setConstrain(to: self) { make in
-            make.append(.leading(leading: 0))
-            make.append(.trailing(trailing: 0))
-            make.append(.bottom(bottom: 0))
-            make.append(.top(top: 0))
-        }
-        
         // TODO: add register
-//        collectionView.register(UICollectionViewCell.self)
     }
     
     // TODO: fix type here
