@@ -33,9 +33,7 @@ final class SubjectScheduleCell: CustomCell {
     
     private var learningSchedBottomView: LearnScheduleBottomView = .fromNib()
     
-    private lazy var testSceduleBottomView: TestScheduleBottomView = {
-        return .fromNib()
-    }()
+    private var testSceduleBottomView: TestScheduleBottomView = .fromNib()
     
     private lazy var scoreBottomView: ScoreBottomView = {
         return .fromNib()
@@ -79,6 +77,7 @@ final class SubjectScheduleCell: CustomCell {
             self.subjectCodeLabel.text = data.subjectCode
             self.classLabel.text = data.classRoomCode
             self.creditLabel.isHidden = true
+            self.detailButton.isHidden = true
         case .schedBottom(let data):
             self.subjectNameLabel.text = data.subjectName
             self.subjectCodeLabel.text = data.subjectCode

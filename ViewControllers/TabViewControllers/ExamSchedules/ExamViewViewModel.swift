@@ -1,13 +1,13 @@
 //
-//  ScheduleViewModel.swift
+//  ExamViewViewModel.swift
 //  MybkMobile
 //
-//  Created by DucTran on 09/03/2023.
+//  Created by DucTran on 11/03/2023.
 //
 
 import Foundation
 
-final class ScheduleViewModel {
+final class ExamViewViewModel {
     var listSemeter: [String]? = ["ba", "ba", "ba", "ba"]
     var currentSelectedRow: Int = 0
     var subjectCellData: [SubjectCellModel]?

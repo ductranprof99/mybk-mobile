@@ -1,5 +1,5 @@
 //
-//  ScheduleViewController.swift
+//  ExamViewController.swift
 //  MybkMobile
 //
 //  Created by DucTran on 05/03/2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ScheduleViewController: UIViewController {
+final class ExamViewController: UIViewController {
     
     @IBOutlet weak var pickerButton: UIButton!
     
@@ -68,10 +68,10 @@ final class ScheduleViewController: UIViewController {
         collectionView.register(SubjectScheduleCell.self)
     }
     
-    public let viewModel = ScheduleViewModel()
+    public let viewModel = ExamViewViewModel()
 }
 
-extension ScheduleViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension ExamViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
@@ -82,13 +82,13 @@ extension ScheduleViewController: UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(SubjectScheduleCell.self,for: indexPath)
-        cell.setCellContent(cellData: .schedBottom(data: .init()))
+        cell.setCellContent(cellData: .testBottom(data: .init()))
         return cell
     }
     
 }
 
-extension ScheduleViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension ExamViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return self.viewModel.getNumOfPickerItem()
     }
@@ -118,6 +118,7 @@ extension ScheduleViewController: UIPickerViewDelegate, UIPickerViewDataSource {
                 self.collectionView.reloadData()
             }
         }
-
+        
     }
+    
 }
