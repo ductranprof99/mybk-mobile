@@ -45,5 +45,4 @@ extension UIViewController {
             label.centerYAnchor.constraint(equalTo: bottomView.centerYAnchor),
         ])
     }
-
 }

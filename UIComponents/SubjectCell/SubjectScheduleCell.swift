@@ -15,8 +15,6 @@ enum SubjectCellType {
 
 final class SubjectScheduleCell: CustomCell {
     
-    static let cellHeight: CGFloat = 200
-
     @IBOutlet private weak var subjectNameLabel: UILabel!
     
     @IBOutlet private weak var subjectCodeLabel: UILabel!
@@ -83,12 +81,4 @@ final class SubjectScheduleCell: CustomCell {
             self.creditLabel.text = data.credit
         }
     }
-    
-    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
-        return CGSize(
-            width: targetSize.width,
-            height: 180
-        )
-    }
-    
 }

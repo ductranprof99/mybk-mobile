@@ -33,6 +33,10 @@
 		52A0D00D29B48E5C003B8952 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0D00C29B48E5C003B8952 /* MainTabBarController.swift */; };
 		52BA48D129BCB283006C6CA5 /* TranscriptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA48D029BCB283006C6CA5 /* TranscriptViewModel.swift */; };
 		52BA48D329BCB455006C6CA5 /* TranscriptAdditionalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA48D229BCB455006C6CA5 /* TranscriptAdditionalModel.swift */; };
+		52BA48D729BD5DF9006C6CA5 /* TranscriptCollectionViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA48D529BD5DF9006C6CA5 /* TranscriptCollectionViewHeaderCell.swift */; };
+		52BA48DE29BD6302006C6CA5 /* InfoDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA48DC29BD6302006C6CA5 /* InfoDetailCell.swift */; };
+		52BA48DF29BD6302006C6CA5 /* InfoDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52BA48DD29BD6302006C6CA5 /* InfoDetailCell.xib */; };
+		52BA48E129BD8236006C6CA5 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA48E029BD8236006C6CA5 /* UITableView.swift */; };
 		52C9A25B29AA19B700F2B8C1 /* LearnScheduleBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52C9A25A29AA19B700F2B8C1 /* LearnScheduleBottomView.xib */; };
 		52C9A25D29AA3DA700F2B8C1 /* LearnScheduleBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A25C29AA3DA700F2B8C1 /* LearnScheduleBottomView.swift */; };
 		52C9A25F29AA434D00F2B8C1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A25E29AA434D00F2B8C1 /* UIView.swift */; };
@@ -44,8 +48,6 @@
 		52C9A26C29AA55AC00F2B8C1 /* NumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52C9A26A29AA55AC00F2B8C1 /* NumberCell.xib */; };
 		52C9A26E29AA561000F2B8C1 /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A26D29AA561000F2B8C1 /* CustomToggle.swift */; };
 		52C9A27029AA567300F2B8C1 /* CustomThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A26F29AA567300F2B8C1 /* CustomThumbView.swift */; };
-		52C9A27329AACD2700F2B8C1 /* InfoDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A27129AACD2700F2B8C1 /* InfoDetailCell.swift */; };
-		52C9A27429AACD2700F2B8C1 /* InfoDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52C9A27229AACD2700F2B8C1 /* InfoDetailCell.xib */; };
 		52C9A27629AACDF900F2B8C1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A27529AACDF900F2B8C1 /* CustomTextField.swift */; };
 		52ED1A9B29B37E3700DC1429 /* SpecialScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED1A9929B37E3700DC1429 /* SpecialScoreCell.swift */; };
 		52ED1A9C29B37E3700DC1429 /* SpecialScoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52ED1A9A29B37E3700DC1429 /* SpecialScoreCell.xib */; };
@@ -107,6 +109,10 @@
 		52A0D00C29B48E5C003B8952 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		52BA48D029BCB283006C6CA5 /* TranscriptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptViewModel.swift; sourceTree = "<group>"; };
 		52BA48D229BCB455006C6CA5 /* TranscriptAdditionalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptAdditionalModel.swift; sourceTree = "<group>"; };
+		52BA48D529BD5DF9006C6CA5 /* TranscriptCollectionViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptCollectionViewHeaderCell.swift; sourceTree = "<group>"; };
+		52BA48DC29BD6302006C6CA5 /* InfoDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDetailCell.swift; sourceTree = "<group>"; };
+		52BA48DD29BD6302006C6CA5 /* InfoDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoDetailCell.xib; sourceTree = "<group>"; };
+		52BA48E029BD8236006C6CA5 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		52C9A25A29AA19B700F2B8C1 /* LearnScheduleBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnScheduleBottomView.xib; sourceTree = "<group>"; };
 		52C9A25C29AA3DA700F2B8C1 /* LearnScheduleBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnScheduleBottomView.swift; sourceTree = "<group>"; };
 		52C9A25E29AA434D00F2B8C1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -118,8 +124,6 @@
 		52C9A26A29AA55AC00F2B8C1 /* NumberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberCell.xib; sourceTree = "<group>"; };
 		52C9A26D29AA561000F2B8C1 /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
 		52C9A26F29AA567300F2B8C1 /* CustomThumbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomThumbView.swift; sourceTree = "<group>"; };
-		52C9A27129AACD2700F2B8C1 /* InfoDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDetailCell.swift; sourceTree = "<group>"; };
-		52C9A27229AACD2700F2B8C1 /* InfoDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoDetailCell.xib; sourceTree = "<group>"; };
 		52C9A27529AACDF900F2B8C1 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		52ED1A9929B37E3700DC1429 /* SpecialScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialScoreCell.swift; sourceTree = "<group>"; };
 		52ED1A9A29B37E3700DC1429 /* SpecialScoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialScoreCell.xib; sourceTree = "<group>"; };
@@ -281,6 +285,7 @@
 		528FF64129A9E14800C25137 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				52BA48D429BD5DA3006C6CA5 /* TranscriptSupplyCell */,
 				52ED1A9D29B3800000DC1429 /* SettingCell */,
 				52ED1A9829B37E1D00DC1429 /* SpecialScoreCell */,
 				52C9A26429AA54EF00F2B8C1 /* CurrentWeekView */,
@@ -338,8 +343,8 @@
 		528FF64929A9E2F400C25137 /* InfoDetailCell */ = {
 			isa = PBXGroup;
 			children = (
-				52C9A27129AACD2700F2B8C1 /* InfoDetailCell.swift */,
-				52C9A27229AACD2700F2B8C1 /* InfoDetailCell.xib */,
+				52BA48DC29BD6302006C6CA5 /* InfoDetailCell.swift */,
+				52BA48DD29BD6302006C6CA5 /* InfoDetailCell.xib */,
 			);
 			path = InfoDetailCell;
 			sourceTree = "<group>";
@@ -372,6 +377,7 @@
 				52373E9D29B795CB00AA4383 /* UIColor.swift */,
 				52373E9F29B79CA700AA4383 /* CustomButton.swift */,
 				5246822729BB67EA00124A6A /* UICollectionViewCell.swift */,
+				52BA48E029BD8236006C6CA5 /* UITableView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -392,6 +398,14 @@
 				52BA48D029BCB283006C6CA5 /* TranscriptViewModel.swift */,
 			);
 			path = Transcript;
+			sourceTree = "<group>";
+		};
+		52BA48D429BD5DA3006C6CA5 /* TranscriptSupplyCell */ = {
+			isa = PBXGroup;
+			children = (
+				52BA48D529BD5DF9006C6CA5 /* TranscriptCollectionViewHeaderCell.swift */,
+			);
+			path = TranscriptSupplyCell;
 			sourceTree = "<group>";
 		};
 		52C9A26429AA54EF00F2B8C1 /* CurrentWeekView */ = {
@@ -556,12 +570,12 @@
 			files = (
 				52C9A26C29AA55AC00F2B8C1 /* NumberCell.xib in Resources */,
 				528958AA29AA0A090049EE07 /* TestScheduleBottomView.xib in Resources */,
+				52BA48DF29BD6302006C6CA5 /* InfoDetailCell.xib in Resources */,
 				52ED1A9C29B37E3700DC1429 /* SpecialScoreCell.xib in Resources */,
 				528958B029AA14160049EE07 /* ScoreBottomView.xib in Resources */,
 				52C9A26829AA559400F2B8C1 /* DotCell.xib in Resources */,
 				528958A129AA036B0049EE07 /* SubjectScheduleCell.xib in Resources */,
 				52A0D00529B46405003B8952 /* MainTabBarController.storyboard in Resources */,
-				52C9A27429AACD2700F2B8C1 /* InfoDetailCell.xib in Resources */,
 				52C9A25B29AA19B700F2B8C1 /* LearnScheduleBottomView.xib in Resources */,
 				528FF61E29A9E13F00C25137 /* LaunchScreen.storyboard in Resources */,
 				52ED1AAC29B3B6B800DC1429 /* LoginViewController.xib in Resources */,
@@ -598,7 +612,6 @@
 				52ED1A9B29B37E3700DC1429 /* SpecialScoreCell.swift in Sources */,
 				528FF61229A9E13E00C25137 /* AppDelegate.swift in Sources */,
 				52373EA029B79CA700AA4383 /* CustomButton.swift in Sources */,
-				52C9A27329AACD2700F2B8C1 /* InfoDetailCell.swift in Sources */,
 				52C9A26729AA559400F2B8C1 /* DotCell.swift in Sources */,
 				52C9A26329AA480C00F2B8C1 /* SubjectCellModel.swift in Sources */,
 				52F064EE29BA29B500D07D72 /* ScheduleViewModel.swift in Sources */,
@@ -610,14 +623,17 @@
 				52C9A26B29AA55AC00F2B8C1 /* NumberCell.swift in Sources */,
 				528958A829AA094E0049EE07 /* TestScheduleBottomView.swift in Sources */,
 				528FF65729A9F11F00C25137 /* Constrain.swift in Sources */,
+				52BA48DE29BD6302006C6CA5 /* InfoDetailCell.swift in Sources */,
 				528958B129AA14160049EE07 /* ScoreBottomView.swift in Sources */,
 				52ED1AAE29B3B6ED00DC1429 /* UIViewController.swift in Sources */,
 				52A0D00B29B47002003B8952 /* ProfileViewController.swift in Sources */,
 				528FF65329A9EF8B00C25137 /* BottomBarItem.swift in Sources */,
 				52C9A25D29AA3DA700F2B8C1 /* LearnScheduleBottomView.swift in Sources */,
+				52BA48D729BD5DF9006C6CA5 /* TranscriptCollectionViewHeaderCell.swift in Sources */,
 				52ED1AA629B3B55800DC1429 /* SceneDelegate.swift in Sources */,
 				52BA48D329BCB455006C6CA5 /* TranscriptAdditionalModel.swift in Sources */,
 				52A0D00D29B48E5C003B8952 /* MainTabBarController.swift in Sources */,
+				52BA48E129BD8236006C6CA5 /* UITableView.swift in Sources */,
 				52C9A26E29AA561000F2B8C1 /* CustomToggle.swift in Sources */,
 				52F1B46B29BBFD470003178D /* ExamViewViewModel.swift in Sources */,
 				52373E9E29B795CB00AA4383 /* UIColor.swift in Sources */,

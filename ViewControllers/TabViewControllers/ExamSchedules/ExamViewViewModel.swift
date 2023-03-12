@@ -33,8 +33,9 @@ final class ExamViewViewModel {
         self.currentSelectedRow = index
     }
     
-    public func getListSchedule() -> Int {
+    public func getListSchedule(completion: @escaping ()-> Void) -> Int {
         if let subjectCellData = subjectCellData {
+            completion()
             return subjectCellData.count
         } else {
             // call api here

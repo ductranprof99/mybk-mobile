@@ -60,12 +60,14 @@ final class TranscriptViewController: UIViewController {
     private func setupCollectionView() {
         // layout
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 10, right: 20)
-        layout.itemSize = CGSize(width: collectionView.safeAreaLayoutGuide.layoutFrame.width, height: 185)
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
+        layout.itemSize = CGSize(width: collectionView.safeAreaLayoutGuide.layoutFrame.width,
+                                 height: 185)
         layout.minimumLineSpacing = 15
         collectionView!.collectionViewLayout = layout
         // cell
         collectionView.register(SubjectScheduleCell.self)
+        collectionView.register(header: TranscriptCollectionViewHeaderCell.self)
     }
     
     public let viewModel = TranscriptViewModel()
@@ -86,6 +88,11 @@ extension TranscriptViewController: UICollectionViewDataSource, UICollectionView
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeue(header: TranscriptCollectionViewHeaderCell.self, forIndexPath: indexPath)
+        header.setUpContent(viewModel: viewModel.getHeaderSectionData())
+        return header
+    }
 }
 
 extension TranscriptViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -114,9 +121,11 @@ extension TranscriptViewController: UIPickerViewDelegate, UIPickerViewDataSource
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // bind model here
         let _ = self.viewModel.updateListSchedule {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                self.collectionView.reloadData()
-            }
+            self.collectionView.performBatchUpdates({
+                    self.collectionView.reloadData()
+            }, completion: { _ in
+                self.collectionView.invalidateIntrinsicContentSize()
+            })
         }
         
     }

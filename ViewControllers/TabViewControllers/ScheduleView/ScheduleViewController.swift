@@ -60,8 +60,9 @@ final class ScheduleViewController: UIViewController {
     private func setupCollectionView() {
         // layout
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 10, right: 20)
-        layout.itemSize = CGSize(width: collectionView.safeAreaLayoutGuide.layoutFrame.width, height: 185)
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
+        layout.itemSize = CGSize(width: collectionView.safeAreaLayoutGuide.layoutFrame.width,
+                                 height: 185)
         layout.minimumLineSpacing = 15
         collectionView!.collectionViewLayout = layout
         // cell
