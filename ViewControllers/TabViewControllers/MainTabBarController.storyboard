@@ -42,10 +42,72 @@
                     <view key="view" contentMode="scaleToFill" id="8pZ-ah-3FJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giờ học" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbg-7j-TXc">
+                                <rect key="frame" x="12" y="83" width="106" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="0.066666666669999999" green="0.25882352939999997" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwk-kR-Adu" customClass="CustomButton" customModule="MybkMobile" customModuleProvider="target">
+                                <rect key="frame" x="12" y="146" width="369" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button">
+                                    <color key="baseForegroundColor" red="0.066666666669999999" green="0.25882352939999997" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pickerTapHandler:" destination="qJf-6g-CQm" eventType="touchUpInside" id="LoZ-LZ-ENe"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vYU-Tb-6S9">
+                                <rect key="frame" x="20" y="196" width="353" height="553"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="20" minimumInteritemSpacing="20" id="pj2-FF-n4l">
+                                    <size key="itemSize" width="300" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="12" minY="10" maxX="12" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="qJf-6g-CQm" id="eSk-tf-EqN"/>
+                                    <outlet property="delegate" destination="qJf-6g-CQm" id="jrj-uX-7Ec"/>
+                                </connections>
+                            </collectionView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="icon_arrow_down" translatesAutoresizingMaskIntoConstraints="NO" id="bxt-4d-3cL">
+                                <rect key="frame" x="340" y="151" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="7R7-bo-W77"/>
+                                    <constraint firstAttribute="width" secondItem="bxt-4d-3cL" secondAttribute="height" multiplier="1:1" id="uBc-37-A1K"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="S8G-ew-FZf"/>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="S8G-ew-FZf" firstAttribute="trailing" secondItem="kwk-kR-Adu" secondAttribute="trailing" constant="12" id="0Sy-tI-bcC"/>
+                            <constraint firstItem="zbg-7j-TXc" firstAttribute="leading" secondItem="S8G-ew-FZf" secondAttribute="leading" constant="12" id="9KT-RU-0KJ"/>
+                            <constraint firstItem="vYU-Tb-6S9" firstAttribute="leading" secondItem="S8G-ew-FZf" secondAttribute="leading" constant="20" id="EBD-S3-Vsn"/>
+                            <constraint firstItem="S8G-ew-FZf" firstAttribute="trailing" secondItem="vYU-Tb-6S9" secondAttribute="trailing" constant="20" id="OPr-ye-txD"/>
+                            <constraint firstItem="kwk-kR-Adu" firstAttribute="top" secondItem="zbg-7j-TXc" secondAttribute="bottom" constant="24" id="Oba-Jd-jIz"/>
+                            <constraint firstItem="S8G-ew-FZf" firstAttribute="bottom" secondItem="vYU-Tb-6S9" secondAttribute="bottom" constant="20" id="Sw9-Wb-joz"/>
+                            <constraint firstItem="kwk-kR-Adu" firstAttribute="leading" secondItem="S8G-ew-FZf" secondAttribute="leading" constant="12" id="TlA-4d-Eos"/>
+                            <constraint firstItem="vYU-Tb-6S9" firstAttribute="top" secondItem="kwk-kR-Adu" secondAttribute="bottom" constant="15" id="rBj-lW-Gjo"/>
+                            <constraint firstItem="zbg-7j-TXc" firstAttribute="top" secondItem="S8G-ew-FZf" secondAttribute="top" constant="24" id="veV-UC-gJ5"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Bảng điểm" image="nav_icon_scoreboard" selectedImage="nav_icon_scoreboard.fill" id="Krg-25-jgy"/>
+                    <connections>
+                        <outlet property="collectionView" destination="vYU-Tb-6S9" id="D7Z-k8-65G"/>
+                        <outlet property="pickerButton" destination="kwk-kR-Adu" id="MGk-w4-6cO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6k4-CF-62H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -234,6 +296,9 @@
     </scenes>
     <designables>
         <designable name="YXS-qQ-ZJM">
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
+        </designable>
+        <designable name="kwk-kR-Adu">
             <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
         </designable>
         <designable name="x0o-me-Tru">

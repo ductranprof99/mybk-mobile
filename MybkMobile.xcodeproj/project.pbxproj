@@ -31,6 +31,8 @@
 		52A0D00929B46C60003B8952 /* TranscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0D00829B46C60003B8952 /* TranscriptViewController.swift */; };
 		52A0D00B29B47002003B8952 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0D00A29B47002003B8952 /* ProfileViewController.swift */; };
 		52A0D00D29B48E5C003B8952 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0D00C29B48E5C003B8952 /* MainTabBarController.swift */; };
+		52BA48D129BCB283006C6CA5 /* TranscriptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA48D029BCB283006C6CA5 /* TranscriptViewModel.swift */; };
+		52BA48D329BCB455006C6CA5 /* TranscriptAdditionalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA48D229BCB455006C6CA5 /* TranscriptAdditionalModel.swift */; };
 		52C9A25B29AA19B700F2B8C1 /* LearnScheduleBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52C9A25A29AA19B700F2B8C1 /* LearnScheduleBottomView.xib */; };
 		52C9A25D29AA3DA700F2B8C1 /* LearnScheduleBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A25C29AA3DA700F2B8C1 /* LearnScheduleBottomView.swift */; };
 		52C9A25F29AA434D00F2B8C1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A25E29AA434D00F2B8C1 /* UIView.swift */; };
@@ -103,6 +105,8 @@
 		52A0D00829B46C60003B8952 /* TranscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptViewController.swift; sourceTree = "<group>"; };
 		52A0D00A29B47002003B8952 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		52A0D00C29B48E5C003B8952 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		52BA48D029BCB283006C6CA5 /* TranscriptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptViewModel.swift; sourceTree = "<group>"; };
+		52BA48D229BCB455006C6CA5 /* TranscriptAdditionalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptAdditionalModel.swift; sourceTree = "<group>"; };
 		52C9A25A29AA19B700F2B8C1 /* LearnScheduleBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnScheduleBottomView.xib; sourceTree = "<group>"; };
 		52C9A25C29AA3DA700F2B8C1 /* LearnScheduleBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnScheduleBottomView.swift; sourceTree = "<group>"; };
 		52C9A25E29AA434D00F2B8C1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				52C9A26229AA480C00F2B8C1 /* SubjectCellModel.swift */,
+				52BA48D229BCB455006C6CA5 /* TranscriptAdditionalModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -380,6 +385,15 @@
 			path = ScheduleView;
 			sourceTree = "<group>";
 		};
+		52BA48CF29BCB26C006C6CA5 /* Transcript */ = {
+			isa = PBXGroup;
+			children = (
+				52A0D00829B46C60003B8952 /* TranscriptViewController.swift */,
+				52BA48D029BCB283006C6CA5 /* TranscriptViewModel.swift */,
+			);
+			path = Transcript;
+			sourceTree = "<group>";
+		};
 		52C9A26429AA54EF00F2B8C1 /* CurrentWeekView */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,10 +431,10 @@
 		52ED1AA829B3B66300DC1429 /* TabViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				52BA48CF29BCB26C006C6CA5 /* Transcript */,
 				52F1B46929BBFD130003178D /* ExamSchedules */,
 				529A2B2629B953DC004631C5 /* ScheduleView */,
 				52A0D00429B46405003B8952 /* MainTabBarController.storyboard */,
-				52A0D00829B46C60003B8952 /* TranscriptViewController.swift */,
 				52A0D00A29B47002003B8952 /* ProfileViewController.swift */,
 				52A0D00C29B48E5C003B8952 /* MainTabBarController.swift */,
 			);
@@ -588,6 +602,7 @@
 				52C9A26729AA559400F2B8C1 /* DotCell.swift in Sources */,
 				52C9A26329AA480C00F2B8C1 /* SubjectCellModel.swift in Sources */,
 				52F064EE29BA29B500D07D72 /* ScheduleViewModel.swift in Sources */,
+				52BA48D129BCB283006C6CA5 /* TranscriptViewModel.swift in Sources */,
 				52C9A27029AA567300F2B8C1 /* CustomThumbView.swift in Sources */,
 				52C9A27629AACDF900F2B8C1 /* CustomTextField.swift in Sources */,
 				5214923429B4370000A7522B /* ScheduleViewController.swift in Sources */,
@@ -601,6 +616,7 @@
 				528FF65329A9EF8B00C25137 /* BottomBarItem.swift in Sources */,
 				52C9A25D29AA3DA700F2B8C1 /* LearnScheduleBottomView.swift in Sources */,
 				52ED1AA629B3B55800DC1429 /* SceneDelegate.swift in Sources */,
+				52BA48D329BCB455006C6CA5 /* TranscriptAdditionalModel.swift in Sources */,
 				52A0D00D29B48E5C003B8952 /* MainTabBarController.swift in Sources */,
 				52C9A26E29AA561000F2B8C1 /* CustomToggle.swift in Sources */,
 				52F1B46B29BBFD470003178D /* ExamViewViewModel.swift in Sources */,

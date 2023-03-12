@@ -8,7 +8,7 @@
 import UIKit
 
 enum SubjectCellType {
-    case scoreBottot(data: SubjectCellModel)
+    case scoreBottom(data: SubjectCellModel)
     case testBottom(data: SubjectCellModel)
     case schedBottom(data: SubjectCellModel)
 }
@@ -35,9 +35,7 @@ final class SubjectScheduleCell: CustomCell {
     
     private var testSceduleBottomView: TestScheduleBottomView = .fromNib()
     
-    private lazy var scoreBottomView: ScoreBottomView = {
-        return .fromNib()
-    }()
+    private var scoreBottomView: ScoreBottomView = .fromNib()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -48,7 +46,7 @@ final class SubjectScheduleCell: CustomCell {
     public func setCellContent(cellData: SubjectCellType) {
         setTopView(data: cellData)
         switch cellData {
-        case .scoreBottot:
+        case .scoreBottom:
             addBottomView(view: scoreBottomView)
             scoreBottomView.setContent(data: cellData)
         case .testBottom:
@@ -72,7 +70,7 @@ final class SubjectScheduleCell: CustomCell {
     
     private func setTopView(data: SubjectCellType) {
         switch data {
-        case .scoreBottot(let data), .testBottom(let data):
+        case .scoreBottom(let data), .testBottom(let data):
             self.subjectNameLabel.text = data.subjectName
             self.subjectCodeLabel.text = data.subjectCode
             self.classLabel.text = data.classRoomCode

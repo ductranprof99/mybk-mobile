@@ -23,7 +23,7 @@ extension UIView {
     
     
     func setConstrain(to relatedView: UIView, completion: (inout [ConstrainStyle]) -> Void ) {
-        self.translatesAutoresizingMaskIntoConstraints = true
+        self.translatesAutoresizingMaskIntoConstraints = false
         var constraintData = [ConstrainStyle]()
         completion(&constraintData)
         var constraints = [NSLayoutConstraint]()

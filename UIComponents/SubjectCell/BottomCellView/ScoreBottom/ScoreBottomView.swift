@@ -19,7 +19,7 @@ final class ScoreBottomView: UIView {
     }
     
     public func setContent(data cellData: SubjectCellType) {
-        if case let .scoreBottot(data) = cellData {
+        if case let .scoreBottom(data) = cellData {
             periodScoreLabel.text = data.periodScore
             finalTestLabel.text = data.finalTermScore
             finalScoreLabel.text = data.finalScore

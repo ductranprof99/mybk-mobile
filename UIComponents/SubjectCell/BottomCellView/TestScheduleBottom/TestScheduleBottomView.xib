@@ -16,13 +16,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Kiểm tra giữa kỳ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TwS-8e-R74">
-                    <rect key="frame" x="12" y="8" width="369" height="17"/>
+                    <rect key="frame" x="24" y="8" width="345" height="17"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                     <color key="textColor" red="0.066666666669999999" green="0.25882352939999997" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nKR-YL-vIF">
-                    <rect key="frame" x="12" y="29" width="369" height="20"/>
+                    <rect key="frame" x="24" y="29" width="345" height="20"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_calendar" highlightedImage="icon_calendar" translatesAutoresizingMaskIntoConstraints="NO" id="B6T-kz-h3s">
                             <rect key="frame" x="3" y="4" width="12" height="12"/>
@@ -82,7 +82,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fo6-ag-8cU">
-                    <rect key="frame" x="12" y="78" width="393" height="20"/>
+                    <rect key="frame" x="24" y="78" width="393" height="20"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_calendar" highlightedImage="icon_calendar" translatesAutoresizingMaskIntoConstraints="NO" id="Mcy-tS-362">
                             <rect key="frame" x="3" y="4" width="12" height="12"/>
@@ -142,7 +142,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kiểm tra cuối kỳ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFf-nt-qdD">
-                    <rect key="frame" x="12" y="57" width="369" height="17"/>
+                    <rect key="frame" x="24" y="57" width="345" height="17"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                     <color key="textColor" red="0.066666666669999999" green="0.25882352939999997" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -151,19 +151,19 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="LFf-nt-qdD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="4wd-xJ-JjB"/>
+                <constraint firstItem="LFf-nt-qdD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="4wd-xJ-JjB"/>
                 <constraint firstItem="TwS-8e-R74" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="8DA-Id-l7i"/>
-                <constraint firstAttribute="trailing" secondItem="nKR-YL-vIF" secondAttribute="trailing" constant="12" id="A6S-FM-IOb"/>
-                <constraint firstItem="Fo6-ag-8cU" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="12" id="Bt5-Fg-LxA"/>
+                <constraint firstAttribute="trailing" secondItem="nKR-YL-vIF" secondAttribute="trailing" constant="24" id="A6S-FM-IOb"/>
+                <constraint firstItem="Fo6-ag-8cU" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="24" id="Bt5-Fg-LxA"/>
                 <constraint firstItem="Fo6-ag-8cU" firstAttribute="top" secondItem="LFf-nt-qdD" secondAttribute="bottom" constant="4" id="CDZ-Jk-ULf"/>
-                <constraint firstItem="nKR-YL-vIF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="PfU-TJ-Quh"/>
+                <constraint firstItem="nKR-YL-vIF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="PfU-TJ-Quh"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Fo6-ag-8cU" secondAttribute="bottom" constant="8" id="Zo1-LC-G2y"/>
                 <constraint firstItem="nKR-YL-vIF" firstAttribute="top" secondItem="TwS-8e-R74" secondAttribute="bottom" constant="4" id="dAV-Pz-vcp"/>
-                <constraint firstItem="TwS-8e-R74" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="gYi-O1-Y7T"/>
-                <constraint firstAttribute="trailing" secondItem="TwS-8e-R74" secondAttribute="trailing" constant="12" id="lFr-UH-uJz"/>
+                <constraint firstItem="TwS-8e-R74" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="gYi-O1-Y7T"/>
+                <constraint firstAttribute="trailing" secondItem="TwS-8e-R74" secondAttribute="trailing" constant="24" id="lFr-UH-uJz"/>
                 <constraint firstItem="LFf-nt-qdD" firstAttribute="top" secondItem="nKR-YL-vIF" secondAttribute="bottom" constant="8" id="lL9-6Y-pPh"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="LFf-nt-qdD" secondAttribute="trailing" constant="12" id="sZw-np-nK7"/>
-                <constraint firstItem="Fo6-ag-8cU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="wvI-3H-0FE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="LFf-nt-qdD" secondAttribute="trailing" constant="24" id="sZw-np-nK7"/>
+                <constraint firstItem="Fo6-ag-8cU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="wvI-3H-0FE"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
