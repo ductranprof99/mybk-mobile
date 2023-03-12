@@ -37,6 +37,9 @@
 		52BA48DE29BD6302006C6CA5 /* InfoDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA48DC29BD6302006C6CA5 /* InfoDetailCell.swift */; };
 		52BA48DF29BD6302006C6CA5 /* InfoDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52BA48DD29BD6302006C6CA5 /* InfoDetailCell.xib */; };
 		52BA48E129BD8236006C6CA5 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA48E029BD8236006C6CA5 /* UITableView.swift */; };
+		52BA48E429BDC5FE006C6CA5 /* SpecialScoreViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA48E229BDC5FE006C6CA5 /* SpecialScoreViewCell.swift */; };
+		52BA48E529BDC5FE006C6CA5 /* SpecialScoreViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52BA48E329BDC5FE006C6CA5 /* SpecialScoreViewCell.xib */; };
+		52BA48E729BDC719006C6CA5 /* TranscriptCollectionViewFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA48E629BDC719006C6CA5 /* TranscriptCollectionViewFooterCell.swift */; };
 		52C9A25B29AA19B700F2B8C1 /* LearnScheduleBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52C9A25A29AA19B700F2B8C1 /* LearnScheduleBottomView.xib */; };
 		52C9A25D29AA3DA700F2B8C1 /* LearnScheduleBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A25C29AA3DA700F2B8C1 /* LearnScheduleBottomView.swift */; };
 		52C9A25F29AA434D00F2B8C1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A25E29AA434D00F2B8C1 /* UIView.swift */; };
@@ -49,8 +52,6 @@
 		52C9A26E29AA561000F2B8C1 /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A26D29AA561000F2B8C1 /* CustomToggle.swift */; };
 		52C9A27029AA567300F2B8C1 /* CustomThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A26F29AA567300F2B8C1 /* CustomThumbView.swift */; };
 		52C9A27629AACDF900F2B8C1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A27529AACDF900F2B8C1 /* CustomTextField.swift */; };
-		52ED1A9B29B37E3700DC1429 /* SpecialScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED1A9929B37E3700DC1429 /* SpecialScoreCell.swift */; };
-		52ED1A9C29B37E3700DC1429 /* SpecialScoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52ED1A9A29B37E3700DC1429 /* SpecialScoreCell.xib */; };
 		52ED1AA029B3803F00DC1429 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED1A9E29B3803F00DC1429 /* SettingCell.swift */; };
 		52ED1AA129B3803F00DC1429 /* SettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52ED1A9F29B3803F00DC1429 /* SettingCell.xib */; };
 		52ED1AA629B3B55800DC1429 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED1AA529B3B55800DC1429 /* SceneDelegate.swift */; };
@@ -113,6 +114,9 @@
 		52BA48DC29BD6302006C6CA5 /* InfoDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDetailCell.swift; sourceTree = "<group>"; };
 		52BA48DD29BD6302006C6CA5 /* InfoDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoDetailCell.xib; sourceTree = "<group>"; };
 		52BA48E029BD8236006C6CA5 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		52BA48E229BDC5FE006C6CA5 /* SpecialScoreViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialScoreViewCell.swift; sourceTree = "<group>"; };
+		52BA48E329BDC5FE006C6CA5 /* SpecialScoreViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialScoreViewCell.xib; sourceTree = "<group>"; };
+		52BA48E629BDC719006C6CA5 /* TranscriptCollectionViewFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptCollectionViewFooterCell.swift; sourceTree = "<group>"; };
 		52C9A25A29AA19B700F2B8C1 /* LearnScheduleBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnScheduleBottomView.xib; sourceTree = "<group>"; };
 		52C9A25C29AA3DA700F2B8C1 /* LearnScheduleBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnScheduleBottomView.swift; sourceTree = "<group>"; };
 		52C9A25E29AA434D00F2B8C1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -125,8 +129,6 @@
 		52C9A26D29AA561000F2B8C1 /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
 		52C9A26F29AA567300F2B8C1 /* CustomThumbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomThumbView.swift; sourceTree = "<group>"; };
 		52C9A27529AACDF900F2B8C1 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		52ED1A9929B37E3700DC1429 /* SpecialScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialScoreCell.swift; sourceTree = "<group>"; };
-		52ED1A9A29B37E3700DC1429 /* SpecialScoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialScoreCell.xib; sourceTree = "<group>"; };
 		52ED1A9E29B3803F00DC1429 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		52ED1A9F29B3803F00DC1429 /* SettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCell.xib; sourceTree = "<group>"; };
 		52ED1AA529B3B55800DC1429 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -404,6 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				52BA48D529BD5DF9006C6CA5 /* TranscriptCollectionViewHeaderCell.swift */,
+				52BA48E629BDC719006C6CA5 /* TranscriptCollectionViewFooterCell.swift */,
 			);
 			path = TranscriptSupplyCell;
 			sourceTree = "<group>";
@@ -418,8 +421,8 @@
 		52ED1A9829B37E1D00DC1429 /* SpecialScoreCell */ = {
 			isa = PBXGroup;
 			children = (
-				52ED1A9929B37E3700DC1429 /* SpecialScoreCell.swift */,
-				52ED1A9A29B37E3700DC1429 /* SpecialScoreCell.xib */,
+				52BA48E229BDC5FE006C6CA5 /* SpecialScoreViewCell.swift */,
+				52BA48E329BDC5FE006C6CA5 /* SpecialScoreViewCell.xib */,
 			);
 			path = SpecialScoreCell;
 			sourceTree = "<group>";
@@ -571,12 +574,12 @@
 				52C9A26C29AA55AC00F2B8C1 /* NumberCell.xib in Resources */,
 				528958AA29AA0A090049EE07 /* TestScheduleBottomView.xib in Resources */,
 				52BA48DF29BD6302006C6CA5 /* InfoDetailCell.xib in Resources */,
-				52ED1A9C29B37E3700DC1429 /* SpecialScoreCell.xib in Resources */,
 				528958B029AA14160049EE07 /* ScoreBottomView.xib in Resources */,
 				52C9A26829AA559400F2B8C1 /* DotCell.xib in Resources */,
 				528958A129AA036B0049EE07 /* SubjectScheduleCell.xib in Resources */,
 				52A0D00529B46405003B8952 /* MainTabBarController.storyboard in Resources */,
 				52C9A25B29AA19B700F2B8C1 /* LearnScheduleBottomView.xib in Resources */,
+				52BA48E529BDC5FE006C6CA5 /* SpecialScoreViewCell.xib in Resources */,
 				528FF61E29A9E13F00C25137 /* LaunchScreen.storyboard in Resources */,
 				52ED1AAC29B3B6B800DC1429 /* LoginViewController.xib in Resources */,
 				528FF61B29A9E13F00C25137 /* Assets.xcassets in Resources */,
@@ -609,12 +612,13 @@
 				52ED1AAB29B3B6B800DC1429 /* LoginViewController.swift in Sources */,
 				52C9A25F29AA434D00F2B8C1 /* UIView.swift in Sources */,
 				5246822829BB67EA00124A6A /* UICollectionViewCell.swift in Sources */,
-				52ED1A9B29B37E3700DC1429 /* SpecialScoreCell.swift in Sources */,
 				528FF61229A9E13E00C25137 /* AppDelegate.swift in Sources */,
 				52373EA029B79CA700AA4383 /* CustomButton.swift in Sources */,
 				52C9A26729AA559400F2B8C1 /* DotCell.swift in Sources */,
 				52C9A26329AA480C00F2B8C1 /* SubjectCellModel.swift in Sources */,
+				52BA48E729BDC719006C6CA5 /* TranscriptCollectionViewFooterCell.swift in Sources */,
 				52F064EE29BA29B500D07D72 /* ScheduleViewModel.swift in Sources */,
+				52BA48E429BDC5FE006C6CA5 /* SpecialScoreViewCell.swift in Sources */,
 				52BA48D129BCB283006C6CA5 /* TranscriptViewModel.swift in Sources */,
 				52C9A27029AA567300F2B8C1 /* CustomThumbView.swift in Sources */,
 				52C9A27629AACDF900F2B8C1 /* CustomTextField.swift in Sources */,

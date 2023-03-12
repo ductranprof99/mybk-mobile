@@ -13,7 +13,7 @@ final class TranscriptViewModel {
     }
     
     public func getFooterSectionData() -> TranscriptFooterModel {
-        return .init()
+        return .mockData
     }
     
     var listSemeter: [String]? = ["ba", "ba", "ba", "ba"]

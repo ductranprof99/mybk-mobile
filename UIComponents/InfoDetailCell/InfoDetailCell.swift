@@ -18,14 +18,9 @@ class InfoDetailCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.addBorder(position: .top, color: UIColor(rgb: 0xDEDEDE), width: 1)
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     public func setContent(title: String,
                            content: String? = nil,
                            crucialInfo: String? = nil) {

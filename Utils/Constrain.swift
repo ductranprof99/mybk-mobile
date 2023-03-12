@@ -32,7 +32,7 @@ extension UIView {
             var c: NSLayoutConstraint? = nil
             switch i {
             case .trailing(let trailing):
-                c = self.trailingAnchor.constraint(equalTo: relatedView.safeAreaLayoutGuide.trailingAnchor, constant: trailing)
+                c = self.trailingAnchor.constraint(equalTo: relatedView.safeAreaLayoutGuide.trailingAnchor, constant: -(trailing))
             case .leading(let leading):
                 c = self.leadingAnchor.constraint(equalTo: relatedView.safeAreaLayoutGuide.leadingAnchor, constant: leading)
             case .top(let top):
@@ -40,7 +40,7 @@ extension UIView {
             case .bottom(let bottom):
                 c = self.bottomAnchor.constraint(equalTo: relatedView.safeAreaLayoutGuide.bottomAnchor, constant: bottom)
             case .centerX(let centerX):
-                c = self.centerXAnchor.constraint(equalTo: relatedView.safeAreaLayoutGuide.trailingAnchor, constant: centerX)
+                c = self.centerXAnchor.constraint(equalTo: relatedView.safeAreaLayoutGuide.centerXAnchor, constant: centerX)
             case .centerY(let centerY):
                 c = self.centerYAnchor.constraint(equalTo: relatedView.safeAreaLayoutGuide.centerYAnchor, constant: centerY)
             case .width(let width):
@@ -48,7 +48,9 @@ extension UIView {
             case .height(let height):
                 c = self.heightAnchor.constraint(equalToConstant: height)
             }
-            constraints.append(c!)
+            if let ct = c {
+                constraints.append(ct)
+            }
         }
         NSLayoutConstraint.activate(constraints)
     }

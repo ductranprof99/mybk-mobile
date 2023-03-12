@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ScoreBottomView" customModule="MybkMobile" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="145"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="119"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Điểm thành phần" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TwS-8e-R74">
@@ -28,7 +28,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nKR-YL-vIF">
-                    <rect key="frame" x="24" y="62" width="60" height="73"/>
+                    <rect key="frame" x="24" y="62" width="60" height="47"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Điểm thi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsM-Ux-4xI">
                             <rect key="frame" x="0.0" y="0.0" width="56.333333333333336" height="17"/>
@@ -37,23 +37,24 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G41-A5-tiZ">
-                            <rect key="frame" x="0.0" y="21" width="43.333333333333336" height="21.666666666666671"/>
-                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                            <rect key="frame" x="0.0" y="26.666666666666671" width="41" height="20.333333333333329"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                             <color key="textColor" red="0.066666666669999999" green="0.25882352939999997" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="G41-A5-tiZ" secondAttribute="bottom" id="GHs-9J-70H"/>
                         <constraint firstItem="G41-A5-tiZ" firstAttribute="leading" secondItem="nKR-YL-vIF" secondAttribute="leading" id="OSh-GR-b7R"/>
                         <constraint firstItem="UsM-Ux-4xI" firstAttribute="top" secondItem="nKR-YL-vIF" secondAttribute="top" id="OfS-ZH-qt3"/>
-                        <constraint firstItem="G41-A5-tiZ" firstAttribute="top" secondItem="UsM-Ux-4xI" secondAttribute="bottom" constant="4" id="QFP-bw-Lpc"/>
+                        <constraint firstItem="G41-A5-tiZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="UsM-Ux-4xI" secondAttribute="bottom" id="QFP-bw-Lpc"/>
                         <constraint firstItem="UsM-Ux-4xI" firstAttribute="leading" secondItem="nKR-YL-vIF" secondAttribute="leading" id="X9Y-Wi-6HL"/>
                         <constraint firstAttribute="width" constant="60" id="yQ9-vq-4BK"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXl-W1-bPL">
-                    <rect key="frame" x="100" y="62" width="269" height="73"/>
+                    <rect key="frame" x="100" y="62" width="269" height="47"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Điểm tổng kết" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LzT-px-Tvt">
                             <rect key="frame" x="0.0" y="0.0" width="94" height="17"/>
@@ -62,8 +63,8 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5GQ-r0-XNE">
-                            <rect key="frame" x="0.0" y="21" width="47" height="21.666666666666671"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <rect key="frame" x="0.0" y="26.666666666666671" width="44.333333333333336" height="20.333333333333329"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <color key="textColor" red="0.070588235294117646" green="0.59215686274509804" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -71,7 +72,8 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="LzT-px-Tvt" firstAttribute="top" secondItem="bXl-W1-bPL" secondAttribute="top" id="BaN-kI-SaP"/>
-                        <constraint firstItem="5GQ-r0-XNE" firstAttribute="top" secondItem="LzT-px-Tvt" secondAttribute="bottom" constant="4" id="kOp-mq-A7v"/>
+                        <constraint firstItem="5GQ-r0-XNE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="LzT-px-Tvt" secondAttribute="bottom" id="l24-mD-Un6"/>
+                        <constraint firstAttribute="bottom" secondItem="5GQ-r0-XNE" secondAttribute="bottom" id="pHS-ka-tMv"/>
                         <constraint firstItem="5GQ-r0-XNE" firstAttribute="leading" secondItem="bXl-W1-bPL" secondAttribute="leading" id="uZs-WA-gmM"/>
                         <constraint firstItem="LzT-px-Tvt" firstAttribute="leading" secondItem="bXl-W1-bPL" secondAttribute="leading" id="zRC-Xx-IZK"/>
                     </constraints>
@@ -100,7 +102,7 @@
                 <outlet property="finalTestLabel" destination="G41-A5-tiZ" id="wBG-1J-sCU"/>
                 <outlet property="periodScoreLabel" destination="LFf-nt-qdD" id="aeB-Zf-rac"/>
             </connections>
-            <point key="canvasLocation" x="-124.42748091603053" y="-57.394366197183103"/>
+            <point key="canvasLocation" x="-124.42748091603053" y="-66.549295774647888"/>
         </view>
     </objects>
     <resources>

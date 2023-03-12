@@ -63,11 +63,16 @@ final class TranscriptViewController: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
         layout.itemSize = CGSize(width: collectionView.safeAreaLayoutGuide.layoutFrame.width,
                                  height: 185)
+        layout.headerReferenceSize = CGSize(width: collectionView.safeAreaLayoutGuide.layoutFrame.width,
+                                            height: 600)
+        layout.footerReferenceSize = CGSize(width: collectionView.safeAreaLayoutGuide.layoutFrame.width,
+                                            height: 600)
         layout.minimumLineSpacing = 15
         collectionView!.collectionViewLayout = layout
         // cell
         collectionView.register(SubjectScheduleCell.self)
         collectionView.register(header: TranscriptCollectionViewHeaderCell.self)
+        collectionView.register(footer: TranscriptCollectionViewFooterCell.self)
     }
     
     public let viewModel = TranscriptViewModel()
@@ -89,10 +94,20 @@ extension TranscriptViewController: UICollectionViewDataSource, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeue(header: TranscriptCollectionViewHeaderCell.self, forIndexPath: indexPath)
-        header.setUpContent(viewModel: viewModel.getHeaderSectionData())
-        return header
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            let header = collectionView.dequeue(header: TranscriptCollectionViewHeaderCell.self, forIndexPath: indexPath)
+            header.setUpContent(viewModel: viewModel.getHeaderSectionData())
+            return header
+        case UICollectionView.elementKindSectionFooter:
+            let footer = collectionView.dequeue(footer: TranscriptCollectionViewFooterCell.self, forIndexPath: indexPath)
+            footer.setUpContent(viewModel: viewModel.getFooterSectionData())
+            return footer
+        default:
+            preconditionFailure("Invalid supplementary view type for this collection view")
+        }
     }
+    
 }
 
 extension TranscriptViewController: UIPickerViewDelegate, UIPickerViewDataSource {

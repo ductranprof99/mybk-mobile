@@ -1,13 +1,13 @@
 //
-//  SpecialScoreCell.swift
+//  SpecialScoreViewCell.swift
 //  MybkMobile
 //
-//  Created by DucTran on 04/03/2023.
+//  Created by DucTran on 12/03/2023.
 //
 
 import UIKit
 
-class SpecialScoreCell: UICollectionViewCell {
+class SpecialScoreViewCell: UITableViewCell {
 
     @IBOutlet weak var pointTypeTitle: UILabel!
     
@@ -18,6 +18,7 @@ class SpecialScoreCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.addBorder(position: .top, color: UIColor(rgb: 0xDEDEDE), width: 1)
     }
     
     public func setContent(title: String, detail: String, point: String) {
@@ -25,5 +26,5 @@ class SpecialScoreCell: UICollectionViewCell {
         pointTypeDetail.text = detail
         specialPoint.text = point
     }
-
+    
 }

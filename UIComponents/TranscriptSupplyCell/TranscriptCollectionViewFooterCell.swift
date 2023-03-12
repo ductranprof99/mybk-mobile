@@ -1,5 +1,5 @@
 //
-//  TranscriptCollectionViewHeaderCell.swift
+//  TranscriptCollectionViewFooterCell.swift
 //  MybkMobile
 //
 //  Created by DucTran on 12/03/2023.
@@ -7,10 +7,10 @@
 
 import UIKit
 
-final class TranscriptCollectionViewHeaderCell: UICollectionReusableView {
+final class TranscriptCollectionViewFooterCell: UICollectionReusableView {
 
     var tableView: UITableView = .init()
-    var viewModel: TranscriptHeaderModel? {
+    var viewModel: TranscriptFooterModel? {
         didSet {
             tableView.reloadData()
         }
@@ -27,7 +27,7 @@ final class TranscriptCollectionViewHeaderCell: UICollectionReusableView {
         }
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(InfoDetailCell.self)
+        tableView.register(SpecialScoreViewCell.self)
         tableView.separatorColor = .clear
         tableView.backgroundColor = UIColor(rgb: 0xF7F7F7)
         tableView.isScrollEnabled = false
@@ -37,7 +37,7 @@ final class TranscriptCollectionViewHeaderCell: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func setUpContent(viewModel: TranscriptHeaderModel) {
+    public func setUpContent(viewModel: TranscriptFooterModel) {
         self.viewModel = viewModel
     }
     
@@ -52,18 +52,17 @@ final class TranscriptCollectionViewHeaderCell: UICollectionReusableView {
     }
 }
 
-extension TranscriptCollectionViewHeaderCell: UITableViewDelegate, UITableViewDataSource {
+extension TranscriptCollectionViewFooterCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let sectionData = viewModel?.getSectionData(section: section) else { return 0 }
-        return sectionData.numOfRow()
+        return viewModel?.numOfRow() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellData = viewModel?.getSectionData(section: indexPath.section)?.dataOfRow(in: indexPath.item)
-        let cell = tableView.dequeueReusableCell(of: InfoDetailCell.self, for: indexPath) { cell in
-            cell.setContent(title: cellData?.title ?? "No title == foul",
-                            content: cellData?.detail,
-                            crucialInfo: cellData?.crucial)
+        let cellData = viewModel?.getSectionData(in: indexPath.item)
+        let cell = tableView.dequeueReusableCell(of: SpecialScoreViewCell.self, for: indexPath) { cell in
+            cell.setContent(title: cellData?.title ?? "no data",
+                            detail: cellData?.detail ?? "no data",
+                            point: cellData?.point ?? "no data")
         }
         return cell ?? UITableViewCell()
     }
@@ -77,7 +76,7 @@ extension TranscriptCollectionViewHeaderCell: UITableViewDelegate, UITableViewDa
         let label = UILabel()
         label.font = .systemFont(ofSize: 15, weight: .semibold)
         label.textColor = UIColor(rgb: 0x1297C1)
-        label.text = viewModel?.getSectionData(section: section)?.title
+        label.text = viewModel?.getTitle()
         view.addSubview(label)
         label.setConstrain(to: view) { make in
             make.append(.centerY(centerY: 0))
@@ -87,7 +86,8 @@ extension TranscriptCollectionViewHeaderCell: UITableViewDelegate, UITableViewDa
         return view
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 35
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 65
     }
 }
+

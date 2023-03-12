@@ -22,11 +22,30 @@ struct ListInfoModel {
         }
         return nil
     }
+    
+    static let mockDataNoDetail = ListInfoModel(title: "Tong ket",
+                                        detail: [("So tin chi dang ki", nil, "16"),
+                                                 ("So tin chi dang ki", nil, "16"),
+                                                 ("So tin chi dang ki", nil, "16"),
+                                                 ("So tin chi dang ki", nil, "16"),
+                                                 ("So tin chi dang ki", nil, "16"),
+                                                 ("So tin chi dang ki", nil, "16"),
+                                                 ("So tin chi dang ki", nil, "16")])
+    
+    static let mockDataDetail = ListInfoModel(title: "Tong ket",
+                                        detail: [("So tin chi dang ki", "16", nil),
+                                                 ("So tin chi dang ki", "16", nil),
+                                                 ("So tin chi dang ki", "16", nil),
+                                                 ("So tin chi dang ki", "16", nil),
+                                                 ("So tin chi dang ki", "16", nil),
+                                                 ("So tin chi dang ki", "16", nil),
+                                                 ("So tin chi dang ki", "16", nil)])
 }
+
 
 struct TranscriptHeaderModel {
     
-    var sectionsData: [ListInfoModel] = [.init(title: "Tong ket", detail: [("So tin chi dang ki", nil, "16")])]
+    var sectionsData: [ListInfoModel] = [.mockDataNoDetail, .mockDataNoDetail]
     
     func numOfSection() -> Int {
         return sectionsData.count
@@ -41,14 +60,33 @@ struct TranscriptHeaderModel {
 }
 
 struct TranscriptFooterModel {
-    
-    var sectionsData: ListInfoModel = .init(title: "Tong ket", detail: [("So tin chi dang ki", nil, "16")])
+    typealias RowData = (title: String, detail: String, point: String)
+    var sectionTitle: String
+    var detail: [RowData]
     
     func numOfSection() -> Int {
         return 1
     }
     
-    func getSectionData() -> ListInfoModel {
-        return sectionsData
+    func getSectionData(in index: Int) -> RowData? {
+        if index < detail.count, index > -1 {
+            return detail[index]
+        }
+        return nil
     }
+    
+    func getTitle() -> String {
+        return sectionTitle
+    }
+    
+    func numOfRow() -> Int {
+        return detail.count
+    }
+    
+    static var mockData: TranscriptFooterModel = .init(sectionTitle: "Các điểm đặc biệt",
+                                                      detail: [("Vắng thi có phép", "Không đạt và không tính vào ĐTB Được thỏa điều kiện môn học trước", "22 VP"),
+                                                               ("Vắng thi có phép", "Không đạt và không tính vào ĐTB Được thỏa điều kiện môn học trước", "22 VP"),
+                                                               ("Vắng thi có phép", "Không đạt và không tính vào ĐTB Được thỏa điều kiện môn học trước", "22 VP"),
+                                                               ("Vắng thi có phép", "Không đạt và không tính vào ĐTB Được thỏa điều kiện môn học trước", "22 VP"),
+                                                               ("Vắng thi có phép", "Không đạt và không tính vào ĐTB Được thỏa điều kiện môn học trước", "22 VP")])
 }
