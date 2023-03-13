@@ -8,7 +8,7 @@
 import UIKit
 import MessageUI
 
-final class ProfileViewController: UIViewController, MFMailComposeViewControllerDelegate, UIGestureRecognizerDelegate {
+final class ProfileViewController: UIViewController, MFMailComposeViewControllerDelegate{
     
     @IBOutlet private weak var userNameLabel: UILabel!
     
@@ -105,9 +105,4 @@ final class ProfileViewController: UIViewController, MFMailComposeViewController
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
     }
-    
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        return true
-    }
-
 }

@@ -446,37 +446,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xs-S5-zYL">
-                                <rect key="frame" x="20" y="553.66666666666663" width="353" height="50"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đăng xuất" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QrO-HF-sbM">
-                                        <rect key="frame" x="60" y="16" width="73" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                        <color key="textColor" systemColor="systemRedColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_logout" translatesAutoresizingMaskIntoConstraints="NO" id="gIl-Nz-RRz">
-                                        <rect key="frame" x="20" y="15" width="20" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="Sn7-x8-TwO"/>
-                                            <constraint firstAttribute="width" secondItem="gIl-Nz-RRz" secondAttribute="height" multiplier="1:1" id="y9s-Dv-XWV"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="QrO-HF-sbM" firstAttribute="centerY" secondItem="0xs-S5-zYL" secondAttribute="centerY" id="1gc-Lx-xKj"/>
-                                    <constraint firstItem="gIl-Nz-RRz" firstAttribute="leading" secondItem="0xs-S5-zYL" secondAttribute="leading" constant="20" id="Fys-hp-1eV"/>
-                                    <constraint firstItem="QrO-HF-sbM" firstAttribute="leading" secondItem="gIl-Nz-RRz" secondAttribute="trailing" constant="20" id="PUK-sP-Ku8"/>
-                                    <constraint firstItem="gIl-Nz-RRz" firstAttribute="centerY" secondItem="0xs-S5-zYL" secondAttribute="centerY" id="bfx-n6-wxv"/>
-                                    <constraint firstAttribute="height" constant="50" id="qri-wb-sHZ"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fqb-RE-dxf">
                                 <rect key="frame" x="20" y="493.66666666666674" width="353" height="50"/>
                                 <subviews>
@@ -501,6 +470,37 @@
                                     <constraint firstItem="JUp-Tn-MsJ" firstAttribute="leading" secondItem="Fqb-RE-dxf" secondAttribute="leading" constant="20" id="eDk-UO-JsV"/>
                                     <constraint firstItem="768-QE-lwg" firstAttribute="leading" secondItem="JUp-Tn-MsJ" secondAttribute="trailing" constant="20" id="kxj-rJ-Tug"/>
                                     <constraint firstItem="768-QE-lwg" firstAttribute="centerY" secondItem="Fqb-RE-dxf" secondAttribute="centerY" id="lMe-ZY-cN0"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xs-S5-zYL">
+                                <rect key="frame" x="20" y="553.66666666666663" width="353" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đăng xuất" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QrO-HF-sbM">
+                                        <rect key="frame" x="60" y="16" width="73" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_logout" translatesAutoresizingMaskIntoConstraints="NO" id="gIl-Nz-RRz">
+                                        <rect key="frame" x="20" y="15" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="Sn7-x8-TwO"/>
+                                            <constraint firstAttribute="width" secondItem="gIl-Nz-RRz" secondAttribute="height" multiplier="1:1" id="y9s-Dv-XWV"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="QrO-HF-sbM" firstAttribute="centerY" secondItem="0xs-S5-zYL" secondAttribute="centerY" id="1gc-Lx-xKj"/>
+                                    <constraint firstItem="gIl-Nz-RRz" firstAttribute="leading" secondItem="0xs-S5-zYL" secondAttribute="leading" constant="20" id="Fys-hp-1eV"/>
+                                    <constraint firstItem="QrO-HF-sbM" firstAttribute="leading" secondItem="gIl-Nz-RRz" secondAttribute="trailing" constant="20" id="PUK-sP-Ku8"/>
+                                    <constraint firstItem="gIl-Nz-RRz" firstAttribute="centerY" secondItem="0xs-S5-zYL" secondAttribute="centerY" id="bfx-n6-wxv"/>
+                                    <constraint firstAttribute="height" constant="50" id="qri-wb-sHZ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -542,8 +542,8 @@
                     <connections>
                         <outlet property="appSaveDataSwitch" destination="aCh-5M-nHI" id="Kp9-9P-0Vu"/>
                         <outlet property="externalLinkButton" destination="ack-2K-zJ8" id="RzY-fO-cNl"/>
-                        <outlet property="infoButton" destination="0xs-S5-zYL" id="ZZc-ii-sU8"/>
-                        <outlet property="logoutButton" destination="Fqb-RE-dxf" id="d6O-Ub-6th"/>
+                        <outlet property="infoButton" destination="Fqb-RE-dxf" id="GYv-lX-xhu"/>
+                        <outlet property="logoutButton" destination="0xs-S5-zYL" id="JR9-M9-L3r"/>
                         <outlet property="policyButton" destination="fOr-fD-GeX" id="xYg-om-tcU"/>
                         <outlet property="userMailLabel" destination="1C5-4j-Jh7" id="6Ac-Yl-XB4"/>
                         <outlet property="userMajorLabel" destination="6NU-yc-FqU" id="kic-Wq-GUW"/>
