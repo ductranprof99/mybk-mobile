@@ -22,7 +22,7 @@ import UIKit
         }
     }
     
-    @IBInspectable var cornerRadius: CGFloat = 0.0 {
+    @IBInspectable override var cornerRadius: CGFloat {
         didSet {
             updateCornerRadius(cornerRadius: cornerRadius)
         }

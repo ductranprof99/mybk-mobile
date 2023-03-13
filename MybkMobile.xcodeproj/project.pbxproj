@@ -11,6 +11,7 @@
 		52373E9E29B795CB00AA4383 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52373E9D29B795CB00AA4383 /* UIColor.swift */; };
 		52373EA029B79CA700AA4383 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52373E9F29B79CA700AA4383 /* CustomButton.swift */; };
 		5246822829BB67EA00124A6A /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5246822729BB67EA00124A6A /* UICollectionViewCell.swift */; };
+		5264423429BE9CE90099F48E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264423329BE9CE90099F48E /* ProfileViewModel.swift */; };
 		528958A129AA036B0049EE07 /* SubjectScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5289589F29AA036B0049EE07 /* SubjectScheduleCell.xib */; };
 		528958A229AA036B0049EE07 /* SubjectScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528958A029AA036B0049EE07 /* SubjectScheduleCell.swift */; };
 		528958A829AA094E0049EE07 /* TestScheduleBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528958A729AA094E0049EE07 /* TestScheduleBottomView.swift */; };
@@ -84,6 +85,7 @@
 		52373E9D29B795CB00AA4383 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		52373E9F29B79CA700AA4383 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		5246822729BB67EA00124A6A /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
+		5264423329BE9CE90099F48E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		5289589F29AA036B0049EE07 /* SubjectScheduleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubjectScheduleCell.xib; sourceTree = "<group>"; };
 		528958A029AA036B0049EE07 /* SubjectScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectScheduleCell.swift; sourceTree = "<group>"; };
 		528958A729AA094E0049EE07 /* TestScheduleBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScheduleBottomView.swift; sourceTree = "<group>"; };
@@ -164,6 +166,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		525A2D5D29BFD7B400C9887B /* PolicyViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PolicyViewController;
+			sourceTree = "<group>";
+		};
+		5264423229BE92A70099F48E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				52A0D00A29B47002003B8952 /* ProfileViewController.swift */,
+				5264423329BE9CE90099F48E /* ProfileViewModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		5289589E29AA035C0049EE07 /* SubjectCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +319,7 @@
 		528FF64229A9E1F100C25137 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				525A2D5D29BFD7B400C9887B /* PolicyViewController */,
 				52ED1AA829B3B66300DC1429 /* TabViewControllers */,
 				52ED1AA729B3B65600DC1429 /* LoginViewController */,
 			);
@@ -448,11 +467,11 @@
 		52ED1AA829B3B66300DC1429 /* TabViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5264423229BE92A70099F48E /* Profile */,
 				52BA48CF29BCB26C006C6CA5 /* Transcript */,
 				52F1B46929BBFD130003178D /* ExamSchedules */,
 				529A2B2629B953DC004631C5 /* ScheduleView */,
 				52A0D00429B46405003B8952 /* MainTabBarController.storyboard */,
-				52A0D00A29B47002003B8952 /* ProfileViewController.swift */,
 				52A0D00C29B48E5C003B8952 /* MainTabBarController.swift */,
 			);
 			path = TabViewControllers;
@@ -635,6 +654,7 @@
 				52C9A25D29AA3DA700F2B8C1 /* LearnScheduleBottomView.swift in Sources */,
 				52BA48D729BD5DF9006C6CA5 /* TranscriptCollectionViewHeaderCell.swift in Sources */,
 				52ED1AA629B3B55800DC1429 /* SceneDelegate.swift in Sources */,
+				5264423429BE9CE90099F48E /* ProfileViewModel.swift in Sources */,
 				52BA48D329BCB455006C6CA5 /* TranscriptAdditionalModel.swift in Sources */,
 				52A0D00D29B48E5C003B8952 /* MainTabBarController.swift in Sources */,
 				52BA48E129BD8236006C6CA5 /* UITableView.swift in Sources */,

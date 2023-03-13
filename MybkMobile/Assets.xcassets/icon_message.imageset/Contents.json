@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Profile.svg",
+      "filename" : "Message.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Profile 1.svg",
+      "filename" : "Message 1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Profile 2.svg",
+      "filename" : "Message 2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }

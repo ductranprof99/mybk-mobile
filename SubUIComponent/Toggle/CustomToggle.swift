@@ -52,7 +52,7 @@ public class CustomSwitch: UIControl {
         }
     }
     
-    @IBInspectable public var cornerRadius: CGFloat {
+    @IBInspectable public override var cornerRadius: CGFloat {
         
         get {
             return self.privateCornerRadius

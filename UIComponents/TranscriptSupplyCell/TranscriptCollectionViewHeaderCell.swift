@@ -28,7 +28,7 @@ final class TranscriptCollectionViewHeaderCell: UICollectionReusableView {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(InfoDetailCell.self)
-        tableView.separatorColor = .clear
+        tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor(rgb: 0xF7F7F7)
         tableView.isScrollEnabled = false
     }
