@@ -66,7 +66,8 @@ final class ProfileViewController: UIViewController, MFMailComposeViewController
     }
     
     @objc func navigateToPolicy(_ sender: UITapGestureRecognizer? = nil) {
-        
+        let vc = PolicyViewController.loadFromNib()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func navigateToExternalLink(_ sender: UITapGestureRecognizer? = nil) {

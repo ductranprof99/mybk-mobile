@@ -11,6 +11,8 @@
 		52373E9E29B795CB00AA4383 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52373E9D29B795CB00AA4383 /* UIColor.swift */; };
 		52373EA029B79CA700AA4383 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52373E9F29B79CA700AA4383 /* CustomButton.swift */; };
 		5246822829BB67EA00124A6A /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5246822729BB67EA00124A6A /* UICollectionViewCell.swift */; };
+		525A2D6029BFDED300C9887B /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525A2D5E29BFDED300C9887B /* PolicyViewController.swift */; };
+		525A2D6129BFDED300C9887B /* PolicyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525A2D5F29BFDED300C9887B /* PolicyViewController.xib */; };
 		5264423429BE9CE90099F48E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264423329BE9CE90099F48E /* ProfileViewModel.swift */; };
 		528958A129AA036B0049EE07 /* SubjectScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5289589F29AA036B0049EE07 /* SubjectScheduleCell.xib */; };
 		528958A229AA036B0049EE07 /* SubjectScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528958A029AA036B0049EE07 /* SubjectScheduleCell.swift */; };
@@ -53,8 +55,6 @@
 		52C9A26E29AA561000F2B8C1 /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A26D29AA561000F2B8C1 /* CustomToggle.swift */; };
 		52C9A27029AA567300F2B8C1 /* CustomThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A26F29AA567300F2B8C1 /* CustomThumbView.swift */; };
 		52C9A27629AACDF900F2B8C1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A27529AACDF900F2B8C1 /* CustomTextField.swift */; };
-		52ED1AA029B3803F00DC1429 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED1A9E29B3803F00DC1429 /* SettingCell.swift */; };
-		52ED1AA129B3803F00DC1429 /* SettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52ED1A9F29B3803F00DC1429 /* SettingCell.xib */; };
 		52ED1AA629B3B55800DC1429 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED1AA529B3B55800DC1429 /* SceneDelegate.swift */; };
 		52ED1AAB29B3B6B800DC1429 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED1AA929B3B6B800DC1429 /* LoginViewController.swift */; };
 		52ED1AAC29B3B6B800DC1429 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52ED1AAA29B3B6B800DC1429 /* LoginViewController.xib */; };
@@ -85,6 +85,8 @@
 		52373E9D29B795CB00AA4383 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		52373E9F29B79CA700AA4383 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		5246822729BB67EA00124A6A /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
+		525A2D5E29BFDED300C9887B /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
+		525A2D5F29BFDED300C9887B /* PolicyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PolicyViewController.xib; sourceTree = "<group>"; };
 		5264423329BE9CE90099F48E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		5289589F29AA036B0049EE07 /* SubjectScheduleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubjectScheduleCell.xib; sourceTree = "<group>"; };
 		528958A029AA036B0049EE07 /* SubjectScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectScheduleCell.swift; sourceTree = "<group>"; };
@@ -131,8 +133,6 @@
 		52C9A26D29AA561000F2B8C1 /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
 		52C9A26F29AA567300F2B8C1 /* CustomThumbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomThumbView.swift; sourceTree = "<group>"; };
 		52C9A27529AACDF900F2B8C1 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		52ED1A9E29B3803F00DC1429 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
-		52ED1A9F29B3803F00DC1429 /* SettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCell.xib; sourceTree = "<group>"; };
 		52ED1AA529B3B55800DC1429 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		52ED1AA929B3B6B800DC1429 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		52ED1AAA29B3B6B800DC1429 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -169,6 +169,8 @@
 		525A2D5D29BFD7B400C9887B /* PolicyViewController */ = {
 			isa = PBXGroup;
 			children = (
+				525A2D5E29BFDED300C9887B /* PolicyViewController.swift */,
+				525A2D5F29BFDED300C9887B /* PolicyViewController.xib */,
 			);
 			path = PolicyViewController;
 			sourceTree = "<group>";
@@ -306,7 +308,6 @@
 			isa = PBXGroup;
 			children = (
 				52BA48D429BD5DA3006C6CA5 /* TranscriptSupplyCell */,
-				52ED1A9D29B3800000DC1429 /* SettingCell */,
 				52ED1A9829B37E1D00DC1429 /* SpecialScoreCell */,
 				52C9A26429AA54EF00F2B8C1 /* CurrentWeekView */,
 				5289589E29AA035C0049EE07 /* SubjectCell */,
@@ -444,15 +445,6 @@
 				52BA48E329BDC5FE006C6CA5 /* SpecialScoreViewCell.xib */,
 			);
 			path = SpecialScoreCell;
-			sourceTree = "<group>";
-		};
-		52ED1A9D29B3800000DC1429 /* SettingCell */ = {
-			isa = PBXGroup;
-			children = (
-				52ED1A9E29B3803F00DC1429 /* SettingCell.swift */,
-				52ED1A9F29B3803F00DC1429 /* SettingCell.xib */,
-			);
-			path = SettingCell;
 			sourceTree = "<group>";
 		};
 		52ED1AA729B3B65600DC1429 /* LoginViewController */ = {
@@ -597,12 +589,12 @@
 				52C9A26829AA559400F2B8C1 /* DotCell.xib in Resources */,
 				528958A129AA036B0049EE07 /* SubjectScheduleCell.xib in Resources */,
 				52A0D00529B46405003B8952 /* MainTabBarController.storyboard in Resources */,
+				525A2D6129BFDED300C9887B /* PolicyViewController.xib in Resources */,
 				52C9A25B29AA19B700F2B8C1 /* LearnScheduleBottomView.xib in Resources */,
 				52BA48E529BDC5FE006C6CA5 /* SpecialScoreViewCell.xib in Resources */,
 				528FF61E29A9E13F00C25137 /* LaunchScreen.storyboard in Resources */,
 				52ED1AAC29B3B6B800DC1429 /* LoginViewController.xib in Resources */,
 				528FF61B29A9E13F00C25137 /* Assets.xcassets in Resources */,
-				52ED1AA129B3803F00DC1429 /* SettingCell.xib in Resources */,
 				528FF65129A9EC7C00C25137 /* BottomBarItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -640,6 +632,7 @@
 				52BA48E429BDC5FE006C6CA5 /* SpecialScoreViewCell.swift in Sources */,
 				52BA48D129BCB283006C6CA5 /* TranscriptViewModel.swift in Sources */,
 				52C9A27029AA567300F2B8C1 /* CustomThumbView.swift in Sources */,
+				525A2D6029BFDED300C9887B /* PolicyViewController.swift in Sources */,
 				52C9A27629AACDF900F2B8C1 /* CustomTextField.swift in Sources */,
 				5214923429B4370000A7522B /* ScheduleViewController.swift in Sources */,
 				52A0D00929B46C60003B8952 /* TranscriptViewController.swift in Sources */,
@@ -662,7 +655,6 @@
 				52F1B46B29BBFD470003178D /* ExamViewViewModel.swift in Sources */,
 				52373E9E29B795CB00AA4383 /* UIColor.swift in Sources */,
 				52C9A26129AA43D600F2B8C1 /* UICollectionView.swift in Sources */,
-				52ED1AA029B3803F00DC1429 /* SettingCell.swift in Sources */,
 				528958A229AA036B0049EE07 /* SubjectScheduleCell.swift in Sources */,
 				52A0D00729B46470003B8952 /* ExamViewController.swift in Sources */,
 			);

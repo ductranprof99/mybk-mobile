@@ -58,7 +58,7 @@
                             <color key="textColor" red="0.070588235289999995" green="0.59215686270000001" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9DA-eo-TUE">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9DA-eo-TUE" customClass="CustomButton" customModule="MybkMobile" customModuleProvider="target">
                             <rect key="frame" x="98" y="609" width="165" height="54"/>
                             <color key="backgroundColor" red="0.070588235289999995" green="0.59215686270000001" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
@@ -76,8 +76,13 @@
                                 <fontDescription key="titleFontDescription" type="boldSystem" pointSize="19"/>
                                 <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </buttonConfiguration>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="signUpHandler:" destination="-1" eventType="touchUpInside" id="wWn-ON-VWb"/>
+                                <action selector="signUpHandler:" destination="-1" eventType="touchUpInside" id="jGC-zp-Evy"/>
                             </connections>
                         </button>
                     </subviews>

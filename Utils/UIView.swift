@@ -121,8 +121,7 @@ extension UIView {
             return layer.shadowRadius
         }
         set {
-
-            layer.shadowRadius = shadowRadius
+            layer.shadowRadius = newValue
         }
     }
     @IBInspectable
