@@ -84,6 +84,9 @@ extension ScheduleViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(SubjectScheduleCell.self,for: indexPath)
         cell.setCellContent(cellData: .schedBottom(data: .init()))
+        cell.handleCellTap = { [weak self] vc in
+            self?.navigationController?.pushViewController(vc, animated: false)
+        }
         return cell
     }
     

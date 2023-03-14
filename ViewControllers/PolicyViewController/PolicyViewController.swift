@@ -14,10 +14,9 @@ class PolicyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
+//        setupNavBar()
         setupPolicyLabel()
-        setupNavBarButton()
     }
     
     private func setupPolicyLabel() {
@@ -52,5 +51,10 @@ class PolicyViewController: UIViewController {
         }
         view.topAnchor.constraint(equalTo: titleHeading.bottomAnchor, constant: 20).isActive = true
         
+    }
+    
+    @IBAction func backHandler(_ sender: Any) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.popViewController(animated: true)
     }
 }

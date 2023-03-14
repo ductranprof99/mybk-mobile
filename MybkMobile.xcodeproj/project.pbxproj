@@ -14,6 +14,10 @@
 		525A2D6029BFDED300C9887B /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525A2D5E29BFDED300C9887B /* PolicyViewController.swift */; };
 		525A2D6129BFDED300C9887B /* PolicyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525A2D5F29BFDED300C9887B /* PolicyViewController.xib */; };
 		5264423429BE9CE90099F48E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264423329BE9CE90099F48E /* ProfileViewModel.swift */; };
+		5287970929C0633E000BA20F /* DetailSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287970729C0633E000BA20F /* DetailSubjectViewController.swift */; };
+		5287970A29C0633E000BA20F /* DetailSubjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5287970829C0633E000BA20F /* DetailSubjectViewController.xib */; };
+		5287970C29C065F5000BA20F /* DetailSubjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287970B29C065F5000BA20F /* DetailSubjectViewModel.swift */; };
+		5287970E29C06A0A000BA20F /* SubjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287970D29C06A0A000BA20F /* SubjectModel.swift */; };
 		528958A129AA036B0049EE07 /* SubjectScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5289589F29AA036B0049EE07 /* SubjectScheduleCell.xib */; };
 		528958A229AA036B0049EE07 /* SubjectScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528958A029AA036B0049EE07 /* SubjectScheduleCell.swift */; };
 		528958A829AA094E0049EE07 /* TestScheduleBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528958A729AA094E0049EE07 /* TestScheduleBottomView.swift */; };
@@ -88,6 +92,10 @@
 		525A2D5E29BFDED300C9887B /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
 		525A2D5F29BFDED300C9887B /* PolicyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PolicyViewController.xib; sourceTree = "<group>"; };
 		5264423329BE9CE90099F48E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		5287970729C0633E000BA20F /* DetailSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSubjectViewController.swift; sourceTree = "<group>"; };
+		5287970829C0633E000BA20F /* DetailSubjectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailSubjectViewController.xib; sourceTree = "<group>"; };
+		5287970B29C065F5000BA20F /* DetailSubjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSubjectViewModel.swift; sourceTree = "<group>"; };
+		5287970D29C06A0A000BA20F /* SubjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectModel.swift; sourceTree = "<group>"; };
 		5289589F29AA036B0049EE07 /* SubjectScheduleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubjectScheduleCell.xib; sourceTree = "<group>"; };
 		528958A029AA036B0049EE07 /* SubjectScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectScheduleCell.swift; sourceTree = "<group>"; };
 		528958A729AA094E0049EE07 /* TestScheduleBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScheduleBottomView.swift; sourceTree = "<group>"; };
@@ -184,6 +192,16 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		5287970629C06327000BA20F /* DetailSubjectViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5287970729C0633E000BA20F /* DetailSubjectViewController.swift */,
+				5287970829C0633E000BA20F /* DetailSubjectViewController.xib */,
+				5287970B29C065F5000BA20F /* DetailSubjectViewModel.swift */,
+			);
+			path = DetailSubjectViewController;
+			sourceTree = "<group>";
+		};
 		5289589E29AA035C0049EE07 /* SubjectCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +254,7 @@
 			children = (
 				52C9A26229AA480C00F2B8C1 /* SubjectCellModel.swift */,
 				52BA48D229BCB455006C6CA5 /* TranscriptAdditionalModel.swift */,
+				5287970D29C06A0A000BA20F /* SubjectModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -320,6 +339,7 @@
 		528FF64229A9E1F100C25137 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5287970629C06327000BA20F /* DetailSubjectViewController */,
 				525A2D5D29BFD7B400C9887B /* PolicyViewController */,
 				52ED1AA829B3B66300DC1429 /* TabViewControllers */,
 				52ED1AA729B3B65600DC1429 /* LoginViewController */,
@@ -584,6 +604,7 @@
 			files = (
 				52C9A26C29AA55AC00F2B8C1 /* NumberCell.xib in Resources */,
 				528958AA29AA0A090049EE07 /* TestScheduleBottomView.xib in Resources */,
+				5287970A29C0633E000BA20F /* DetailSubjectViewController.xib in Resources */,
 				52BA48DF29BD6302006C6CA5 /* InfoDetailCell.xib in Resources */,
 				528958B029AA14160049EE07 /* ScoreBottomView.xib in Resources */,
 				52C9A26829AA559400F2B8C1 /* DotCell.xib in Resources */,
@@ -626,10 +647,12 @@
 				528FF61229A9E13E00C25137 /* AppDelegate.swift in Sources */,
 				52373EA029B79CA700AA4383 /* CustomButton.swift in Sources */,
 				52C9A26729AA559400F2B8C1 /* DotCell.swift in Sources */,
+				5287970E29C06A0A000BA20F /* SubjectModel.swift in Sources */,
 				52C9A26329AA480C00F2B8C1 /* SubjectCellModel.swift in Sources */,
 				52BA48E729BDC719006C6CA5 /* TranscriptCollectionViewFooterCell.swift in Sources */,
 				52F064EE29BA29B500D07D72 /* ScheduleViewModel.swift in Sources */,
 				52BA48E429BDC5FE006C6CA5 /* SpecialScoreViewCell.swift in Sources */,
+				5287970C29C065F5000BA20F /* DetailSubjectViewModel.swift in Sources */,
 				52BA48D129BCB283006C6CA5 /* TranscriptViewModel.swift in Sources */,
 				52C9A27029AA567300F2B8C1 /* CustomThumbView.swift in Sources */,
 				525A2D6029BFDED300C9887B /* PolicyViewController.swift in Sources */,
@@ -642,6 +665,7 @@
 				52BA48DE29BD6302006C6CA5 /* InfoDetailCell.swift in Sources */,
 				528958B129AA14160049EE07 /* ScoreBottomView.swift in Sources */,
 				52ED1AAE29B3B6ED00DC1429 /* UIViewController.swift in Sources */,
+				5287970929C0633E000BA20F /* DetailSubjectViewController.swift in Sources */,
 				52A0D00B29B47002003B8952 /* ProfileViewController.swift in Sources */,
 				528FF65329A9EF8B00C25137 /* BottomBarItem.swift in Sources */,
 				52C9A25D29AA3DA700F2B8C1 /* LearnScheduleBottomView.swift in Sources */,

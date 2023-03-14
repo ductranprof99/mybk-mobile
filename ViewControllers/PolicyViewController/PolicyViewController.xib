@@ -19,31 +19,69 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Điều khoản sử dụng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gc-wX-l3h">
-                    <rect key="frame" x="20" y="79" width="353" height="31.333333333333329"/>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
-                    <color key="textColor" red="0.066666666669999999" green="0.25882352939999997" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKg-WQ-exA">
-                    <rect key="frame" x="20" y="140.33333333333334" width="353" height="71.666666666666657"/>
-                    <string key="text">Mybk Mobile là ứng dụng mã nguồn mở dành cho sinh viên trường Đại học Bách Khoa - ĐHQG TP.HCM. Khi nhấn nút Đăng nhập, bạn đã đồng ý với các điều khoản sau:</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" red="0.066666666669999999" green="0.25882352939999997" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8TB-zu-xXf">
+                    <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <textAttributes key="titleTextAttributes">
+                        <color key="textColor" red="0.070588235289999995" green="0.59215686270000001" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
+                    </textAttributes>
+                    <textAttributes key="largeTitleTextAttributes">
+                        <color key="textColor" red="0.070588235289999995" green="0.59215686270000001" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
+                    </textAttributes>
+                    <items>
+                        <navigationItem title="Điều khoản sử dụng" id="GuN-MK-3TD">
+                            <barButtonItem key="leftBarButtonItem" image="top_nav_back" landscapeImage="top_nav_back" largeContentSizeImage="top_nav_back" id="Kxz-Ps-DHG">
+                                <connections>
+                                    <action selector="backHandler:" destination="-1" id="vRh-Ju-WsI"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cTh-Ye-TQJ">
+                    <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Điều khoản sử dụng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gc-wX-l3h">
+                            <rect key="frame" x="20" y="50.000000000000007" width="353" height="31.333333333333336"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                            <color key="textColor" red="0.066666666669999999" green="0.25882352939999997" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKg-WQ-exA">
+                            <rect key="frame" x="20" y="101.33333333333334" width="353" height="71.666666666666657"/>
+                            <string key="text">Mybk Mobile là ứng dụng mã nguồn mở dành cho sinh viên trường Đại học Bách Khoa - ĐHQG TP.HCM. Khi nhấn nút Đăng nhập, bạn đã đồng ý với các điều khoản sau:</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.066666666669999999" green="0.25882352939999997" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="0Gc-wX-l3h" firstAttribute="leading" secondItem="cTh-Ye-TQJ" secondAttribute="leading" constant="20" id="3hO-3P-vBy"/>
+                        <constraint firstAttribute="trailing" secondItem="0Gc-wX-l3h" secondAttribute="trailing" constant="20" id="XfG-iG-bzW"/>
+                        <constraint firstItem="SKg-WQ-exA" firstAttribute="leading" secondItem="cTh-Ye-TQJ" secondAttribute="leading" constant="20" id="fg7-bd-N73"/>
+                        <constraint firstItem="0Gc-wX-l3h" firstAttribute="top" secondItem="cTh-Ye-TQJ" secondAttribute="top" constant="50" id="ow5-Sg-56J"/>
+                        <constraint firstAttribute="trailing" secondItem="SKg-WQ-exA" secondAttribute="trailing" constant="20" id="pIL-Mp-ji8"/>
+                        <constraint firstItem="SKg-WQ-exA" firstAttribute="top" secondItem="0Gc-wX-l3h" secondAttribute="bottom" constant="20" id="ugm-4T-Wp0"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="SKg-WQ-exA" secondAttribute="trailing" constant="20" id="18u-hb-6yC"/>
-                <constraint firstItem="0Gc-wX-l3h" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="1bc-gb-2O4"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0Gc-wX-l3h" secondAttribute="trailing" constant="20" id="3Wk-VE-70j"/>
-                <constraint firstItem="SKg-WQ-exA" firstAttribute="top" secondItem="0Gc-wX-l3h" secondAttribute="bottom" constant="30" id="Vz3-aa-L2h"/>
-                <constraint firstItem="SKg-WQ-exA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Xb1-TA-fVk"/>
-                <constraint firstItem="0Gc-wX-l3h" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="jEr-Gm-Dpb"/>
+                <constraint firstItem="8TB-zu-xXf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3fF-f5-VZx"/>
+                <constraint firstItem="cTh-Ye-TQJ" firstAttribute="top" secondItem="8TB-zu-xXf" secondAttribute="bottom" id="BCF-Jt-FT5"/>
+                <constraint firstItem="cTh-Ye-TQJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KnY-kU-KBQ"/>
+                <constraint firstItem="8TB-zu-xXf" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="POM-7h-duY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cTh-Ye-TQJ" secondAttribute="trailing" id="RLK-8E-Gfe"/>
+                <constraint firstItem="8TB-zu-xXf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ziw-t6-OZQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cTh-Ye-TQJ" secondAttribute="bottom" id="bNA-jM-5qe"/>
             </constraints>
             <point key="canvasLocation" x="60" y="-12"/>
         </view>
     </objects>
+    <resources>
+        <image name="top_nav_back" width="24" height="24"/>
+    </resources>
 </document>
