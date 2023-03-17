@@ -1,0 +1,232 @@
+//
+//  SSO.swift
+//  MybkMobile
+//
+//  Created by DucTran on 15/03/2023.
+//
+
+import Foundation
+import SwiftSoup
+
+class SSOServiceManager {
+    func login(username: String? = nil,
+               password: String? = nil,
+               completion: @escaping (SSOState) -> Void) {
+        // check login status first
+        // if save -> is need to update credential
+        // if need update then new
+        if let username = username, let password = password {
+            getSSOSession(username: username, password: password) { [weak self] state in
+                if case .LOGGED_IN = state {
+                    self?.updateCredential(username, password)
+                }
+                completion(state)
+            }
+        } else {
+            if let isSave = EncriptStorageKey.getStorage(with: EncriptStorageKey.isSaveData),
+               NSString(string: isSave).boolValue {
+                if let username = EncriptStorageKey.getStorage(with: EncriptStorageKey.username),
+                   let password = EncriptStorageKey.getStorage(with: EncriptStorageKey.password) {
+                    getSSOSession(username: username, password: password) { state in
+                        completion(state)
+                    }
+                }
+            } else {
+                completion(.NO_CREDENTIALS)
+            }
+        }
+    }
+    
+    func getMyBKToken(completion: @escaping (String?,MybkState) -> Void) {
+        getRequest(url: Constant.SSO_MYBK_REDIRECT_URL){ data, response, error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                guard let response = response as? HTTPURLResponse else { return }
+                if response.statusCode == 302 {
+                    let location = response.allHeaderFields["location"] as? String
+                    var comps = URLComponents(string: location ?? "")
+                    comps?.scheme = "https"
+                    getRequest(url: comps?.string ?? "") {
+                        if $2 != nil {
+                            self.getStinfoToken {
+                                completion($0, $1)
+                            }
+                        }
+                    }
+                } else {
+                    completion(nil,.SSO_REQUIRED)
+                }
+            }
+        }
+    }
+    
+    func getSSOSession(username: String,
+                       password: String,
+                       completion: @escaping (SSOState) -> Void) {
+        self.getSSOSession() {
+            let (state, lt, execution) = $0
+            if case .UNAUTHORIZED = state {
+                self.postSSOForm(username: username,
+                                 password: password,
+                                 lt: lt,
+                                 execution: execution) {
+                    completion($0)
+                }
+            } else {
+                completion(state)
+            }
+        }
+    }
+
+    func updateCredential(_ username: String, _ password: String) {
+        let encrt =
+        EncriptStorageKey.updateStorage(with: EncriptStorageKey.username, value: username) &&
+        EncriptStorageKey.updateStorage(with: EncriptStorageKey.password, value: password)
+        if encrt {
+            print("success save user and password")
+        } else {
+            print("save fail")
+        }
+    }
+    
+    func clear() {
+        let clear = EncriptStorageKey.clearStorage(with: EncriptStorageKey.name) &&
+                    EncriptStorageKey.clearStorage(with: EncriptStorageKey.faculty) &&
+                    EncriptStorageKey.clearStorage(with: EncriptStorageKey.username) &&
+                    EncriptStorageKey.clearStorage(with: EncriptStorageKey.password)
+        if clear {
+            print("success clear all save data")
+        } else {
+            print("save fail")
+        }
+    }
+    
+    func updateProfileStore(_ fullName: String, _ faculty: String) {
+        let encrt = EncriptStorageKey.updateStorage(with: EncriptStorageKey.name, value: fullName) &&
+                    EncriptStorageKey.updateStorage(with: EncriptStorageKey.faculty, value: faculty)
+        if encrt {
+            print("success save fullname and faculty")
+        } else {
+            print("save fail")
+        }
+    }
+}
+extension SSOServiceManager {
+    
+    private func getStinfoToken(completion: @escaping (String?,MybkState) -> Void) {
+        getRequest(url: Constant.STINFO_URL) {data,response,error in
+            if error != nil {
+                completion(nil,.UNKNOWN)
+            } else {
+                guard let data = data,
+                      let htmlString = String(data: data, encoding: .ascii) else {
+                    completion(nil,.UNKNOWN)
+                    return
+                }
+                do {
+                    let doc: Document = try SwiftSoup.parse(htmlString)
+                    let metaEle = try doc.getElementsByTag("meta")
+                    let token = try metaEle.select("[name$=\"_token\"").first()?.val()
+                    completion(token, .LOGGED_IN)
+                } catch {
+                    completion(nil,.UNKNOWN)
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    private func getProfileInfo(responseBody: String) {
+        do {
+            var doc: Document = try SwiftSoup.parse(responseBody)
+            var profileBlock = try doc.select("div[class=top-avatar2]").first()?.children()
+            var fullName = try profileBlock?.select("div").first()?.text() ?? ""
+            var faculty = try profileBlock?.select("p").first()?.text() ?? ""
+            updateProfileStore(fullName, faculty)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    private func postSSOForm(username: String,
+                             password: String,
+                             lt: String,
+                             execution: String,
+                             completion: @escaping (SSOState) -> Void) {
+        let requestHeader = ["Content-Type": "application/x-www-form-urlencoded"]
+        var requestBodyComponent = URLComponents()
+        requestBodyComponent.queryItems = [URLQueryItem(name: "_eventId", value: "submit"),
+                                           URLQueryItem(name: "execution", value: execution),
+                                           URLQueryItem(name: "lt", value: lt),
+                                           URLQueryItem(name: "username", value: username),
+                                           URLQueryItem(name: "password", value: password)]
+        postRequest(url: Constant.SSO_URL,
+                    header: requestHeader,
+                    body: requestBodyComponent) { result in
+            switch result {
+            case .success((let data,let httpResponse)):
+                guard let htmlString = String(data: data, encoding: .ascii),
+                      let (lt, execution) = self.detachSSOHTMLElement(input: htmlString) else {
+                    completion(.UNKNOWN)
+                    return
+                }
+                if httpResponse.statusCode == 403 {
+                    completion(.TOO_MANY_TRIES)
+                } else if  htmlString.contains(Constant.HTML_WRONG_CREDENTIAL) {
+                    completion(.WRONG_PASSWORD)
+                } else if htmlString.contains(Constant.HTML_LOGIN_SUCCESS) {
+                    completion(.LOGGED_IN)
+                } else if lt != "" || execution != "" {
+                    completion(.UNAUTHORIZED)
+                } else {
+                    completion(.UNKNOWN)
+                }
+            case .failure:
+                completion(.UNKNOWN)
+            }
+        }
+    }
+    
+    private func getSSOSession(completion: @escaping ((SSOState, String, String)) -> Void) {
+        getRequest(url: Constant.SSO_URL) { (data,response,error) in
+            if error != nil {
+                completion((.NETWORKERROR,"",""))
+            } else {
+                guard let data = data,
+                      let htmlString = String(data: data, encoding: .ascii),
+                      let (lt, execution) = self.detachSSOHTMLElement(input: htmlString) else {
+                    completion((.UNKNOWN,"",""))
+                    return
+                }
+                if let httpResponse = response as? HTTPURLResponse {
+                    if httpResponse.statusCode == 403 {
+                        completion((.TOO_MANY_TRIES,lt,execution))
+                    } else if  htmlString.contains(Constant.HTML_WRONG_CREDENTIAL) {
+                        completion((.WRONG_PASSWORD,lt,execution))
+                    } else if htmlString.contains(Constant.HTML_LOGIN_SUCCESS) {
+                        completion((.LOGGED_IN,lt,execution))
+                    } else if lt != "" || execution != "" {
+                        completion((.UNAUTHORIZED,lt,execution))
+                    } else {
+                        completion((.UNKNOWN,lt,execution))
+                    }
+                }
+            }
+        }
+    }
+    
+    private func detachSSOHTMLElement(input str: String) -> (lt:String,execution:String)? {
+        do {
+            let doc: Document = try SwiftSoup.parse(str)
+            let executeEle: Element = try doc.select("input[name$=\"execution\"]").first()!
+            let executeVal = try executeEle.val()
+            let ltEle: Element = try doc.select("input[name$=\"lt\"]").first()!
+            let ltVal = try ltEle.val()
+            return (lt:ltVal,execution: executeVal)
+        } catch {
+            print("parsing html error")
+        }
+        return nil
+    }
+}

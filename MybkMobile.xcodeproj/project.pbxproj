@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5208F46E29C4111F00A754F1 /* AES256.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F46D29C4111F00A754F1 /* AES256.swift */; };
 		5214923429B4370000A7522B /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214923229B4370000A7522B /* ScheduleViewController.swift */; };
 		52373E9E29B795CB00AA4383 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52373E9D29B795CB00AA4383 /* UIColor.swift */; };
 		52373EA029B79CA700AA4383 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52373E9F29B79CA700AA4383 /* CustomButton.swift */; };
 		5246822829BB67EA00124A6A /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5246822729BB67EA00124A6A /* UICollectionViewCell.swift */; };
 		52486F9929C15AAB004FB208 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52486F9829C15AAB004FB208 /* Constant.swift */; };
-		52486F9B29C1681E004FB208 /* SSO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52486F9A29C1681E004FB208 /* SSO.swift */; };
+		52486F9B29C1681E004FB208 /* Authencation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52486F9A29C1681E004FB208 /* Authencation.swift */; };
 		525A2D6029BFDED300C9887B /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525A2D5E29BFDED300C9887B /* PolicyViewController.swift */; };
 		525A2D6129BFDED300C9887B /* PolicyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525A2D5F29BFDED300C9887B /* PolicyViewController.xib */; };
 		5264423429BE9CE90099F48E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264423329BE9CE90099F48E /* ProfileViewModel.swift */; };
@@ -94,12 +95,13 @@
 		1E3E96EB34776CABB91E6A20 /* Pods-MybkMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MybkMobileTests.release.xcconfig"; path = "Target Support Files/Pods-MybkMobileTests/Pods-MybkMobileTests.release.xcconfig"; sourceTree = "<group>"; };
 		31D63A0A6D89228163808344 /* Pods-MybkMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MybkMobile.release.xcconfig"; path = "Target Support Files/Pods-MybkMobile/Pods-MybkMobile.release.xcconfig"; sourceTree = "<group>"; };
 		47CFEFA3FFB4769F0AD4A206 /* Pods-MybkMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MybkMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-MybkMobileTests/Pods-MybkMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5208F46D29C4111F00A754F1 /* AES256.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AES256.swift; sourceTree = "<group>"; };
 		5214923229B4370000A7522B /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		52373E9D29B795CB00AA4383 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		52373E9F29B79CA700AA4383 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		5246822729BB67EA00124A6A /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 		52486F9829C15AAB004FB208 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		52486F9A29C1681E004FB208 /* SSO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSO.swift; sourceTree = "<group>"; };
+		52486F9A29C1681E004FB208 /* Authencation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authencation.swift; sourceTree = "<group>"; };
 		525A2D5E29BFDED300C9887B /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
 		525A2D5F29BFDED300C9887B /* PolicyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PolicyViewController.xib; sourceTree = "<group>"; };
 		5264423329BE9CE90099F48E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -387,7 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				52486F9829C15AAB004FB208 /* Constant.swift */,
-				52486F9A29C1681E004FB208 /* SSO.swift */,
+				52486F9A29C1681E004FB208 /* Authencation.swift */,
 				526ECB6729C21447006D9B3D /* NetworkAssistant.swift */,
 			);
 			path = NetworkAssistant;
@@ -459,6 +461,7 @@
 				52373E9F29B79CA700AA4383 /* CustomButton.swift */,
 				5246822729BB67EA00124A6A /* UICollectionViewCell.swift */,
 				52BA48E029BD8236006C6CA5 /* UITableView.swift */,
+				5208F46D29C4111F00A754F1 /* AES256.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -819,7 +822,7 @@
 				52C9A26B29AA55AC00F2B8C1 /* NumberCell.swift in Sources */,
 				528958A829AA094E0049EE07 /* TestScheduleBottomView.swift in Sources */,
 				528FF65729A9F11F00C25137 /* Constrain.swift in Sources */,
-				52486F9B29C1681E004FB208 /* SSO.swift in Sources */,
+				52486F9B29C1681E004FB208 /* Authencation.swift in Sources */,
 				52BA48DE29BD6302006C6CA5 /* InfoDetailCell.swift in Sources */,
 				528958B129AA14160049EE07 /* ScoreBottomView.swift in Sources */,
 				52ED1AAE29B3B6ED00DC1429 /* UIViewController.swift in Sources */,
@@ -839,6 +842,7 @@
 				52F1B46B29BBFD470003178D /* ExamViewViewModel.swift in Sources */,
 				52373E9E29B795CB00AA4383 /* UIColor.swift in Sources */,
 				52C9A26129AA43D600F2B8C1 /* UICollectionView.swift in Sources */,
+				5208F46E29C4111F00A754F1 /* AES256.swift in Sources */,
 				528958A229AA036B0049EE07 /* SubjectScheduleCell.swift in Sources */,
 				52A0D00729B46470003B8952 /* ExamViewController.swift in Sources */,
 			);

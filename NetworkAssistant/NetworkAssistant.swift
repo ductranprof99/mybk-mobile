@@ -15,3 +15,26 @@ public func getRequest(url urlString: String, completion: @escaping (Data?,URLRe
         completion(data, response, error)
     }.resume()
 }
+
+
+public func postRequest(url urlString: String,
+                        header requestHeader: [String: String]? = nil,
+                        body bodyComponent:URLComponents? = nil,
+                        completion: @escaping (Result<(Data,HTTPURLResponse), Error>) -> Void) {
+    guard let url = URL(string: urlString) else {
+        return
+    }
+    var request = URLRequest(url: url)
+    request.httpMethod = "POST"
+    request.allHTTPHeaderFields = requestHeader
+    request.httpBody = bodyComponent?.query?.data(using: .utf8)
+    URLSession.shared.dataTask(with: request) { (data, response, error) in
+        if let error = error {
+            completion(.failure(error))
+        } else {
+            guard let data = data,
+                  let response = response as? HTTPURLResponse else { return }
+            completion(.success((data, response)))
+        }
+    }.resume()
+}
