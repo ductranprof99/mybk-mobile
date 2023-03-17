@@ -8,15 +8,15 @@
 import Foundation
 import SwiftSoup
 
-class SSOServiceManager {
+final class SSOServiceManager {
+    
+    static public let shared: SSOServiceManager = .init()
+    
     func login(username: String? = nil,
                password: String? = nil,
                completion: @escaping (SSOState) -> Void) {
-        // check login status first
-        // if save -> is need to update credential
-        // if need update then new
         if let username = username, let password = password {
-            getSSOSession(username: username, password: password) { [weak self] state in
+            SSOLogin(username: username, password: password) { [weak self] state in
                 if case .LOGGED_IN = state {
                     self?.updateCredential(username, password)
                 }
@@ -27,7 +27,7 @@ class SSOServiceManager {
                NSString(string: isSave).boolValue {
                 if let username = EncriptStorageKey.getStorage(with: EncriptStorageKey.username),
                    let password = EncriptStorageKey.getStorage(with: EncriptStorageKey.password) {
-                    getSSOSession(username: username, password: password) { state in
+                    SSOLogin(username: username, password: password) { state in
                         completion(state)
                     }
                 }
@@ -61,7 +61,7 @@ class SSOServiceManager {
         }
     }
     
-    func getSSOSession(username: String,
+    func SSOLogin(username: String,
                        password: String,
                        completion: @escaping (SSOState) -> Void) {
         self.getSSOSession() {
@@ -90,7 +90,7 @@ class SSOServiceManager {
         }
     }
     
-    func clear() {
+    func clearCredential() {
         let clear = EncriptStorageKey.clearStorage(with: EncriptStorageKey.name) &&
                     EncriptStorageKey.clearStorage(with: EncriptStorageKey.faculty) &&
                     EncriptStorageKey.clearStorage(with: EncriptStorageKey.username) &&
@@ -138,14 +138,11 @@ extension SSOServiceManager {
     }
     
     private func getProfileInfo(responseBody: String) {
-        do {
-            var doc: Document = try SwiftSoup.parse(responseBody)
-            var profileBlock = try doc.select("div[class=top-avatar2]").first()?.children()
-            var fullName = try profileBlock?.select("div").first()?.text() ?? ""
-            var faculty = try profileBlock?.select("p").first()?.text() ?? ""
+        if let fullName = HTMLutils.getContentWithFullXpath(of: responseBody, xpath: "div[class=top-avatar2]/div"),
+           let faculty = HTMLutils.getContentWithFullXpath(of: responseBody, xpath: "div[class=top-avatar2]/p") {
             updateProfileStore(fullName, faculty)
-        } catch {
-            print(error.localizedDescription)
+        } else {
+            print("cannot get profile")
         }
     }
     
@@ -165,23 +162,9 @@ extension SSOServiceManager {
                     header: requestHeader,
                     body: requestBodyComponent) { result in
             switch result {
-            case .success((let data,let httpResponse)):
-                guard let htmlString = String(data: data, encoding: .ascii),
-                      let (lt, execution) = self.detachSSOHTMLElement(input: htmlString) else {
-                    completion(.UNKNOWN)
-                    return
-                }
-                if httpResponse.statusCode == 403 {
-                    completion(.TOO_MANY_TRIES)
-                } else if  htmlString.contains(Constant.HTML_WRONG_CREDENTIAL) {
-                    completion(.WRONG_PASSWORD)
-                } else if htmlString.contains(Constant.HTML_LOGIN_SUCCESS) {
-                    completion(.LOGGED_IN)
-                } else if lt != "" || execution != "" {
-                    completion(.UNAUTHORIZED)
-                } else {
-                    completion(.UNKNOWN)
-                }
+            case .success((let data,let response)):
+                let result = self.analizeSSOSession(data: data, response: response)
+                completion(result.status)
             case .failure:
                 completion(.UNKNOWN)
             }
@@ -189,44 +172,34 @@ extension SSOServiceManager {
     }
     
     private func getSSOSession(completion: @escaping ((SSOState, String, String)) -> Void) {
-        getRequest(url: Constant.SSO_URL) { (data,response,error) in
-            if error != nil {
+        getRequestWithResult(url: Constant.SSO_URL) { result in
+            switch result {
+            case .success((let data, let response)):
+                let result = self.analizeSSOSession(data: data, response: response)
+                completion(result)
+            case .failure(_):
                 completion((.NETWORKERROR,"",""))
-            } else {
-                guard let data = data,
-                      let htmlString = String(data: data, encoding: .ascii),
-                      let (lt, execution) = self.detachSSOHTMLElement(input: htmlString) else {
-                    completion((.UNKNOWN,"",""))
-                    return
-                }
-                if let httpResponse = response as? HTTPURLResponse {
-                    if httpResponse.statusCode == 403 {
-                        completion((.TOO_MANY_TRIES,lt,execution))
-                    } else if  htmlString.contains(Constant.HTML_WRONG_CREDENTIAL) {
-                        completion((.WRONG_PASSWORD,lt,execution))
-                    } else if htmlString.contains(Constant.HTML_LOGIN_SUCCESS) {
-                        completion((.LOGGED_IN,lt,execution))
-                    } else if lt != "" || execution != "" {
-                        completion((.UNAUTHORIZED,lt,execution))
-                    } else {
-                        completion((.UNKNOWN,lt,execution))
-                    }
-                }
             }
         }
     }
     
-    private func detachSSOHTMLElement(input str: String) -> (lt:String,execution:String)? {
-        do {
-            let doc: Document = try SwiftSoup.parse(str)
-            let executeEle: Element = try doc.select("input[name$=\"execution\"]").first()!
-            let executeVal = try executeEle.val()
-            let ltEle: Element = try doc.select("input[name$=\"lt\"]").first()!
-            let ltVal = try ltEle.val()
-            return (lt:ltVal,execution: executeVal)
-        } catch {
-            print("parsing html error")
+    private func analizeSSOSession(data: Data, response: URLResponse) -> (status: SSOState, lt: String, execution: String){
+        guard let htmlString = String(data: data, encoding: .ascii),
+              let httpResponse = response as? HTTPURLResponse else {
+            return (.UNKNOWN,"","")
         }
-        return nil
+        let lt = HTMLutils.getValueOf(of: htmlString, element: "input", attribute: ["name": "lt"]) ?? ""
+        let execution = HTMLutils.getValueOf(of: htmlString, element: "input", attribute: ["name": "execution"]) ?? ""
+        if httpResponse.statusCode == 403 {
+            return (.TOO_MANY_TRIES,lt,execution)
+        } else if  htmlString.contains(Constant.HTML_WRONG_CREDENTIAL) {
+            return (.WRONG_PASSWORD,lt,execution)
+        } else if htmlString.contains(Constant.HTML_LOGIN_SUCCESS) {
+            return (.LOGGED_IN,lt,execution)
+        } else if lt != "" || execution != "" {
+            return (.UNAUTHORIZED,lt,execution)
+        } else {
+            return (.UNKNOWN,lt,execution)
+        }
     }
 }

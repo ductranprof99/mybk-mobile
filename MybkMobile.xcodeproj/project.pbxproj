@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5208F46E29C4111F00A754F1 /* AES256.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F46D29C4111F00A754F1 /* AES256.swift */; };
+		5208F47029C417D400A754F1 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F46F29C417D400A754F1 /* Storage.swift */; };
+		5208F47229C43D6900A754F1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F47129C43D6900A754F1 /* LoginViewModel.swift */; };
+		5208F47429C477D600A754F1 /* HTMLutils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F47329C477D600A754F1 /* HTMLutils.swift */; };
 		5214923429B4370000A7522B /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214923229B4370000A7522B /* ScheduleViewController.swift */; };
 		52373E9E29B795CB00AA4383 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52373E9D29B795CB00AA4383 /* UIColor.swift */; };
 		52373EA029B79CA700AA4383 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52373E9F29B79CA700AA4383 /* CustomButton.swift */; };
@@ -96,6 +99,9 @@
 		31D63A0A6D89228163808344 /* Pods-MybkMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MybkMobile.release.xcconfig"; path = "Target Support Files/Pods-MybkMobile/Pods-MybkMobile.release.xcconfig"; sourceTree = "<group>"; };
 		47CFEFA3FFB4769F0AD4A206 /* Pods-MybkMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MybkMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-MybkMobileTests/Pods-MybkMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5208F46D29C4111F00A754F1 /* AES256.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AES256.swift; sourceTree = "<group>"; };
+		5208F46F29C417D400A754F1 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		5208F47129C43D6900A754F1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		5208F47329C477D600A754F1 /* HTMLutils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLutils.swift; sourceTree = "<group>"; };
 		5214923229B4370000A7522B /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		52373E9D29B795CB00AA4383 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		52373E9F29B79CA700AA4383 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -307,7 +313,7 @@
 		528FF60529A9E13E00C25137 = {
 			isa = PBXGroup;
 			children = (
-				528FF64329A9E20000C25137 /* NetworkAssistant */,
+				528FF64329A9E20000C25137 /* Assistant */,
 				528958AC29AA13120049EE07 /* Models */,
 				528FF65529A9F11000C25137 /* Utils */,
 				528FF64829A9E2BD00C25137 /* SubUIComponent */,
@@ -385,14 +391,15 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		528FF64329A9E20000C25137 /* NetworkAssistant */ = {
+		528FF64329A9E20000C25137 /* Assistant */ = {
 			isa = PBXGroup;
 			children = (
 				52486F9829C15AAB004FB208 /* Constant.swift */,
 				52486F9A29C1681E004FB208 /* Authencation.swift */,
 				526ECB6729C21447006D9B3D /* NetworkAssistant.swift */,
+				5208F46F29C417D400A754F1 /* Storage.swift */,
 			);
-			path = NetworkAssistant;
+			path = Assistant;
 			sourceTree = "<group>";
 		};
 		528FF64429A9E24C00C25137 /* TextField */ = {
@@ -462,6 +469,7 @@
 				5246822729BB67EA00124A6A /* UICollectionViewCell.swift */,
 				52BA48E029BD8236006C6CA5 /* UITableView.swift */,
 				5208F46D29C4111F00A754F1 /* AES256.swift */,
+				5208F47329C477D600A754F1 /* HTMLutils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -514,6 +522,7 @@
 			children = (
 				52ED1AA929B3B6B800DC1429 /* LoginViewController.swift */,
 				52ED1AAA29B3B6B800DC1429 /* LoginViewController.xib */,
+				5208F47129C43D6900A754F1 /* LoginViewModel.swift */,
 			);
 			path = LoginViewController;
 			sourceTree = "<group>";
@@ -801,6 +810,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5208F47229C43D6900A754F1 /* LoginViewModel.swift in Sources */,
 				52ED1AAB29B3B6B800DC1429 /* LoginViewController.swift in Sources */,
 				52C9A25F29AA434D00F2B8C1 /* UIView.swift in Sources */,
 				5246822829BB67EA00124A6A /* UICollectionViewCell.swift in Sources */,
@@ -815,6 +825,8 @@
 				5287970C29C065F5000BA20F /* DetailSubjectViewModel.swift in Sources */,
 				52BA48D129BCB283006C6CA5 /* TranscriptViewModel.swift in Sources */,
 				52C9A27029AA567300F2B8C1 /* CustomThumbView.swift in Sources */,
+				5208F47429C477D600A754F1 /* HTMLutils.swift in Sources */,
+				5208F47029C417D400A754F1 /* Storage.swift in Sources */,
 				525A2D6029BFDED300C9887B /* PolicyViewController.swift in Sources */,
 				52C9A27629AACDF900F2B8C1 /* CustomTextField.swift in Sources */,
 				5214923429B4370000A7522B /* ScheduleViewController.swift in Sources */,

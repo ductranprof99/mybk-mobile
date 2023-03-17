@@ -16,11 +16,27 @@ public func getRequest(url urlString: String, completion: @escaping (Data?,URLRe
     }.resume()
 }
 
+public func getRequestWithResult(url urlString: String,
+                       completion: @escaping (Result<(Data,URLResponse), Error>) -> Void) {
+    guard let url = URL(string: urlString) else {
+        return
+    }
+    URLSession.shared.dataTask(with: url) { (data,response,error) in
+        if let error = error {
+            completion(.failure(error))
+        } else {
+            if let data = data,
+               let response = response{
+                completion(.success((data,response)))
+            }
+        }
+    }.resume()
+}
 
 public func postRequest(url urlString: String,
                         header requestHeader: [String: String]? = nil,
                         body bodyComponent:URLComponents? = nil,
-                        completion: @escaping (Result<(Data,HTTPURLResponse), Error>) -> Void) {
+                        completion: @escaping (Result<(Data,URLResponse), Error>) -> Void) {
     guard let url = URL(string: urlString) else {
         return
     }
@@ -33,7 +49,7 @@ public func postRequest(url urlString: String,
             completion(.failure(error))
         } else {
             guard let data = data,
-                  let response = response as? HTTPURLResponse else { return }
+                  let response = response else { return }
             completion(.success((data, response)))
         }
     }.resume()

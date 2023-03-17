@@ -1,41 +1,12 @@
 //
-//  Constant.swift
+//  Storage.swift
 //  MybkMobile
 //
-//  Created by DucTran on 15/03/2023.
+//  Created by DucTran on 17/03/2023.
 //
 
 import Foundation
-import CommonCrypto
 import UIKit
-
-struct Constant {
-    static let SSO_MYBK_REDIRECT_URL =
-    "https://sso.hcmut.edu.vn/cas/login?service=http%3A%2F%2Fmybk.hcmut.edu.vn%2Fstinfo%2F"
-    static let SSO_URL =
-    "https://sso.hcmut.edu.vn/cas/login"
-    static let HTML_LOGIN_SUCCESS = "<h2>Log In Successful</h2>"
-    static let HTML_WRONG_CREDENTIAL =
-    "The credentials you provided cannot be determined to be authentic"
-    static let STINFO_URL =
-    "https://mybk.hcmut.edu.vn/stinfo/"
-}
-
-enum SSOState: String, Error {
-    case UNAUTHORIZED
-    case NO_CREDENTIALS
-    case LOGGED_IN
-    case WRONG_PASSWORD
-    case TOO_MANY_TRIES
-    case UNKNOWN
-    case NETWORKERROR
-}
-
-enum MybkState {
-    case LOGGED_IN
-    case SSO_REQUIRED
-    case UNKNOWN
-}
 
 class EncriptStorageKey {
     static let username = "key.username"
@@ -62,4 +33,3 @@ class EncriptStorageKey {
         return decryptedData
     }
 }
-

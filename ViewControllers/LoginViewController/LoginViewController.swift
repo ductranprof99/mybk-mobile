@@ -9,7 +9,6 @@ import UIKit
 
 final class LoginViewController: UIViewController {
     
-    
     @IBOutlet weak var usernameViewContainer: UIView!
     
     @IBOutlet weak var passwordViewContainer: UIView!
@@ -17,13 +16,30 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var policyLabel: UILabel!
     
     @IBAction func signUpHandler(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "MainTabBarController", bundle: nil)
-        let tabbarVC = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
-        self.navigationController?.pushViewController(tabbarVC, animated: false)
+        if let userNameField = userNameField,
+           let passwordField = passwordField {
+            viewModel.login(username: userNameField.text,
+                            password: passwordField.text) {
+                if $0 {
+                    DispatchQueue.main.async {
+                        self.navigateToMainScreen()
+                    }
+                } else {
+                    print("not granted")
+                }
+            }
+        }
     }
     
     @objc func navigateToPolicy() {
-        
+        let vc = PolicyViewController.loadFromNib()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func navigateToMainScreen() {
+        let storyboard = UIStoryboard(name: "MainTabBarController", bundle: nil)
+        let tabbarVC = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
+        self.navigationController?.pushViewController(tabbarVC, animated: false)
     }
     
     override func viewDidLoad() {
@@ -32,7 +48,11 @@ final class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         setupViewContent()
     }
-
+    
+    let viewModel = LoginViewModel()
+    
+    var userNameField: CustomTextField?
+    var passwordField: CustomTextField?
 
     private func setupViewContent() {
         let userNameTextField = CustomTextField(frame: usernameViewContainer.bounds)
@@ -69,6 +89,8 @@ final class LoginViewController: UIViewController {
         let gestureRecognizer = UIGestureRecognizer(target: self, action: #selector(navigateToPolicy))
         
         policyLabel.addGestureRecognizer(gestureRecognizer)
+        userNameField = userNameTextField
+        passwordField = passwordTextField
     }
     
 }
