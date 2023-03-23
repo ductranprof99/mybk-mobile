@@ -15,6 +15,7 @@ class EncriptStorageKey {
     static let faculty  = "key.faculty"
     static let isSaveData  = "key.saveData"
     static let encryptionKey = "mySecretEncryptionKey"
+    static let mybkToken = "key.mybkToken"
     
     static func updateStorage(with key: String, value: String) -> Bool{
         let encryptedData = value.aesDecrypt(key: UUID().uuidString, iv: UIDevice.current.identifierForVendor!.uuidString)

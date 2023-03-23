@@ -43,8 +43,11 @@ final class SSOServiceManager {
                 print(error.localizedDescription)
             } else {
                 guard let response = response as? HTTPURLResponse else { return }
-                if response.statusCode == 302 {
-                    let location = response.allHeaderFields["location"] as? String
+                
+                // android need this to check , but not for ios
+                /*
+                 if response.statusCode == 302 {
+                    let location = response.allHeaderFields["Location"] as? String
                     var comps = URLComponents(string: location ?? "")
                     comps?.scheme = "https"
                     getRequest(url: comps?.string ?? "") {
@@ -53,6 +56,12 @@ final class SSOServiceManager {
                                 completion($0, $1)
                             }
                         }
+                    }
+                 }
+                 */
+                if response.statusCode == 200 {
+                    self.getStinfoToken {
+                        completion($0, $1)
                     }
                 } else {
                     completion(nil,.SSO_REQUIRED)
