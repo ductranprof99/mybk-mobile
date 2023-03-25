@@ -7,6 +7,8 @@ target 'MybkMobile' do
 
   # Pods for MybkMobile
   pod 'SwiftSoup'
+  pod 'CryptoSwift'
+  
   target 'MybkMobileTests' do
     inherit! :search_paths
     # Pods for testing

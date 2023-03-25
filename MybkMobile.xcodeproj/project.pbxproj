@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5208F46E29C4111F00A754F1 /* AES256.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F46D29C4111F00A754F1 /* AES256.swift */; };
 		5208F47029C417D400A754F1 /* EncryptStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F46F29C417D400A754F1 /* EncryptStorage.swift */; };
 		5208F47229C43D6900A754F1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F47129C43D6900A754F1 /* LoginViewModel.swift */; };
 		5208F47429C477D600A754F1 /* HTMLutils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F47329C477D600A754F1 /* HTMLutils.swift */; };
@@ -108,7 +107,6 @@
 		1E3E96EB34776CABB91E6A20 /* Pods-MybkMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MybkMobileTests.release.xcconfig"; path = "Target Support Files/Pods-MybkMobileTests/Pods-MybkMobileTests.release.xcconfig"; sourceTree = "<group>"; };
 		31D63A0A6D89228163808344 /* Pods-MybkMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MybkMobile.release.xcconfig"; path = "Target Support Files/Pods-MybkMobile/Pods-MybkMobile.release.xcconfig"; sourceTree = "<group>"; };
 		47CFEFA3FFB4769F0AD4A206 /* Pods-MybkMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MybkMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-MybkMobileTests/Pods-MybkMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5208F46D29C4111F00A754F1 /* AES256.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AES256.swift; sourceTree = "<group>"; };
 		5208F46F29C417D400A754F1 /* EncryptStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptStorage.swift; sourceTree = "<group>"; };
 		5208F47129C43D6900A754F1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		5208F47329C477D600A754F1 /* HTMLutils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLutils.swift; sourceTree = "<group>"; };
@@ -421,7 +419,6 @@
 				528FF65529A9F11000C25137 /* Utils */,
 				52486F9829C15AAB004FB208 /* Constant.swift */,
 				526ECB6729C21447006D9B3D /* NetworkAssistant.swift */,
-				5208F46F29C417D400A754F1 /* EncryptStorage.swift */,
 			);
 			path = Assistant;
 			sourceTree = "<group>";
@@ -484,6 +481,7 @@
 		528FF65529A9F11000C25137 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5208F46F29C417D400A754F1 /* EncryptStorage.swift */,
 				528FF65629A9F11F00C25137 /* Constrain.swift */,
 				52C9A25E29AA434D00F2B8C1 /* UIView.swift */,
 				52C9A26029AA43D600F2B8C1 /* UICollectionView.swift */,
@@ -492,7 +490,6 @@
 				52373E9F29B79CA700AA4383 /* CustomButton.swift */,
 				5246822729BB67EA00124A6A /* UICollectionViewCell.swift */,
 				52BA48E029BD8236006C6CA5 /* UITableView.swift */,
-				5208F46D29C4111F00A754F1 /* AES256.swift */,
 				5208F47329C477D600A754F1 /* HTMLutils.swift */,
 			);
 			path = Utils;
@@ -933,7 +930,6 @@
 				52F1B46B29BBFD470003178D /* ExamViewViewModel.swift in Sources */,
 				52373E9E29B795CB00AA4383 /* UIColor.swift in Sources */,
 				52C9A26129AA43D600F2B8C1 /* UICollectionView.swift in Sources */,
-				5208F46E29C4111F00A754F1 /* AES256.swift in Sources */,
 				528958A229AA036B0049EE07 /* SubjectScheduleCell.swift in Sources */,
 				52A47E9129CDF51C00CD07D1 /* SemeterExamModel.swift in Sources */,
 				52A0D00729B46470003B8952 /* ExamViewController.swift in Sources */,

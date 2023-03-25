@@ -22,7 +22,7 @@ final class DetailSubjectViewModel {
                                         "Số tín chỉ học phần": data.creditPerSemeter,
                                         "Học kỳ": data.semeter,
                                         "Tuần học": data.schedule]
-        var i = 0
+        let i = 0
         if index < 0 || index > combineData.count {
             return nil
         }

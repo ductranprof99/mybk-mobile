@@ -23,7 +23,7 @@ final class ScheduleViewModel {
     
     public func getListSemeter() {
         // call api here
-        if let mybkToken = EncriptStorageKey.getStorage(with: EncriptStorageKey.mybkToken) {
+        if let mybkToken = EncriptStorageKey.getStorage(with: Constant.EncryptKey.mybkToken) {
             RemoteSchedule.shared.getSchedules(token: mybkToken) { [weak self] result in
                 switch result {
                 case .success(let listSched):

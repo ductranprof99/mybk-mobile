@@ -23,10 +23,10 @@ final class SSOServiceManager {
                 completion(state)
             }
         } else {
-            if let isSave = EncriptStorageKey.getStorage(with: EncriptStorageKey.isSaveData),
+            if let isSave = EncriptStorageKey.getStorage(with: Constant.EncryptKey.isSaveData),
                NSString(string: isSave).boolValue {
-                if let username = EncriptStorageKey.getStorage(with: EncriptStorageKey.username),
-                   let password = EncriptStorageKey.getStorage(with: EncriptStorageKey.password) {
+                if let username = EncriptStorageKey.getStorage(with: Constant.EncryptKey.username),
+                   let password = EncriptStorageKey.getStorage(with: Constant.EncryptKey.password) {
                     SSOLogin(username: username, password: password) { state in
                         completion(state)
                     }
@@ -91,8 +91,8 @@ final class SSOServiceManager {
 
     func updateCredential(_ username: String, _ password: String) {
         let encrt =
-        EncriptStorageKey.updateStorage(with: EncriptStorageKey.username, value: username) &&
-        EncriptStorageKey.updateStorage(with: EncriptStorageKey.password, value: password)
+        EncriptStorageKey.updateStorage(with: Constant.EncryptKey.username, value: username) &&
+        EncriptStorageKey.updateStorage(with: Constant.EncryptKey.password, value: password)
         if encrt {
             print("success save user and password")
         } else {
@@ -101,10 +101,10 @@ final class SSOServiceManager {
     }
     
     func clearCredential() {
-        let clear = EncriptStorageKey.clearStorage(with: EncriptStorageKey.name) &&
-                    EncriptStorageKey.clearStorage(with: EncriptStorageKey.faculty) &&
-                    EncriptStorageKey.clearStorage(with: EncriptStorageKey.username) &&
-                    EncriptStorageKey.clearStorage(with: EncriptStorageKey.password)
+        let clear = EncriptStorageKey.clearStorage(with: Constant.EncryptKey.name) &&
+                    EncriptStorageKey.clearStorage(with: Constant.EncryptKey.faculty) &&
+                    EncriptStorageKey.clearStorage(with: Constant.EncryptKey.username) &&
+                    EncriptStorageKey.clearStorage(with: Constant.EncryptKey.password)
         if clear {
             print("success clear all save data")
         } else {
@@ -113,8 +113,8 @@ final class SSOServiceManager {
     }
     
     func updateProfileStore(_ fullName: String, _ faculty: String) {
-        let encrt = EncriptStorageKey.updateStorage(with: EncriptStorageKey.name, value: fullName) &&
-                    EncriptStorageKey.updateStorage(with: EncriptStorageKey.faculty, value: faculty)
+        let encrt = EncriptStorageKey.updateStorage(with: Constant.EncryptKey.name, value: fullName) &&
+                    EncriptStorageKey.updateStorage(with: Constant.EncryptKey.faculty, value: faculty)
         if encrt {
             print("success save fullname and faculty")
         } else {

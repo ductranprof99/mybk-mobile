@@ -50,7 +50,7 @@ extension DetailSubjectViewController: UITableViewDelegate, UITableViewDataSourc
             }
             return cell ?? UITableViewCell()
         } else if let schedule = cellData.info as? [String] {
-            let cell = tableView.dequeueReusableCell(of: InfoDetailCell.self, for: indexPath) { cell in
+            _ = tableView.dequeueReusableCell(of: InfoDetailCell.self, for: indexPath) { cell in
                 cell.setContent(title: cellData.title ,schedule: schedule)
             }
         }

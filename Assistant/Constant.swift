@@ -17,6 +17,15 @@ struct Constant {
     "The credentials you provided cannot be determined to be authentic"
     static let STINFO_URL =
     "https://mybk.hcmut.edu.vn/stinfo/"
+    
+    struct EncryptKey {
+        static let username = "key.username"
+        static let password = "key.password"
+        static let name  = "key.name"
+        static let faculty  = "key.faculty"
+        static let isSaveData  = "key.saveData"
+        static let mybkToken = "key.mybkToken"
+    }
 }
 
 enum SSOState: String, Error {

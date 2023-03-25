@@ -26,7 +26,7 @@ final class LoginViewModel {
             switch state {
             case .LOGGED_IN:
                 if let token = str {
-                    if EncriptStorageKey.updateStorage(with: EncriptStorageKey.mybkToken, value: token) {
+                    if EncriptStorageKey.updateStorage(with: Constant.EncryptKey.mybkToken, value: token) {
                         completion(true)
                     }
                 } else {
