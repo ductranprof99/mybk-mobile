@@ -14,7 +14,6 @@ final class LoginViewModel {
             if case .LOGGED_IN = state {
                 self.mybkToken {
                     completion($0)
-                    print($1)
                 }
             } else {
                 completion(false)
@@ -22,17 +21,19 @@ final class LoginViewModel {
         }
     }
     
-    func mybkToken(completion: @escaping (Bool, String) -> Void) {
+    func mybkToken(completion: @escaping (Bool) -> Void) {
         SSOServiceManager.shared.getMyBKToken { (str, state) in
             switch state {
             case .LOGGED_IN:
                 if let token = str {
-                    completion(true, token)
+                    if EncriptStorageKey.updateStorage(with: EncriptStorageKey.mybkToken, value: token) {
+                        completion(true)
+                    }
                 } else {
-                    completion(false, "")
+                    completion(false)
                 }
             default:
-                completion(false, "")
+                completion(false)
             }
         }
     }

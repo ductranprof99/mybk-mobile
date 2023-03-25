@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5208F46E29C4111F00A754F1 /* AES256.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F46D29C4111F00A754F1 /* AES256.swift */; };
-		5208F47029C417D400A754F1 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F46F29C417D400A754F1 /* Storage.swift */; };
+		5208F47029C417D400A754F1 /* EncryptStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F46F29C417D400A754F1 /* EncryptStorage.swift */; };
 		5208F47229C43D6900A754F1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F47129C43D6900A754F1 /* LoginViewModel.swift */; };
 		5208F47429C477D600A754F1 /* HTMLutils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F47329C477D600A754F1 /* HTMLutils.swift */; };
 		5214923429B4370000A7522B /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214923229B4370000A7522B /* ScheduleViewController.swift */; };
@@ -45,6 +45,15 @@
 		52A0D00929B46C60003B8952 /* TranscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0D00829B46C60003B8952 /* TranscriptViewController.swift */; };
 		52A0D00B29B47002003B8952 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0D00A29B47002003B8952 /* ProfileViewController.swift */; };
 		52A0D00D29B48E5C003B8952 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0D00C29B48E5C003B8952 /* MainTabBarController.swift */; };
+		52A47E8729CDEF7500CD07D1 /* CourseGradeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E8629CDEF7500CD07D1 /* CourseGradeModel.swift */; };
+		52A47E8929CDF08F00CD07D1 /* SemeterGradeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E8829CDF08F00CD07D1 /* SemeterGradeModel.swift */; };
+		52A47E8B29CDF14700CD07D1 /* CourseScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E8A29CDF14700CD07D1 /* CourseScheduleModel.swift */; };
+		52A47E8D29CDF25800CD07D1 /* SemeterScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E8C29CDF25800CD07D1 /* SemeterScheduleModel.swift */; };
+		52A47E8F29CDF2D600CD07D1 /* CourseExamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E8E29CDF2D600CD07D1 /* CourseExamModel.swift */; };
+		52A47E9129CDF51C00CD07D1 /* SemeterExamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E9029CDF51C00CD07D1 /* SemeterExamModel.swift */; };
+		52A47E9529CE75EB00CD07D1 /* RemoteExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E9429CE75EB00CD07D1 /* RemoteExam.swift */; };
+		52A47E9729CE765600CD07D1 /* RemoteGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E9629CE765600CD07D1 /* RemoteGrade.swift */; };
+		52A47E9929CE766900CD07D1 /* RemoteSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E9829CE766900CD07D1 /* RemoteSchedule.swift */; };
 		52BA48D129BCB283006C6CA5 /* TranscriptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA48D029BCB283006C6CA5 /* TranscriptViewModel.swift */; };
 		52BA48D329BCB455006C6CA5 /* TranscriptAdditionalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA48D229BCB455006C6CA5 /* TranscriptAdditionalModel.swift */; };
 		52BA48D729BD5DF9006C6CA5 /* TranscriptCollectionViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA48D529BD5DF9006C6CA5 /* TranscriptCollectionViewHeaderCell.swift */; };
@@ -72,6 +81,7 @@
 		52ED1AAE29B3B6ED00DC1429 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED1AAD29B3B6ED00DC1429 /* UIViewController.swift */; };
 		52F064EE29BA29B500D07D72 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F064ED29BA29B500D07D72 /* ScheduleViewModel.swift */; };
 		52F1B46B29BBFD470003178D /* ExamViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F1B46A29BBFD470003178D /* ExamViewViewModel.swift */; };
+		52FAA94929CCAD8700228ACC /* Storaged.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA94729CCAD8700228ACC /* Storaged.xcdatamodeld */; };
 		5DF5BD7634AD8E745E862F34 /* Pods_MybkMobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6C01F0768372E7B50A67FC /* Pods_MybkMobileTests.framework */; };
 		CA15242B7EB444CB53E44562 /* Pods_MybkMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA51BFDC10F73C0CE4F58E58 /* Pods_MybkMobile.framework */; };
 		F0C344E22D0A423B6A126EDE /* Pods_MybkMobile_MybkMobileUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 832C92A93C35177F4D677D13 /* Pods_MybkMobile_MybkMobileUITests.framework */; };
@@ -99,7 +109,7 @@
 		31D63A0A6D89228163808344 /* Pods-MybkMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MybkMobile.release.xcconfig"; path = "Target Support Files/Pods-MybkMobile/Pods-MybkMobile.release.xcconfig"; sourceTree = "<group>"; };
 		47CFEFA3FFB4769F0AD4A206 /* Pods-MybkMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MybkMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-MybkMobileTests/Pods-MybkMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5208F46D29C4111F00A754F1 /* AES256.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AES256.swift; sourceTree = "<group>"; };
-		5208F46F29C417D400A754F1 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		5208F46F29C417D400A754F1 /* EncryptStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptStorage.swift; sourceTree = "<group>"; };
 		5208F47129C43D6900A754F1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		5208F47329C477D600A754F1 /* HTMLutils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLutils.swift; sourceTree = "<group>"; };
 		5214923229B4370000A7522B /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +150,15 @@
 		52A0D00829B46C60003B8952 /* TranscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptViewController.swift; sourceTree = "<group>"; };
 		52A0D00A29B47002003B8952 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		52A0D00C29B48E5C003B8952 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		52A47E8629CDEF7500CD07D1 /* CourseGradeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseGradeModel.swift; sourceTree = "<group>"; };
+		52A47E8829CDF08F00CD07D1 /* SemeterGradeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemeterGradeModel.swift; sourceTree = "<group>"; };
+		52A47E8A29CDF14700CD07D1 /* CourseScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseScheduleModel.swift; sourceTree = "<group>"; };
+		52A47E8C29CDF25800CD07D1 /* SemeterScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemeterScheduleModel.swift; sourceTree = "<group>"; };
+		52A47E8E29CDF2D600CD07D1 /* CourseExamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseExamModel.swift; sourceTree = "<group>"; };
+		52A47E9029CDF51C00CD07D1 /* SemeterExamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemeterExamModel.swift; sourceTree = "<group>"; };
+		52A47E9429CE75EB00CD07D1 /* RemoteExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteExam.swift; sourceTree = "<group>"; };
+		52A47E9629CE765600CD07D1 /* RemoteGrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGrade.swift; sourceTree = "<group>"; };
+		52A47E9829CE766900CD07D1 /* RemoteSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteSchedule.swift; sourceTree = "<group>"; };
 		52BA48D029BCB283006C6CA5 /* TranscriptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptViewModel.swift; sourceTree = "<group>"; };
 		52BA48D229BCB455006C6CA5 /* TranscriptAdditionalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptAdditionalModel.swift; sourceTree = "<group>"; };
 		52BA48D529BD5DF9006C6CA5 /* TranscriptCollectionViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptCollectionViewHeaderCell.swift; sourceTree = "<group>"; };
@@ -167,6 +186,7 @@
 		52ED1AAD29B3B6ED00DC1429 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		52F064ED29BA29B500D07D72 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
 		52F1B46A29BBFD470003178D /* ExamViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamViewViewModel.swift; sourceTree = "<group>"; };
+		52FAA94829CCAD8700228ACC /* Storaged.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Storaged.xcdatamodel; sourceTree = "<group>"; };
 		5C6C01F0768372E7B50A67FC /* Pods_MybkMobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MybkMobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60239DFB59761D57A4B0C39F /* Pods-MybkMobile-MybkMobileUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MybkMobile-MybkMobileUITests.debug.xcconfig"; path = "Target Support Files/Pods-MybkMobile-MybkMobileUITests/Pods-MybkMobile-MybkMobileUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		832C92A93C35177F4D677D13 /* Pods_MybkMobile_MybkMobileUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MybkMobile_MybkMobileUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -294,6 +314,9 @@
 		528958AC29AA13120049EE07 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				52A47E8529CDEF5600CD07D1 /* schedule */,
+				52A47E8429CDEF2C00CD07D1 /* grade */,
+				52A47E8329CDEF1A00CD07D1 /* exam */,
 				52C9A26229AA480C00F2B8C1 /* SubjectCellModel.swift */,
 				52BA48D229BCB455006C6CA5 /* TranscriptAdditionalModel.swift */,
 				5287970D29C06A0A000BA20F /* SubjectModel.swift */,
@@ -313,9 +336,9 @@
 		528FF60529A9E13E00C25137 = {
 			isa = PBXGroup;
 			children = (
+				52A47E9329CE75C400CD07D1 /* MyBKNetwork+CoursesData */,
 				528FF64329A9E20000C25137 /* Assistant */,
 				528958AC29AA13120049EE07 /* Models */,
-				528FF65529A9F11000C25137 /* Utils */,
 				528FF64829A9E2BD00C25137 /* SubUIComponent */,
 				528FF64229A9E1F100C25137 /* ViewControllers */,
 				528FF64129A9E14800C25137 /* UIComponents */,
@@ -346,6 +369,7 @@
 				528FF61A29A9E13F00C25137 /* Assets.xcassets */,
 				528FF61C29A9E13F00C25137 /* LaunchScreen.storyboard */,
 				528FF61F29A9E13F00C25137 /* Info.plist */,
+				52FAA94729CCAD8700228ACC /* Storaged.xcdatamodeld */,
 			);
 			path = MybkMobile;
 			sourceTree = "<group>";
@@ -394,10 +418,10 @@
 		528FF64329A9E20000C25137 /* Assistant */ = {
 			isa = PBXGroup;
 			children = (
+				528FF65529A9F11000C25137 /* Utils */,
 				52486F9829C15AAB004FB208 /* Constant.swift */,
-				52486F9A29C1681E004FB208 /* Authencation.swift */,
 				526ECB6729C21447006D9B3D /* NetworkAssistant.swift */,
-				5208F46F29C417D400A754F1 /* Storage.swift */,
+				5208F46F29C417D400A754F1 /* EncryptStorage.swift */,
 			);
 			path = Assistant;
 			sourceTree = "<group>";
@@ -481,6 +505,52 @@
 				52F064ED29BA29B500D07D72 /* ScheduleViewModel.swift */,
 			);
 			path = ScheduleView;
+			sourceTree = "<group>";
+		};
+		52A47E8329CDEF1A00CD07D1 /* exam */ = {
+			isa = PBXGroup;
+			children = (
+				52A47E8E29CDF2D600CD07D1 /* CourseExamModel.swift */,
+				52A47E9029CDF51C00CD07D1 /* SemeterExamModel.swift */,
+			);
+			path = exam;
+			sourceTree = "<group>";
+		};
+		52A47E8429CDEF2C00CD07D1 /* grade */ = {
+			isa = PBXGroup;
+			children = (
+				52A47E8629CDEF7500CD07D1 /* CourseGradeModel.swift */,
+				52A47E8829CDF08F00CD07D1 /* SemeterGradeModel.swift */,
+			);
+			path = grade;
+			sourceTree = "<group>";
+		};
+		52A47E8529CDEF5600CD07D1 /* schedule */ = {
+			isa = PBXGroup;
+			children = (
+				52A47E8A29CDF14700CD07D1 /* CourseScheduleModel.swift */,
+				52A47E8C29CDF25800CD07D1 /* SemeterScheduleModel.swift */,
+			);
+			path = schedule;
+			sourceTree = "<group>";
+		};
+		52A47E9229CE759500CD07D1 /* RemoteCourseFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				52A47E9429CE75EB00CD07D1 /* RemoteExam.swift */,
+				52A47E9629CE765600CD07D1 /* RemoteGrade.swift */,
+				52A47E9829CE766900CD07D1 /* RemoteSchedule.swift */,
+			);
+			path = RemoteCourseFetcher;
+			sourceTree = "<group>";
+		};
+		52A47E9329CE75C400CD07D1 /* MyBKNetwork+CoursesData */ = {
+			isa = PBXGroup;
+			children = (
+				52486F9A29C1681E004FB208 /* Authencation.swift */,
+				52A47E9229CE759500CD07D1 /* RemoteCourseFetcher */,
+			);
+			path = "MyBKNetwork+CoursesData";
 			sourceTree = "<group>";
 		};
 		52BA48CF29BCB26C006C6CA5 /* Transcript */ = {
@@ -810,28 +880,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52A47E8D29CDF25800CD07D1 /* SemeterScheduleModel.swift in Sources */,
+				52A47E9929CE766900CD07D1 /* RemoteSchedule.swift in Sources */,
 				5208F47229C43D6900A754F1 /* LoginViewModel.swift in Sources */,
 				52ED1AAB29B3B6B800DC1429 /* LoginViewController.swift in Sources */,
 				52C9A25F29AA434D00F2B8C1 /* UIView.swift in Sources */,
 				5246822829BB67EA00124A6A /* UICollectionViewCell.swift in Sources */,
 				528FF61229A9E13E00C25137 /* AppDelegate.swift in Sources */,
 				52373EA029B79CA700AA4383 /* CustomButton.swift in Sources */,
+				52FAA94929CCAD8700228ACC /* Storaged.xcdatamodeld in Sources */,
 				52C9A26729AA559400F2B8C1 /* DotCell.swift in Sources */,
 				5287970E29C06A0A000BA20F /* SubjectModel.swift in Sources */,
 				52C9A26329AA480C00F2B8C1 /* SubjectCellModel.swift in Sources */,
 				52BA48E729BDC719006C6CA5 /* TranscriptCollectionViewFooterCell.swift in Sources */,
+				52A47E9529CE75EB00CD07D1 /* RemoteExam.swift in Sources */,
+				52A47E8729CDEF7500CD07D1 /* CourseGradeModel.swift in Sources */,
 				52F064EE29BA29B500D07D72 /* ScheduleViewModel.swift in Sources */,
 				52BA48E429BDC5FE006C6CA5 /* SpecialScoreViewCell.swift in Sources */,
 				5287970C29C065F5000BA20F /* DetailSubjectViewModel.swift in Sources */,
 				52BA48D129BCB283006C6CA5 /* TranscriptViewModel.swift in Sources */,
 				52C9A27029AA567300F2B8C1 /* CustomThumbView.swift in Sources */,
 				5208F47429C477D600A754F1 /* HTMLutils.swift in Sources */,
-				5208F47029C417D400A754F1 /* Storage.swift in Sources */,
+				5208F47029C417D400A754F1 /* EncryptStorage.swift in Sources */,
 				525A2D6029BFDED300C9887B /* PolicyViewController.swift in Sources */,
 				52C9A27629AACDF900F2B8C1 /* CustomTextField.swift in Sources */,
+				52A47E8F29CDF2D600CD07D1 /* CourseExamModel.swift in Sources */,
 				5214923429B4370000A7522B /* ScheduleViewController.swift in Sources */,
 				52A0D00929B46C60003B8952 /* TranscriptViewController.swift in Sources */,
 				52C9A26B29AA55AC00F2B8C1 /* NumberCell.swift in Sources */,
+				52A47E9729CE765600CD07D1 /* RemoteGrade.swift in Sources */,
 				528958A829AA094E0049EE07 /* TestScheduleBottomView.swift in Sources */,
 				528FF65729A9F11F00C25137 /* Constrain.swift in Sources */,
 				52486F9B29C1681E004FB208 /* Authencation.swift in Sources */,
@@ -841,10 +918,12 @@
 				5287970929C0633E000BA20F /* DetailSubjectViewController.swift in Sources */,
 				52A0D00B29B47002003B8952 /* ProfileViewController.swift in Sources */,
 				528FF65329A9EF8B00C25137 /* BottomBarItem.swift in Sources */,
+				52A47E8B29CDF14700CD07D1 /* CourseScheduleModel.swift in Sources */,
 				52C9A25D29AA3DA700F2B8C1 /* LearnScheduleBottomView.swift in Sources */,
 				52BA48D729BD5DF9006C6CA5 /* TranscriptCollectionViewHeaderCell.swift in Sources */,
 				52ED1AA629B3B55800DC1429 /* SceneDelegate.swift in Sources */,
 				5264423429BE9CE90099F48E /* ProfileViewModel.swift in Sources */,
+				52A47E8929CDF08F00CD07D1 /* SemeterGradeModel.swift in Sources */,
 				526ECB6829C21447006D9B3D /* NetworkAssistant.swift in Sources */,
 				52486F9929C15AAB004FB208 /* Constant.swift in Sources */,
 				52BA48D329BCB455006C6CA5 /* TranscriptAdditionalModel.swift in Sources */,
@@ -856,6 +935,7 @@
 				52C9A26129AA43D600F2B8C1 /* UICollectionView.swift in Sources */,
 				5208F46E29C4111F00A754F1 /* AES256.swift in Sources */,
 				528958A229AA036B0049EE07 /* SubjectScheduleCell.swift in Sources */,
+				52A47E9129CDF51C00CD07D1 /* SemeterExamModel.swift in Sources */,
 				52A0D00729B46470003B8952 /* ExamViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1200,6 +1280,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		52FAA94729CCAD8700228ACC /* Storaged.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				52FAA94829CCAD8700228ACC /* Storaged.xcdatamodel */,
+			);
+			currentVersion = 52FAA94829CCAD8700228ACC /* Storaged.xcdatamodel */;
+			path = Storaged.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 528FF60629A9E13E00C25137 /* Project object */;
 }

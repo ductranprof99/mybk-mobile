@@ -17,12 +17,6 @@ final class ScheduleViewController: UIViewController {
         let vc = UIViewController()
         vc.preferredContentSize = CGSize(width: self.view.bounds.width,
                                          height: self.view.bounds.height)
-        let pickerView = UIPickerView(frame: .init(x: 0,
-                                                   y: 0,
-                                                   width: view.bounds.width,
-                                                   height: 100))
-        pickerView.dataSource = self
-        pickerView.delegate = self
         vc.view.addSubview(pickerView)
         pickerView.centerXAnchor.constraint(equalTo: vc.view.centerXAnchor).isActive = true
         pickerView.centerYAnchor.constraint(equalTo: vc.view.centerYAnchor).isActive = true
@@ -37,20 +31,40 @@ final class ScheduleViewController: UIViewController {
         }))
         
         alert.addAction(UIAlertAction(title: "Chọn học kì", style: .default, handler: { [weak self] (UIAlertAction) in
-            if let selectedRow = self?.viewModel.currentSelectedRow,
-               let buttonName = self?.viewModel.getListSemeter()[selectedRow] {
-                pickerView.selectedRow(inComponent: selectedRow)
-                self?.pickerButton.setTitle(buttonName, for: .normal)
+            if let selectedRow = self?.viewModel.getSelectedRow(),
+               let buttonInfo = self?.viewModel.getSelectedSemeter(index: selectedRow) {
+                self?.pickerView.selectedRow(inComponent: selectedRow)
+                self?.pickerButton.setTitle(buttonInfo.ten_hocky ?? "error", for: .normal)
             }
         }))
         
         self.present(alert, animated: true, completion: nil)
     }
     
+    lazy var pickerView: UIPickerView = {
+        let pickerView = UIPickerView(frame: .init(x: 0,
+                                                   y: 0,
+                                                   width: view.bounds.width,
+                                                   height: 100))
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        return pickerView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViewModel()
         setupPickerView()
         setupCollectionView()
+    }
+    
+    private func setupViewModel() {
+        viewModel.updatePickerView =  { _ in
+            DispatchQueue.main.async {
+                self.pickerView.reloadAllComponents()
+            }
+        }
+        viewModel.getListSemeter()
     }
     
     private func setupPickerView() {
@@ -74,6 +88,7 @@ final class ScheduleViewController: UIViewController {
 
 extension ScheduleViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // TODO: something to do with view model here
         return 10
     }
     
@@ -108,7 +123,7 @@ extension ScheduleViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width - 20, height: 30))
         if viewModel.getNumOfPickerItem() > 0 {
-            label.text = viewModel.getListSemeter()[row]
+            label.text = viewModel.getSelectedSemeter(index: row)?.ten_hocky
         }
         label.font = .systemFont(ofSize: 14, weight: .semibold)
         label.sizeToFit()
@@ -117,7 +132,8 @@ extension ScheduleViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // bind model here
-        let _ = self.viewModel.updateListSchedule {
+        if let _ = self.viewModel.getSelectedSemeter(index: row) {
+            viewModel.setSelectedRow(index: row)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.collectionView.reloadData()
             }

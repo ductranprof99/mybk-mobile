@@ -5,6 +5,7 @@
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,8 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     @available(iOS, deprecated: 13.0, message: "Change to Scene delegate available on ios 13.0 and later")
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        saveContext()
     }
     
     @available(iOS, deprecated: 13.0, message: "Change to Scene delegate available on ios 13.0 and later")
@@ -62,6 +62,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
-    
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "Storaged")
+        container.loadPersistentStores {
+            if let error = $1 {
+                print("Load local db error: \(error.localizedDescription)")
+            }
+        }
+        return container
+    }()
+}
+
+extension AppDelegate {
+    func saveContext () {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
 }
 

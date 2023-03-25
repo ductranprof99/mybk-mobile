@@ -6,6 +6,13 @@
 //
 
 import Foundation
+import CoreData
+
+enum SubjectCellModelType {
+    case schedule
+    case test
+    case score
+}
 
 struct TestInfo {
     var location: String
@@ -14,6 +21,8 @@ struct TestInfo {
 }
 
 struct SubjectCellModel {
+    
+    var dataType: SubjectCellModelType = .schedule
     
     // MARK: - top view cell
     var subjectName: String = "LUAN VAN TOT NGHIEP(KHMT)"
@@ -47,3 +56,28 @@ struct SubjectCellModel {
         }
     }
 }
+
+//final class SubjectDataObject: NSManagedObject, Decodable {
+//    @NSManaged var subjectName: String
+//    @NSManaged var subjectCode: String
+//    @NSManaged var classRoomCode: String
+//    @NSManaged var credit: String
+//    @NSManaged var weekDay: String
+//    @NSManaged var hours: String
+//    @NSManaged var location: String
+//    @NSManaged var activeWeek: [Int]
+//    @NSManaged var midTermTestInfo: TestInfo
+//    @NSManaged var endTermTestInfo: TestInfo
+//    @NSManaged var midTermScore: String
+//    @NSManaged var subScore: [String: String]
+//    @NSManaged var finalTermScore: String
+//    @NSManaged var finalScore: String
+//    
+//    
+//    enum CodingKeys: CodingKey {
+//       
+//    }
+//    required convenience public init(from decoder: Decoder) {
+//        self.init()
+//    }
+//}

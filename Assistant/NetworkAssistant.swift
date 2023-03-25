@@ -16,7 +16,7 @@ public func getRequest(url urlString: String, completion: @escaping (Data?,URLRe
     }.resume()
 }
 
-public func getRequestWithResult(url urlString: String,
+public func getRequest(with urlString: String,
                        completion: @escaping (Result<(Data,URLResponse), Error>) -> Void) {
     guard let url = URL(string: urlString) else {
         return

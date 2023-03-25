@@ -38,34 +38,35 @@ final class SSOServiceManager {
     }
     
     func getMyBKToken(completion: @escaping (String?,MybkState) -> Void) {
-        getRequest(url: Constant.SSO_MYBK_REDIRECT_URL){ data, response, error in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                guard let response = response as? HTTPURLResponse else { return }
-                
-                // android need this to check , but not for ios
-                /*
-                 if response.statusCode == 302 {
-                    let location = response.allHeaderFields["Location"] as? String
-                    var comps = URLComponents(string: location ?? "")
-                    comps?.scheme = "https"
-                    getRequest(url: comps?.string ?? "") {
-                        if $2 != nil {
-                            self.getStinfoToken {
-                                completion($0, $1)
-                            }
-                        }
-                    }
-                 }
-                 */
-                if response.statusCode == 200 {
+        // android need this to check , but not for ios
+        /*
+         if response.statusCode == 302 {
+            let location = response.allHeaderFields["Location"] as? String
+            var comps = URLComponents(string: location ?? "")
+            comps?.scheme = "https"
+            getRequest(url: comps?.string ?? "") {
+                if $2 != nil {
                     self.getStinfoToken {
                         completion($0, $1)
                     }
-                } else {
-                    completion(nil,.SSO_REQUIRED)
                 }
+            }
+         }
+         */
+        getRequest(with: Constant.SSO_MYBK_REDIRECT_URL) { result in
+            switch result {
+            case .success((let data, let response)):
+                guard let htmlString = String(data: data, encoding: .ascii),
+                      let token = HTMLutils.getHeaderMetaContent(of: htmlString, attribute: ["name": "_token"]),
+                      let httpResponse = response as? HTTPURLResponse,
+                      httpResponse.statusCode == 200 else {
+                    completion(nil, .UNKNOWN)
+                    return
+                }
+                completion(token,.LOGGED_IN)
+                
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }
@@ -123,29 +124,6 @@ final class SSOServiceManager {
 }
 extension SSOServiceManager {
     
-    private func getStinfoToken(completion: @escaping (String?,MybkState) -> Void) {
-        getRequest(url: Constant.STINFO_URL) {data,response,error in
-            if error != nil {
-                completion(nil,.UNKNOWN)
-            } else {
-                guard let data = data,
-                      let htmlString = String(data: data, encoding: .ascii) else {
-                    completion(nil,.UNKNOWN)
-                    return
-                }
-                do {
-                    let doc: Document = try SwiftSoup.parse(htmlString)
-                    let metaEle = try doc.getElementsByTag("meta")
-                    let token = try metaEle.select("[name$=\"_token\"").first()?.val()
-                    completion(token, .LOGGED_IN)
-                } catch {
-                    completion(nil,.UNKNOWN)
-                    print(error.localizedDescription)
-                }
-            }
-        }
-    }
-    
     private func getProfileInfo(responseBody: String) {
         if let fullName = HTMLutils.getContentWithFullXpath(of: responseBody, xpath: "div[class=top-avatar2]/div"),
            let faculty = HTMLutils.getContentWithFullXpath(of: responseBody, xpath: "div[class=top-avatar2]/p") {
@@ -181,7 +159,7 @@ extension SSOServiceManager {
     }
     
     private func getSSOSession(completion: @escaping ((SSOState, String, String)) -> Void) {
-        getRequestWithResult(url: Constant.SSO_URL) { result in
+        getRequest(with: Constant.SSO_URL) { result in
             switch result {
             case .success((let data, let response)):
                 let result = self.analizeSSOSession(data: data, response: response)

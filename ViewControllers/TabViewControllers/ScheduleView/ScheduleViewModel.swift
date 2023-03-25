@@ -8,16 +8,30 @@
 import Foundation
 
 final class ScheduleViewModel {
-    var listSemeter: [String]? = ["ba", "ba", "ba", "ba"]
-    var currentSelectedRow: Int = 0
-    var subjectCellData: [SubjectCellModel]?
     
-    public func getListSemeter() -> [String] {
-        if let listSemeter = listSemeter {
-            return listSemeter
-        } else {
-            // call api here
-            return []
+    var updatePickerView: (([SemeterScheduleModel]?) -> Void)?
+    
+    // this for demo, cus when sync you need to sync with remote (in background) then convert
+    // to local storage, you always get data from local storage
+    private var listSemeter: [SemeterScheduleModel]? {
+        didSet {
+            updatePickerView?(listSemeter)
+        }
+    }
+    private var currentSelectedRow: Int = 0
+    private var subjectCellData: [SubjectCellModel]?
+    
+    public func getListSemeter() {
+        // call api here
+        if let mybkToken = EncriptStorageKey.getStorage(with: EncriptStorageKey.mybkToken) {
+            RemoteSchedule.shared.getSchedules(token: mybkToken) { [weak self] result in
+                switch result {
+                case .success(let listSched):
+                    self?.listSemeter = listSched
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
         }
     }
     
@@ -33,20 +47,10 @@ final class ScheduleViewModel {
         self.currentSelectedRow = index
     }
     
-    public func getListSchedule() -> Int {
-        if let subjectCellData = subjectCellData {
-            return subjectCellData.count
-        } else {
-            // call api here
-            subjectCellData = updateListSchedule {
-                
-            }
-            return  10
+    public func getSelectedSemeter(index: Int) -> SemeterScheduleModel? {
+        if let listSemeter = listSemeter {
+            return listSemeter[index]
         }
-    }
-    
-    public func updateListSchedule(completion: () -> Void) -> [SubjectCellModel] {
-        // request here
-        return []
+        return nil
     }
 }

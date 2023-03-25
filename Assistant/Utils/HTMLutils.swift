@@ -74,4 +74,23 @@ final class HTMLutils {
         }
         return nil
     }
+    
+    static public func getHeaderMetaContent(of str: String, attribute: [String: String]?) -> String? {
+        do {
+            let doc: Document = try SwiftSoup.parse(str)
+            var xpath = "meta"
+            if let attribute = attribute {
+                xpath += "["
+                for (key, value) in attribute {
+                    xpath += "\(key)$='\(value)'"
+                }
+                xpath += "]"
+            }
+            let meta: Element? = try doc.head()?.select(xpath).first()
+            let text: String? = try meta?.attr("content")
+            return text
+        } catch {
+            return nil
+        }
+    }
 }
