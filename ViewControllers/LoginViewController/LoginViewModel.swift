@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 final class LoginViewModel {
     func login(username: String?, password: String?, completion: @escaping (Bool) -> Void) {
@@ -23,16 +23,33 @@ final class LoginViewModel {
     
     func mybkToken(completion: @escaping (Bool) -> Void) {
         SSOServiceManager.shared.getMyBKToken { (str, state) in
-            switch state {
-            case .LOGGED_IN:
-                if let token = str {
-                    if EncriptStorageKey.updateStorage(with: Constant.EncryptKey.mybkToken, value: token) {
-                        completion(true)
-                    }
-                } else {
-                    completion(false)
+            if case .LOGGED_IN = state, str != nil {
+                completion(true)
+            } else {
+                completion(false)
+            }
+        }
+    }
+    
+    func getBioMetricUIImage() -> UIImage? {
+        let type = BioMetric.shared.bioMetricType
+        switch type {
+        case .none:
+            return nil
+        case .touch:
+            return UIImage(named: "icon_touch")
+        case .face:
+            return UIImage(named: "icon_face")
+        }
+    }
+    
+    func biometricLogin(completion: @escaping (Bool) -> Void) {
+        SSOServiceManager.shared.login { state in
+            if case .LOGGED_IN = state {
+                self.mybkToken {
+                    completion($0)
                 }
-            default:
+            } else {
                 completion(false)
             }
         }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5208F47029C417D400A754F1 /* EncryptStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F46F29C417D400A754F1 /* EncryptStorage.swift */; };
+		5208F47029C417D400A754F1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F46F29C417D400A754F1 /* String.swift */; };
 		5208F47229C43D6900A754F1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F47129C43D6900A754F1 /* LoginViewModel.swift */; };
 		5208F47429C477D600A754F1 /* HTMLutils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F47329C477D600A754F1 /* HTMLutils.swift */; };
 		5214923429B4370000A7522B /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214923229B4370000A7522B /* ScheduleViewController.swift */; };
@@ -74,6 +74,7 @@
 		52C9A26E29AA561000F2B8C1 /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A26D29AA561000F2B8C1 /* CustomToggle.swift */; };
 		52C9A27029AA567300F2B8C1 /* CustomThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A26F29AA567300F2B8C1 /* CustomThumbView.swift */; };
 		52C9A27629AACDF900F2B8C1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A27529AACDF900F2B8C1 /* CustomTextField.swift */; };
+		52CD462A29CFF53F00410F8C /* LocalAuthencation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD462929CFF53F00410F8C /* LocalAuthencation.swift */; };
 		52ED1AA629B3B55800DC1429 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED1AA529B3B55800DC1429 /* SceneDelegate.swift */; };
 		52ED1AAB29B3B6B800DC1429 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED1AA929B3B6B800DC1429 /* LoginViewController.swift */; };
 		52ED1AAC29B3B6B800DC1429 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52ED1AAA29B3B6B800DC1429 /* LoginViewController.xib */; };
@@ -107,7 +108,7 @@
 		1E3E96EB34776CABB91E6A20 /* Pods-MybkMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MybkMobileTests.release.xcconfig"; path = "Target Support Files/Pods-MybkMobileTests/Pods-MybkMobileTests.release.xcconfig"; sourceTree = "<group>"; };
 		31D63A0A6D89228163808344 /* Pods-MybkMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MybkMobile.release.xcconfig"; path = "Target Support Files/Pods-MybkMobile/Pods-MybkMobile.release.xcconfig"; sourceTree = "<group>"; };
 		47CFEFA3FFB4769F0AD4A206 /* Pods-MybkMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MybkMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-MybkMobileTests/Pods-MybkMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5208F46F29C417D400A754F1 /* EncryptStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptStorage.swift; sourceTree = "<group>"; };
+		5208F46F29C417D400A754F1 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		5208F47129C43D6900A754F1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		5208F47329C477D600A754F1 /* HTMLutils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLutils.swift; sourceTree = "<group>"; };
 		5214923229B4370000A7522B /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +179,7 @@
 		52C9A26D29AA561000F2B8C1 /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
 		52C9A26F29AA567300F2B8C1 /* CustomThumbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomThumbView.swift; sourceTree = "<group>"; };
 		52C9A27529AACDF900F2B8C1 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		52CD462929CFF53F00410F8C /* LocalAuthencation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthencation.swift; sourceTree = "<group>"; };
 		52ED1AA529B3B55800DC1429 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		52ED1AA929B3B6B800DC1429 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		52ED1AAA29B3B6B800DC1429 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -419,6 +421,7 @@
 				528FF65529A9F11000C25137 /* Utils */,
 				52486F9829C15AAB004FB208 /* Constant.swift */,
 				526ECB6729C21447006D9B3D /* NetworkAssistant.swift */,
+				52CD462929CFF53F00410F8C /* LocalAuthencation.swift */,
 			);
 			path = Assistant;
 			sourceTree = "<group>";
@@ -481,7 +484,7 @@
 		528FF65529A9F11000C25137 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				5208F46F29C417D400A754F1 /* EncryptStorage.swift */,
+				5208F46F29C417D400A754F1 /* String.swift */,
 				528FF65629A9F11F00C25137 /* Constrain.swift */,
 				52C9A25E29AA434D00F2B8C1 /* UIView.swift */,
 				52C9A26029AA43D600F2B8C1 /* UICollectionView.swift */,
@@ -898,7 +901,7 @@
 				52BA48D129BCB283006C6CA5 /* TranscriptViewModel.swift in Sources */,
 				52C9A27029AA567300F2B8C1 /* CustomThumbView.swift in Sources */,
 				5208F47429C477D600A754F1 /* HTMLutils.swift in Sources */,
-				5208F47029C417D400A754F1 /* EncryptStorage.swift in Sources */,
+				5208F47029C417D400A754F1 /* String.swift in Sources */,
 				525A2D6029BFDED300C9887B /* PolicyViewController.swift in Sources */,
 				52C9A27629AACDF900F2B8C1 /* CustomTextField.swift in Sources */,
 				52A47E8F29CDF2D600CD07D1 /* CourseExamModel.swift in Sources */,
@@ -906,6 +909,7 @@
 				52A0D00929B46C60003B8952 /* TranscriptViewController.swift in Sources */,
 				52C9A26B29AA55AC00F2B8C1 /* NumberCell.swift in Sources */,
 				52A47E9729CE765600CD07D1 /* RemoteGrade.swift in Sources */,
+				52CD462A29CFF53F00410F8C /* LocalAuthencation.swift in Sources */,
 				528958A829AA094E0049EE07 /* TestScheduleBottomView.swift in Sources */,
 				528FF65729A9F11F00C25137 /* Constrain.swift in Sources */,
 				52486F9B29C1681E004FB208 /* Authencation.swift in Sources */,

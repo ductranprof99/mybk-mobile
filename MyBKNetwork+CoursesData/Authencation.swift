@@ -7,34 +7,57 @@
 
 import Foundation
 import SwiftSoup
+import CryptoSwift
 
 final class SSOServiceManager {
     
     static public let shared: SSOServiceManager = .init()
     
+    var username: String?
+    var password: String?
+    var serviceEncryptIV: String?
+    var mybkToken: String?
+    var JSSESSIONID: String?
+    
     func login(username: String? = nil,
                password: String? = nil,
                completion: @escaping (SSOState) -> Void) {
         if let username = username, let password = password {
-            SSOLogin(username: username, password: password) { [weak self] state in
-                if case .LOGGED_IN = state {
-                    self?.updateCredential(username, password)
+            SSOLogin(username: username, password: password) { state in
+                if state == .LOGGED_IN {
+                    self.saveTemporaryCredential(username: username, password: password)
                 }
                 completion(state)
             }
         } else {
-            if let isSave = EncriptStorageKey.getStorage(with: Constant.EncryptKey.isSaveData),
-               NSString(string: isSave).boolValue {
-                if let username = EncriptStorageKey.getStorage(with: Constant.EncryptKey.username),
-                   let password = EncriptStorageKey.getStorage(with: Constant.EncryptKey.password) {
-                    SSOLogin(username: username, password: password) { state in
-                        completion(state)
-                    }
+            BioMetric.shared.getEntryFromBioProtected(key: Constant.Key.bioMetric) {
+                guard let result = $0 else {
+                    completion(.NO_CREDENTIALS)
+                    return
                 }
-            } else {
-                completion(.NO_CREDENTIALS)
+                self.SSOLogin(username: result.username, password: result.password){ state in
+                    if state == .LOGGED_IN {
+                        self.saveTemporaryCredential(username: result.username, password: result.password)
+                    }
+                    completion(state)
+                }
             }
         }
+    }
+    
+    func logout(completion: @escaping(Bool) -> Void) {
+        if let JSSESSIONID = self.JSSESSIONID {
+            getRequest(with: Constant.SSO_MYBK_LOGOUT_URL,
+                       header: ["Cookie": JSSESSIONID]) { result in
+                if case .success(( _,let response)) = result,
+                   let httpResponse = response as? HTTPURLResponse,
+                   httpResponse.statusCode == 200 {
+                    completion(true)
+                    return
+                }
+            }
+        }
+        completion(false)
     }
     
     func getMyBKToken(completion: @escaping (String?,MybkState) -> Void) {
@@ -63,6 +86,10 @@ final class SSOServiceManager {
                     completion(nil, .UNKNOWN)
                     return
                 }
+                if let cookie = httpResponse.allHeaderFields["Cookie"] as? String {
+                    self.JSSESSIONID = cookie
+                }
+                self.mybkToken = token
                 completion(token,.LOGGED_IN)
                 
             case .failure(let error):
@@ -88,48 +115,43 @@ final class SSOServiceManager {
             }
         }
     }
-
-    func updateCredential(_ username: String, _ password: String) {
-        let encrt =
-        EncriptStorageKey.updateStorage(with: Constant.EncryptKey.username, value: username) &&
-        EncriptStorageKey.updateStorage(with: Constant.EncryptKey.password, value: password)
-        if encrt {
-            print("success save user and password")
+    
+    func saveToBioMetric(completion: @escaping (Bool) -> Void) {
+        if let result = self.decryptCredential() {
+            let res = BioMetric.shared.createBioProtectedEntry(key: Constant.Key.bioMetric,
+                                                     username: result.username,
+                                                     password: result.password)
+            completion(res)
+        }
+        completion(false)
+    }
+    
+    func clearBioMetric() {
+        if BioMetric.shared.clearEntryFromBioProtected(key: Constant.Key.bioMetric) {
+            print("cleared saved info")
         } else {
-            print("save fail")
+            print("cannot clear saved info")
         }
     }
     
-    func clearCredential() {
-        let clear = EncriptStorageKey.clearStorage(with: Constant.EncryptKey.name) &&
-                    EncriptStorageKey.clearStorage(with: Constant.EncryptKey.faculty) &&
-                    EncriptStorageKey.clearStorage(with: Constant.EncryptKey.username) &&
-                    EncriptStorageKey.clearStorage(with: Constant.EncryptKey.password)
-        if clear {
-            print("success clear all save data")
-        } else {
-            print("save fail")
-        }
+    func clearMemory() {
+        self.username = nil
+        self.password = nil
+        self.serviceEncryptIV = nil
+        self.mybkToken = nil
+        self.JSSESSIONID = nil
     }
     
-    func updateProfileStore(_ fullName: String, _ faculty: String) {
-        let encrt = EncriptStorageKey.updateStorage(with: Constant.EncryptKey.name, value: fullName) &&
-                    EncriptStorageKey.updateStorage(with: Constant.EncryptKey.faculty, value: faculty)
-        if encrt {
-            print("success save fullname and faculty")
-        } else {
-            print("save fail")
-        }
-    }
 }
 extension SSOServiceManager {
     
-    private func getProfileInfo(responseBody: String) {
+    private func getProfileInfo(responseBody: String) -> (fullName: String, faculty: String)? {
         if let fullName = HTMLutils.getContentWithFullXpath(of: responseBody, xpath: "div[class=top-avatar2]/div"),
            let faculty = HTMLutils.getContentWithFullXpath(of: responseBody, xpath: "div[class=top-avatar2]/p") {
-            updateProfileStore(fullName, faculty)
+            return (fullName, faculty)
         } else {
             print("cannot get profile")
+            return nil
         }
     }
     
@@ -189,4 +211,44 @@ extension SSOServiceManager {
             return (.UNKNOWN,lt,execution)
         }
     }
+    
+    private func saveTemporaryCredential(username: String, password: String) {
+        // get generate temporary key
+        self.serviceEncryptIV = String.randomString(length: 16)
+        do {
+            let keyString = String(decoding: UUID().uuidString.toFixedUInt8Array(), as: UTF8.self)
+            let ivString = String(decoding: serviceEncryptIV!.toFixedUInt8Array(), as: UTF8.self)
+            let aes = try AES(key: keyString,
+                              iv: ivString )
+            let encryptedUsername = try aes.encrypt(username.bytes)
+            let encryptedPassword = try aes.encrypt(password.bytes)
+            self.username = String(decoding: encryptedUsername, as: UTF8.self)
+            self.password = String(decoding: encryptedPassword, as: UTF8.self)
+        } catch {
+            print("cannot encrypt credential")
+        }
+    }
+    
+    private func decryptCredential() -> (username: String, password: String)? {
+        guard let username = username,
+              let password = password,
+              let temporaryIV = serviceEncryptIV else {
+            return nil
+        }
+        // decrypt to save
+        do {
+            let keyString = String(decoding: UUID().uuidString.toFixedUInt8Array(), as: UTF8.self)
+            let ivString = String(decoding: temporaryIV.toFixedUInt8Array(), as: UTF8.self)
+            let aes = try AES(key: keyString,
+                              iv: ivString )
+            let usernameDecrypted = try aes.decrypt(username.bytes)
+            let passwordDecrypted = try aes.decrypt(password.bytes)
+            let convertedUsername = String(decoding: usernameDecrypted, as: UTF8.self)
+            let convertedPassword = String(decoding: passwordDecrypted, as: UTF8.self)
+            return (convertedUsername, convertedPassword)
+        } catch {
+            return nil
+        }
+    }
+    
 }

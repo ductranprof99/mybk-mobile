@@ -50,7 +50,12 @@ final class ProfileViewModel {
     }
     
     func logout(completion: @escaping () -> Void) {
-        completion()
+        SSOServiceManager.shared.logout {
+            if $0 {
+                SSOServiceManager.shared.clearMemory()
+                completion()
+            }
+        }
     }
     
 }

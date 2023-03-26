@@ -98,8 +98,10 @@ final class ProfileViewController: UIViewController, MFMailComposeViewController
     }
     
     @objc func logout(_ sender: UITapGestureRecognizer? = nil) {
-        viewModel.logout { [weak self] in
-            self?.navigationController?.popViewController(animated: true)
+        viewModel.logout {
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: true)
+            }
         }
     }
     

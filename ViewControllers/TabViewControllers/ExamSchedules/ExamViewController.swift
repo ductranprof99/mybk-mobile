@@ -15,17 +15,15 @@ final class ExamViewController: UIViewController {
     
     @IBAction func pickerTapHandler(_ sender: Any) {
         let vc = UIViewController()
-        vc.preferredContentSize = CGSize(width: self.view.bounds.width,
-                                         height: self.view.bounds.height)
-        let pickerView = UIPickerView(frame: .init(x: 0,
-                                                   y: 0,
-                                                   width: view.bounds.width,
-                                                   height: 100))
-        pickerView.dataSource = self
-        pickerView.delegate = self
+        vc.view.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
+        vc.view.translatesAutoresizingMaskIntoConstraints = false
         vc.view.addSubview(pickerView)
-        pickerView.centerXAnchor.constraint(equalTo: vc.view.centerXAnchor).isActive = true
-        pickerView.centerYAnchor.constraint(equalTo: vc.view.centerYAnchor).isActive = true
+        pickerView.setConstrain(to: vc.view) { make in
+            make.append(.centerY(centerY: 0))
+            make.append(.leading(leading: 0))
+            make.append(.trailing(trailing: 0))
+            make.append(.height(height: 100))
+        }
         
         let alert = UIAlertController(title: nil, message: "", preferredStyle: .actionSheet)
         
@@ -39,13 +37,20 @@ final class ExamViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Chọn học kì", style: .default, handler: { [weak self] (UIAlertAction) in
             if let selectedRow = self?.viewModel.currentSelectedRow,
                let buttonName = self?.viewModel.getListSemeter()[selectedRow] {
-                pickerView.selectedRow(inComponent: selectedRow)
+                self?.pickerView.selectedRow(inComponent: selectedRow)
                 self?.pickerButton.setTitle(buttonName, for: .normal)
             }
         }))
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    lazy var pickerView: UIPickerView = {
+        let pickerView = UIPickerView(frame: .zero)
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        return pickerView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()

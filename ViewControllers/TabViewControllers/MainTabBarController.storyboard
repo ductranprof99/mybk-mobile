@@ -13,11 +13,12 @@
         <scene sceneID="Zc6-jv-23L">
             <objects>
                 <tabBarController storyboardIdentifier="MainTabBarController" title="MainTabBarController" id="msf-tE-WGr" customClass="MainTabBarController" customModule="MybkMobile" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" itemPositioning="fill" id="iVg-aq-zw6">
+                    <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="iVg-aq-zw6">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" red="0.066666666669999999" green="0.25882352939999997" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <userDefinedRuntimeAttributes>
@@ -41,7 +42,7 @@
             <objects>
                 <viewController id="qJf-6g-CQm" customClass="TranscriptViewController" customModule="MybkMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8pZ-ah-3FJ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bảng điểm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbg-7j-TXc">
@@ -106,7 +107,9 @@
                             <constraint firstItem="zbg-7j-TXc" firstAttribute="top" secondItem="S8G-ew-FZf" secondAttribute="top" constant="24" id="veV-UC-gJ5"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Bảng điểm" image="nav_icon_scoreboard" selectedImage="nav_icon_scoreboard.fill" id="Krg-25-jgy"/>
+                    <tabBarItem key="tabBarItem" title="Bảng điểm" image="nav_icon_scoreboard" selectedImage="nav_icon_scoreboard.fill" id="Krg-25-jgy">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="collectionView" destination="vYU-Tb-6S9" id="D7Z-k8-65G"/>
                         <outlet property="pickerButton" destination="kwk-kR-Adu" id="MGk-w4-6cO"/>
@@ -121,7 +124,7 @@
             <objects>
                 <viewController id="Pdg-4U-Gr5" customClass="ScheduleViewController" customModule="MybkMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Ed-il-QQQ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giờ học" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sC7-Mz-IHS">
@@ -203,7 +206,7 @@
             <objects>
                 <viewController id="pVO-XS-Bvy" customClass="ExamViewController" customModule="MybkMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k05-9E-1TS">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="STN-9W-Xjt">
@@ -285,7 +288,7 @@
             <objects>
                 <viewController id="L9W-4b-bU6" customClass="ProfileViewController" customModule="MybkMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hjX-xc-c9b">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lịch thi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1G-9e-P9x">
@@ -538,7 +541,9 @@
                             <constraint firstItem="1C5-4j-Jh7" firstAttribute="top" secondItem="s1G-9e-P9x" secondAttribute="bottom" constant="12" id="wUS-JN-rPM"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Cá nhân" image="nav_icon_profile" selectedImage="nav_icon_profile.bold" id="s3v-5Z-G2n"/>
+                    <tabBarItem key="tabBarItem" title="Cá nhân" image="nav_icon_profile" selectedImage="nav_icon_profile.bold" id="s3v-5Z-G2n">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="appSaveDataSwitch" destination="aCh-5M-nHI" id="Kp9-9P-0Vu"/>
                         <outlet property="externalLinkButton" destination="ack-2K-zJ8" id="RzY-fO-cNl"/>
