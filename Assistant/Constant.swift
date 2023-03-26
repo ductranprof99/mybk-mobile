@@ -17,14 +17,12 @@ struct Constant {
     "The credentials you provided cannot be determined to be authentic"
     static let STINFO_URL =
     "https://mybk.hcmut.edu.vn/stinfo/"
-    static let SSO_MYBK_LOGOUT_URL = "https://sso.hcmut.edu.vn/cas/logout?service=http%3A%2F%2Fmybk.hcmut.edu.vn%2Fstinfo%2F"
+    static let SSO_MYBK_LOGOUT_URL = "https://sso.hcmut.edu.vn/cas/logout"
     
+    static let MYBK_SCHEDULE = "https://mybk.hcmut.edu.vn/stinfo/lichthi/ajax_lichhoc"
+    static let MYBK_GRADE = "https://mybk.hcmut.edu.vn/stinfo/lichthi/ajax_grade"
+    static let MYBK_EXAM = "https://mybk.hcmut.edu.vn/stinfo/lichthi/ajax_lichthi"
     struct Key {
-        static let username = "key.username"
-        static let password = "key.password"
-        static let name  = "key.name"
-        static let faculty  = "key.faculty"
-        static let isSaveData  = "key.saveData"
         static let mybkToken = "key.mybkToken"
         static let bioMetric = "key.bioInfomation"
     }

@@ -24,7 +24,7 @@ final class RemoteExam {
                          completion: @escaping (Result<[SemeterExamModel], Error>) -> Void) {
         var requestBodyComponent = URLComponents()
         requestBodyComponent.queryItems = [URLQueryItem(name: "_token", value: token)]
-        postRequest(url: "https://mybk.hcmut.edu.vn/stinfo/lichthi/ajax_lichthi",
+        postRequest(url: Constant.MYBK_EXAM,
                     body: requestBodyComponent ) { result in
             switch result {
             case .success((let data, _)):

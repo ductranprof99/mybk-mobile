@@ -86,7 +86,7 @@ final class SSOServiceManager {
                     completion(nil, .UNKNOWN)
                     return
                 }
-                if let cookie = httpResponse.allHeaderFields["Cookie"] as? String {
+                if let cookie = httpResponse.allHeaderFields["Set-Cookie"] as? String {
                     self.JSSESSIONID = cookie
                 }
                 self.mybkToken = token

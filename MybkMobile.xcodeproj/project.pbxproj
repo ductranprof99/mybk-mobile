@@ -74,7 +74,7 @@
 		52C9A26E29AA561000F2B8C1 /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A26D29AA561000F2B8C1 /* CustomToggle.swift */; };
 		52C9A27029AA567300F2B8C1 /* CustomThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A26F29AA567300F2B8C1 /* CustomThumbView.swift */; };
 		52C9A27629AACDF900F2B8C1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9A27529AACDF900F2B8C1 /* CustomTextField.swift */; };
-		52CD462A29CFF53F00410F8C /* LocalAuthencation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD462929CFF53F00410F8C /* LocalAuthencation.swift */; };
+		52CD462A29CFF53F00410F8C /* BioMetricAuthencation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD462929CFF53F00410F8C /* BioMetricAuthencation.swift */; };
 		52ED1AA629B3B55800DC1429 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED1AA529B3B55800DC1429 /* SceneDelegate.swift */; };
 		52ED1AAB29B3B6B800DC1429 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED1AA929B3B6B800DC1429 /* LoginViewController.swift */; };
 		52ED1AAC29B3B6B800DC1429 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52ED1AAA29B3B6B800DC1429 /* LoginViewController.xib */; };
@@ -179,7 +179,7 @@
 		52C9A26D29AA561000F2B8C1 /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
 		52C9A26F29AA567300F2B8C1 /* CustomThumbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomThumbView.swift; sourceTree = "<group>"; };
 		52C9A27529AACDF900F2B8C1 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		52CD462929CFF53F00410F8C /* LocalAuthencation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthencation.swift; sourceTree = "<group>"; };
+		52CD462929CFF53F00410F8C /* BioMetricAuthencation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioMetricAuthencation.swift; sourceTree = "<group>"; };
 		52ED1AA529B3B55800DC1429 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		52ED1AA929B3B6B800DC1429 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		52ED1AAA29B3B6B800DC1429 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -421,7 +421,7 @@
 				528FF65529A9F11000C25137 /* Utils */,
 				52486F9829C15AAB004FB208 /* Constant.swift */,
 				526ECB6729C21447006D9B3D /* NetworkAssistant.swift */,
-				52CD462929CFF53F00410F8C /* LocalAuthencation.swift */,
+				52CD462929CFF53F00410F8C /* BioMetricAuthencation.swift */,
 			);
 			path = Assistant;
 			sourceTree = "<group>";
@@ -909,7 +909,7 @@
 				52A0D00929B46C60003B8952 /* TranscriptViewController.swift in Sources */,
 				52C9A26B29AA55AC00F2B8C1 /* NumberCell.swift in Sources */,
 				52A47E9729CE765600CD07D1 /* RemoteGrade.swift in Sources */,
-				52CD462A29CFF53F00410F8C /* LocalAuthencation.swift in Sources */,
+				52CD462A29CFF53F00410F8C /* BioMetricAuthencation.swift in Sources */,
 				528958A829AA094E0049EE07 /* TestScheduleBottomView.swift in Sources */,
 				528FF65729A9F11F00C25137 /* Constrain.swift in Sources */,
 				52486F9B29C1681E004FB208 /* Authencation.swift in Sources */,
