@@ -25,15 +25,13 @@ final class LearnScheduleBottomView: UIView {
     // TODO: fix type here
     var data: CourseScheduleRemoteData? {
         didSet {
-            collectionView.performBatchUpdates {
-                collectionView.reloadData()
-            }
+            collectionView.reloadData()
         }
     }
     
     public func setContent(data cellData: SubjectCellType) {
         if case let .schedBottom(data) = cellData {
-            self.weekDayLabel.text = "Thứ \(data.lessonDate ?? 0)"
+            self.weekDayLabel.text = (data.lessonDate != nil) ? "Thứ \(data.lessonDate!)" : Constant.String.all
             self.hoursLabel.text = "\(data.timeStart ?? "") - \(data.timeEnd ?? "")"
             self.locationLabel.text = data.locationCode.rawValue
             self.data = data

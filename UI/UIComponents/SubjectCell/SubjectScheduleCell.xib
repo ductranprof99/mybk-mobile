@@ -35,7 +35,7 @@
                                     <action selector="detailButtonHandler:" destination="UhJ-Uj-4MA" eventType="touchUpInside" id="DsI-cu-JOf"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGx-BD-gu7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGx-BD-gu7">
                                 <rect key="frame" x="24.000000000000004" y="15.999999999999998" width="44.333333333333343" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.066666666666666666" green="0.25882352941176467" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
@@ -67,10 +67,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HGx-BD-gu7" secondAttribute="trailing" constant="20" id="1kf-h1-30i"/>
+                            <constraint firstItem="I31-Ze-Huv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HGx-BD-gu7" secondAttribute="trailing" constant="20" id="1kf-h1-30i"/>
                             <constraint firstAttribute="trailing" secondItem="I31-Ze-Huv" secondAttribute="trailing" constant="20" id="5l1-rU-zv5"/>
                             <constraint firstItem="wgF-OE-TeN" firstAttribute="top" secondItem="HGx-BD-gu7" secondAttribute="bottom" constant="6" id="A82-Cl-dN5"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wgF-OE-TeN" secondAttribute="trailing" constant="20" id="Dmr-Pz-99d"/>
+                            <constraint firstItem="I31-Ze-Huv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wgF-OE-TeN" secondAttribute="trailing" constant="20" id="Dmr-Pz-99d"/>
                             <constraint firstAttribute="height" constant="75" id="QN0-kf-sZO"/>
                             <constraint firstItem="wgF-OE-TeN" firstAttribute="leading" secondItem="qRS-Ch-Eh5" secondAttribute="leading" constant="24" id="R0n-cH-mXb"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="75" id="Rtl-m5-E3O"/>

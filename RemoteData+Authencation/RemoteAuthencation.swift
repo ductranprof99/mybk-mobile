@@ -1,5 +1,5 @@
 //
-//  SSO.swift
+//  RemoteAuthencation.swift
 //  MybkMobile
 //
 //  Created by DucTran on 15/03/2023.

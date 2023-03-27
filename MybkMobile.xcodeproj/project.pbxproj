@@ -15,11 +15,13 @@
 		52373EA029B79CA700AA4383 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52373E9F29B79CA700AA4383 /* CustomButton.swift */; };
 		5246822829BB67EA00124A6A /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5246822729BB67EA00124A6A /* UICollectionViewCell.swift */; };
 		52486F9929C15AAB004FB208 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52486F9829C15AAB004FB208 /* Constant.swift */; };
-		52486F9B29C1681E004FB208 /* Authencation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52486F9A29C1681E004FB208 /* Authencation.swift */; };
+		52486F9B29C1681E004FB208 /* RemoteAuthencation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52486F9A29C1681E004FB208 /* RemoteAuthencation.swift */; };
 		525A2D6029BFDED300C9887B /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525A2D5E29BFDED300C9887B /* PolicyViewController.swift */; };
 		525A2D6129BFDED300C9887B /* PolicyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525A2D5F29BFDED300C9887B /* PolicyViewController.xib */; };
 		5264423429BE9CE90099F48E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264423329BE9CE90099F48E /* ProfileViewModel.swift */; };
 		526ECB6829C21447006D9B3D /* NetworkAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526ECB6729C21447006D9B3D /* NetworkAssistant.swift */; };
+		52844B2229D21154005849A7 /* UpdateDateFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52844B2029D21154005849A7 /* UpdateDateFooterView.swift */; };
+		52844B2329D21154005849A7 /* UpdateDateFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52844B2129D21154005849A7 /* UpdateDateFooterView.xib */; };
 		5287970929C0633E000BA20F /* DetailSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287970729C0633E000BA20F /* DetailSubjectViewController.swift */; };
 		5287970A29C0633E000BA20F /* DetailSubjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5287970829C0633E000BA20F /* DetailSubjectViewController.xib */; };
 		5287970C29C065F5000BA20F /* DetailSubjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287970B29C065F5000BA20F /* DetailSubjectViewModel.swift */; };
@@ -46,11 +48,9 @@
 		52A0D00929B46C60003B8952 /* TranscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0D00829B46C60003B8952 /* TranscriptViewController.swift */; };
 		52A0D00B29B47002003B8952 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0D00A29B47002003B8952 /* ProfileViewController.swift */; };
 		52A0D00D29B48E5C003B8952 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0D00C29B48E5C003B8952 /* MainTabBarController.swift */; };
-		52A47E8729CDEF7500CD07D1 /* CourseGradeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E8629CDEF7500CD07D1 /* CourseGradeModel.swift */; };
 		52A47E8929CDF08F00CD07D1 /* SemeterGradeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E8829CDF08F00CD07D1 /* SemeterGradeModel.swift */; };
 		52A47E8B29CDF14700CD07D1 /* ScheduleLocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E8A29CDF14700CD07D1 /* ScheduleLocalData.swift */; };
 		52A47E8D29CDF25800CD07D1 /* ScheduleRemoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E8C29CDF25800CD07D1 /* ScheduleRemoteData.swift */; };
-		52A47E8F29CDF2D600CD07D1 /* CourseExamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E8E29CDF2D600CD07D1 /* CourseExamModel.swift */; };
 		52A47E9129CDF51C00CD07D1 /* SemeterExamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E9029CDF51C00CD07D1 /* SemeterExamModel.swift */; };
 		52A47E9529CE75EB00CD07D1 /* RemoteExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E9429CE75EB00CD07D1 /* RemoteExam.swift */; };
 		52A47E9729CE765600CD07D1 /* RemoteGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E9629CE765600CD07D1 /* RemoteGrade.swift */; };
@@ -113,11 +113,13 @@
 		52373E9F29B79CA700AA4383 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		5246822729BB67EA00124A6A /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 		52486F9829C15AAB004FB208 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		52486F9A29C1681E004FB208 /* Authencation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authencation.swift; sourceTree = "<group>"; };
+		52486F9A29C1681E004FB208 /* RemoteAuthencation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthencation.swift; sourceTree = "<group>"; };
 		525A2D5E29BFDED300C9887B /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
 		525A2D5F29BFDED300C9887B /* PolicyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PolicyViewController.xib; sourceTree = "<group>"; };
 		5264423329BE9CE90099F48E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		526ECB6729C21447006D9B3D /* NetworkAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAssistant.swift; sourceTree = "<group>"; };
+		52844B2029D21154005849A7 /* UpdateDateFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDateFooterView.swift; sourceTree = "<group>"; };
+		52844B2129D21154005849A7 /* UpdateDateFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateDateFooterView.xib; sourceTree = "<group>"; };
 		5287970729C0633E000BA20F /* DetailSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSubjectViewController.swift; sourceTree = "<group>"; };
 		5287970829C0633E000BA20F /* DetailSubjectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailSubjectViewController.xib; sourceTree = "<group>"; };
 		5287970B29C065F5000BA20F /* DetailSubjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSubjectViewModel.swift; sourceTree = "<group>"; };
@@ -148,11 +150,9 @@
 		52A0D00829B46C60003B8952 /* TranscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptViewController.swift; sourceTree = "<group>"; };
 		52A0D00A29B47002003B8952 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		52A0D00C29B48E5C003B8952 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		52A47E8629CDEF7500CD07D1 /* CourseGradeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseGradeModel.swift; sourceTree = "<group>"; };
 		52A47E8829CDF08F00CD07D1 /* SemeterGradeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemeterGradeModel.swift; sourceTree = "<group>"; };
 		52A47E8A29CDF14700CD07D1 /* ScheduleLocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLocalData.swift; sourceTree = "<group>"; };
 		52A47E8C29CDF25800CD07D1 /* ScheduleRemoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRemoteData.swift; sourceTree = "<group>"; };
-		52A47E8E29CDF2D600CD07D1 /* CourseExamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseExamModel.swift; sourceTree = "<group>"; };
 		52A47E9029CDF51C00CD07D1 /* SemeterExamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemeterExamModel.swift; sourceTree = "<group>"; };
 		52A47E9429CE75EB00CD07D1 /* RemoteExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteExam.swift; sourceTree = "<group>"; };
 		52A47E9629CE765600CD07D1 /* RemoteGrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGrade.swift; sourceTree = "<group>"; };
@@ -248,6 +248,60 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		52844B1A29D20B91005849A7 /* LocalData+Authencation */ = {
+			isa = PBXGroup;
+			children = (
+				52CD462929CFF53F00410F8C /* BioMetricAuthencation.swift */,
+				52844B1C29D20BD3005849A7 /* LocalDataObject */,
+			);
+			path = "LocalData+Authencation";
+			sourceTree = "<group>";
+		};
+		52844B1B29D20BBA005849A7 /* RemoteDataObject */ = {
+			isa = PBXGroup;
+			children = (
+				52A47E8C29CDF25800CD07D1 /* ScheduleRemoteData.swift */,
+				52A47E8829CDF08F00CD07D1 /* SemeterGradeModel.swift */,
+				52A47E9029CDF51C00CD07D1 /* SemeterExamModel.swift */,
+			);
+			path = RemoteDataObject;
+			sourceTree = "<group>";
+		};
+		52844B1C29D20BD3005849A7 /* LocalDataObject */ = {
+			isa = PBXGroup;
+			children = (
+				52A47E8A29CDF14700CD07D1 /* ScheduleLocalData.swift */,
+			);
+			path = LocalDataObject;
+			sourceTree = "<group>";
+		};
+		52844B1D29D20D6D005849A7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				528FF64129A9E14800C25137 /* UIComponents */,
+				528FF64229A9E1F100C25137 /* View+ViewModel */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		52844B1E29D20E24005849A7 /* GlobalAssistant */ = {
+			isa = PBXGroup;
+			children = (
+				52486F9829C15AAB004FB208 /* Constant.swift */,
+				526ECB6729C21447006D9B3D /* NetworkAssistant.swift */,
+			);
+			path = GlobalAssistant;
+			sourceTree = "<group>";
+		};
+		52844B1F29D21133005849A7 /* UpdateDateFooter */ = {
+			isa = PBXGroup;
+			children = (
+				52844B2029D21154005849A7 /* UpdateDateFooterView.swift */,
+				52844B2129D21154005849A7 /* UpdateDateFooterView.xib */,
+			);
+			path = UpdateDateFooter;
+			sourceTree = "<group>";
+		};
 		5287970629C06327000BA20F /* DetailSubjectViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,9 +362,6 @@
 		528958AC29AA13120049EE07 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				52A47E8529CDEF5600CD07D1 /* schedule */,
-				52A47E8429CDEF2C00CD07D1 /* grade */,
-				52A47E8329CDEF1A00CD07D1 /* exam */,
 				52C9A26229AA480C00F2B8C1 /* SubjectCellModel.swift */,
 				52BA48D229BCB455006C6CA5 /* TranscriptAdditionalModel.swift */,
 				5287970D29C06A0A000BA20F /* SubjectModel.swift */,
@@ -321,12 +372,11 @@
 		528FF60529A9E13E00C25137 = {
 			isa = PBXGroup;
 			children = (
-				52A47E9329CE75C400CD07D1 /* MyBKNetwork+CoursesData */,
-				528FF64329A9E20000C25137 /* Assistant */,
+				528FF64329A9E20000C25137 /* Helper */,
+				52A47E9329CE75C400CD07D1 /* RemoteData+Authencation */,
+				52844B1A29D20B91005849A7 /* LocalData+Authencation */,
 				528958AC29AA13120049EE07 /* Models */,
-				528FF64829A9E2BD00C25137 /* SubUIComponent */,
-				528FF64229A9E1F100C25137 /* ViewControllers */,
-				528FF64129A9E14800C25137 /* UIComponents */,
+				52844B1D29D20D6D005849A7 /* UI */,
 				528FF61029A9E13E00C25137 /* MybkMobile */,
 				528FF62729A9E13F00C25137 /* MybkMobileTests */,
 				528FF63129A9E14000C25137 /* MybkMobileUITests */,
@@ -379,9 +429,9 @@
 		528FF64129A9E14800C25137 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				52844B1F29D21133005849A7 /* UpdateDateFooter */,
 				52BA48D429BD5DA3006C6CA5 /* TranscriptSupplyCell */,
 				52ED1A9829B37E1D00DC1429 /* SpecialScoreCell */,
-				52C9A26429AA54EF00F2B8C1 /* CurrentWeekView */,
 				5289589E29AA035C0049EE07 /* SubjectCell */,
 				528FF64F29A9E58E00C25137 /* BottomBarItem */,
 				528FF64929A9E2F400C25137 /* InfoDetailCell */,
@@ -389,7 +439,7 @@
 			path = UIComponents;
 			sourceTree = "<group>";
 		};
-		528FF64229A9E1F100C25137 /* ViewControllers */ = {
+		528FF64229A9E1F100C25137 /* View+ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				5287970629C06327000BA20F /* DetailSubjectViewController */,
@@ -397,18 +447,17 @@
 				52ED1AA829B3B66300DC1429 /* TabViewControllers */,
 				52ED1AA729B3B65600DC1429 /* LoginViewController */,
 			);
-			path = ViewControllers;
+			path = "View+ViewModel";
 			sourceTree = "<group>";
 		};
-		528FF64329A9E20000C25137 /* Assistant */ = {
+		528FF64329A9E20000C25137 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				52844B1E29D20E24005849A7 /* GlobalAssistant */,
+				528FF64829A9E2BD00C25137 /* SubUIComponent */,
 				528FF65529A9F11000C25137 /* Utils */,
-				52486F9829C15AAB004FB208 /* Constant.swift */,
-				526ECB6729C21447006D9B3D /* NetworkAssistant.swift */,
-				52CD462929CFF53F00410F8C /* BioMetricAuthencation.swift */,
 			);
-			path = Assistant;
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		528FF64529A9E27300C25137 /* Toggle */ = {
@@ -482,50 +531,24 @@
 			path = WeekCell;
 			sourceTree = "<group>";
 		};
-		52A47E8329CDEF1A00CD07D1 /* exam */ = {
-			isa = PBXGroup;
-			children = (
-				52A47E8E29CDF2D600CD07D1 /* CourseExamModel.swift */,
-				52A47E9029CDF51C00CD07D1 /* SemeterExamModel.swift */,
-			);
-			path = exam;
-			sourceTree = "<group>";
-		};
-		52A47E8429CDEF2C00CD07D1 /* grade */ = {
-			isa = PBXGroup;
-			children = (
-				52A47E8629CDEF7500CD07D1 /* CourseGradeModel.swift */,
-				52A47E8829CDF08F00CD07D1 /* SemeterGradeModel.swift */,
-			);
-			path = grade;
-			sourceTree = "<group>";
-		};
-		52A47E8529CDEF5600CD07D1 /* schedule */ = {
-			isa = PBXGroup;
-			children = (
-				52A47E8A29CDF14700CD07D1 /* ScheduleLocalData.swift */,
-				52A47E8C29CDF25800CD07D1 /* ScheduleRemoteData.swift */,
-			);
-			path = schedule;
-			sourceTree = "<group>";
-		};
-		52A47E9229CE759500CD07D1 /* RemoteCourseFetcher */ = {
+		52A47E9229CE759500CD07D1 /* RemoteDataFetcher */ = {
 			isa = PBXGroup;
 			children = (
 				52A47E9829CE766900CD07D1 /* RemoteSchedule.swift */,
 				52A47E9429CE75EB00CD07D1 /* RemoteExam.swift */,
 				52A47E9629CE765600CD07D1 /* RemoteGrade.swift */,
 			);
-			path = RemoteCourseFetcher;
+			path = RemoteDataFetcher;
 			sourceTree = "<group>";
 		};
-		52A47E9329CE75C400CD07D1 /* MyBKNetwork+CoursesData */ = {
+		52A47E9329CE75C400CD07D1 /* RemoteData+Authencation */ = {
 			isa = PBXGroup;
 			children = (
-				52486F9A29C1681E004FB208 /* Authencation.swift */,
-				52A47E9229CE759500CD07D1 /* RemoteCourseFetcher */,
+				52486F9A29C1681E004FB208 /* RemoteAuthencation.swift */,
+				52A47E9229CE759500CD07D1 /* RemoteDataFetcher */,
+				52844B1B29D20BBA005849A7 /* RemoteDataObject */,
 			);
-			path = "MyBKNetwork+CoursesData";
+			path = "RemoteData+Authencation";
 			sourceTree = "<group>";
 		};
 		52BA48CF29BCB26C006C6CA5 /* Transcript */ = {
@@ -544,13 +567,6 @@
 				52BA48E629BDC719006C6CA5 /* TranscriptCollectionViewFooterCell.swift */,
 			);
 			path = TranscriptSupplyCell;
-			sourceTree = "<group>";
-		};
-		52C9A26429AA54EF00F2B8C1 /* CurrentWeekView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CurrentWeekView;
 			sourceTree = "<group>";
 		};
 		52ED1A9829B37E1D00DC1429 /* SpecialScoreCell */ = {
@@ -719,6 +735,7 @@
 				528958B029AA14160049EE07 /* ScoreBottomView.xib in Resources */,
 				528958A129AA036B0049EE07 /* SubjectScheduleCell.xib in Resources */,
 				52A0D00529B46405003B8952 /* MainTabBarController.storyboard in Resources */,
+				52844B2329D21154005849A7 /* UpdateDateFooterView.xib in Resources */,
 				525A2D6129BFDED300C9887B /* PolicyViewController.xib in Resources */,
 				52C9A25B29AA19B700F2B8C1 /* LearnScheduleBottomView.xib in Resources */,
 				52BA48E529BDC5FE006C6CA5 /* SpecialScoreViewCell.xib in Resources */,
@@ -867,7 +884,6 @@
 				52C9A26329AA480C00F2B8C1 /* SubjectCellModel.swift in Sources */,
 				52BA48E729BDC719006C6CA5 /* TranscriptCollectionViewFooterCell.swift in Sources */,
 				52A47E9529CE75EB00CD07D1 /* RemoteExam.swift in Sources */,
-				52A47E8729CDEF7500CD07D1 /* CourseGradeModel.swift in Sources */,
 				52F064EE29BA29B500D07D72 /* ScheduleViewModel.swift in Sources */,
 				52BA48E429BDC5FE006C6CA5 /* SpecialScoreViewCell.swift in Sources */,
 				5287970C29C065F5000BA20F /* DetailSubjectViewModel.swift in Sources */,
@@ -876,14 +892,14 @@
 				5208F47429C477D600A754F1 /* HTMLutils.swift in Sources */,
 				5208F47029C417D400A754F1 /* String.swift in Sources */,
 				525A2D6029BFDED300C9887B /* PolicyViewController.swift in Sources */,
-				52A47E8F29CDF2D600CD07D1 /* CourseExamModel.swift in Sources */,
 				5214923429B4370000A7522B /* ScheduleViewController.swift in Sources */,
 				52A0D00929B46C60003B8952 /* TranscriptViewController.swift in Sources */,
+				52844B2229D21154005849A7 /* UpdateDateFooterView.swift in Sources */,
 				52A47E9729CE765600CD07D1 /* RemoteGrade.swift in Sources */,
 				52CD462A29CFF53F00410F8C /* BioMetricAuthencation.swift in Sources */,
 				528958A829AA094E0049EE07 /* TestScheduleBottomView.swift in Sources */,
 				528FF65729A9F11F00C25137 /* Constrain.swift in Sources */,
-				52486F9B29C1681E004FB208 /* Authencation.swift in Sources */,
+				52486F9B29C1681E004FB208 /* RemoteAuthencation.swift in Sources */,
 				52BA48DE29BD6302006C6CA5 /* InfoDetailCell.swift in Sources */,
 				528958B129AA14160049EE07 /* ScoreBottomView.swift in Sources */,
 				52ED1AAE29B3B6ED00DC1429 /* UIViewController.swift in Sources */,

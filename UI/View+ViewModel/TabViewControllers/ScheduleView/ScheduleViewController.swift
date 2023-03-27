@@ -39,6 +39,9 @@ final class ScheduleViewController: UIViewController {
                let buttonInfo = self?.viewModel.getSemeter(at: semeterIndex) {
                 self?.pickerView.selectRow(semeterIndex, inComponent: 0, animated: true)
                 self?.pickerButton.setTitle(buttonInfo.semeterName ?? "error", for: .normal)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self?.collectionView.reloadSections(IndexSet(integer: 0))
+                }
             }
         }))
         
@@ -78,10 +81,13 @@ final class ScheduleViewController: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
         layout.itemSize = CGSize(width: collectionView.safeAreaLayoutGuide.layoutFrame.width,
                                  height: 185)
+        layout.footerReferenceSize = .init(width:collectionView.safeAreaLayoutGuide.layoutFrame.width,
+                                           height: 50)
         layout.minimumLineSpacing = 15
         collectionView!.collectionViewLayout = layout
         // cell
         collectionView.register(SubjectScheduleCell.self)
+        collectionView.register(footer: UpdateDateFooterView.self)
     }
     
     public let viewModel = ScheduleViewModel()
@@ -108,6 +114,16 @@ extension ScheduleViewController: UICollectionViewDataSource, UICollectionViewDe
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionFooter {
+            let footerView = collectionView.dequeue(footer: UpdateDateFooterView.self, forIndexPath: indexPath)
+            let updateDate = viewModel.getSemeter(at: viewModel.getSelectedSemeterIndex())?.updateDate
+            footerView.setUpdateDate(date: updateDate)
+            return footerView
+        } else {
+            return UICollectionReusableView()
+        }
+    }
 }
 
 extension ScheduleViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -135,12 +151,6 @@ extension ScheduleViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // bind model here
-        if let _ = self.viewModel.getSemeter(at: row) {
-            viewModel.setSemeterIndex(index: row)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                self.collectionView.reloadData()
-            }
-        }
-
+        viewModel.setSemeterIndex(index: row)
     }
 }

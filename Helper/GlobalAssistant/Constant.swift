@@ -26,6 +26,11 @@ struct Constant {
         static let mybkToken = "key.mybkToken"
         static let bioMetric = "key.bioInfomation"
     }
+    
+    
+    struct String {
+        static let all = "Tất cả"
+    }
 }
 
 enum SSOState: String, Error {
