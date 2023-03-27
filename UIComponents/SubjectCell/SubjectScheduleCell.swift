@@ -10,7 +10,7 @@ import UIKit
 enum SubjectCellType {
     case scoreBottom(data: SubjectCellModel)
     case testBottom(data: SubjectCellModel)
-    case schedBottom(data: SubjectCellModel)
+    case schedBottom(data: CourseScheduleRemoteData)
 }
 
 final class SubjectScheduleCell: CustomCell {
@@ -85,8 +85,8 @@ final class SubjectScheduleCell: CustomCell {
         case .schedBottom(let data):
             self.subjectNameLabel.text = data.subjectName
             self.subjectCodeLabel.text = data.subjectCode
-            self.classLabel.text = data.classRoomCode
-            self.creditLabel.text = data.credit
+            self.classLabel.text = data.classRoom
+            self.creditLabel.text = String(data.semeterCredit ?? 0.0)
         }
     }
 }

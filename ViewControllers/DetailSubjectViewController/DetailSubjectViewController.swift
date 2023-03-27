@@ -12,6 +12,8 @@ final class DetailSubjectViewController: UIViewController {
     @IBOutlet private weak var itemTitle: UILabel!
     @IBOutlet private weak var subjectNameLabel: UILabel!
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet weak var backButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

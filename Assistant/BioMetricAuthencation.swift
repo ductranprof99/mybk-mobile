@@ -62,32 +62,61 @@ fileprivate struct Credential: Codable {
 final class BioMetric {
     public static let shared = BioMetric()
     
+    var _bioMetricType: BioMetricType?
+    var _biometryState: BiometryState?
+    var _hasBioMetricEntryInStoraged: Bool?
+    
+    
     var bioMetricType: BioMetricType {
-        var context = LAContext()
-        context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
-        switch context.biometryType {
-        case .none:
-            return .none
-        case .touchID:
-            return .touch
-        case .faceID:
-            return .face
-        @unknown default:
-            return .none
+        if _biometryState == nil {
+            let context = LAContext()
+            context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
+            if context.biometryType == .faceID {
+                self._bioMetricType = .face
+            } else if context.biometryType == .touchID {
+                self._bioMetricType = .touch
+            } else {
+                self._bioMetricType = BioMetricType.none
+            }
         }
+        return _bioMetricType!
     }
     
     var biometryState: BiometryState {
-        let authContext = LAContext()
-        var error: NSError?
-        
-        let biometryAvailable = authContext.canEvaluatePolicy(
-            LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &error)
-        if let laError = error as? LAError, laError.code == LAError.Code.biometryLockout {
-            return .locked
+        if _biometryState == nil {
+            let authContext = LAContext()
+            var error: NSError?
+            
+            let biometryAvailable = authContext.canEvaluatePolicy(
+                LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &error)
+            if let laError = error as? LAError, laError.code == LAError.Code.biometryLockout {
+                _biometryState = .locked
+            } else {
+                _biometryState = biometryAvailable ? .available : .notAvailable
+            }
         }
-        return biometryAvailable ? .available : .notAvailable
+        return _biometryState!
     }
+    
+    var hasBioMetricEntryInStoraged: Bool {
+        if _hasBioMetricEntryInStoraged == nil {
+            let query: [String: Any] = [
+                kSecClass as String       : kSecClassGenericPassword,
+                kSecAttrAccessControl as String: getBioSecAccessControl(),
+                kSecMatchLimit as String  : kSecMatchLimitOne ]
+            var dataTypeRef: AnyObject? = nil
+            
+            let status = SecItemCopyMatching(query as CFDictionary, &dataTypeRef)
+            
+            if status == noErr {
+                _hasBioMetricEntryInStoraged = true
+            } else {
+                _hasBioMetricEntryInStoraged = false
+            }
+        }
+        return _hasBioMetricEntryInStoraged!
+    }
+    
     
     func createBioProtectedEntry(key: String, username: String, password: String) -> Bool {
         let encoder = JSONEncoder()
@@ -139,11 +168,10 @@ final class BioMetric {
     
 }
 
-
 extension BioMetric {
     
     private func loadBioProtected(key: String) -> Data? {
-        var query: [String: Any] = [
+        let query: [String: Any] = [
             kSecClass as String       : kSecClassGenericPassword,
             kSecAttrAccount as String : key,
             kSecReturnData as String  : kCFBooleanTrue as Any ,

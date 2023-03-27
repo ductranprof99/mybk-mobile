@@ -19,22 +19,23 @@ final class LearnScheduleBottomView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         // TODO: add register
+        collectionView.register(WeekViewCell.self)
     }
     
     // TODO: fix type here
-    var data: SubjectCellModel? {
+    var data: CourseScheduleRemoteData? {
         didSet {
-//            collectionView.performBatchUpdates {
-//                collectionView.reloadData()
-//            }
+            collectionView.performBatchUpdates {
+                collectionView.reloadData()
+            }
         }
     }
     
     public func setContent(data cellData: SubjectCellType) {
         if case let .schedBottom(data) = cellData {
-            self.weekDayLabel.text = data.weekDay
-            self.hoursLabel.text = data.hours
-            self.locationLabel.text = data.location
+            self.weekDayLabel.text = "Thứ \(data.lessonDate ?? 0)"
+            self.hoursLabel.text = "\(data.timeStart ?? "") - \(data.timeEnd ?? "")"
+            self.locationLabel.text = data.locationCode.rawValue
             self.data = data
         }
     }
@@ -43,7 +44,11 @@ final class LearnScheduleBottomView: UIView {
 
 extension LearnScheduleBottomView: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueCell(for: indexPath)
+        let cell = collectionView.dequeueCell(WeekViewCell.self, for: indexPath)
+        if let cellData = data?.weekSchedule,
+           indexPath.item < cellData.count {
+            cell.setCellContent(week: cellData[indexPath.item] )
+        }
         return cell
     }
     
@@ -52,7 +57,7 @@ extension LearnScheduleBottomView: UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.data?.activeWeek.count ?? 0
+        return data?.weekSchedule.count ?? 0
     }
     
 }

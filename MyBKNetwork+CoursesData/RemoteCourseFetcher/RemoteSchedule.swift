@@ -12,7 +12,7 @@ final class RemoteSchedule {
     public static let shared: RemoteSchedule = .init()
     
     public func getSchedules(token: String,
-                         completion: @escaping (Result<[SemeterScheduleModel], Error>) -> Void) {
+                         completion: @escaping (Result<[ScheduleRemoteData], Error>) -> Void) {
         var requestBodyComponent = URLComponents()
         requestBodyComponent.queryItems = [URLQueryItem(name: "_token", value: token)]
         postRequest(url: Constant.MYBK_SCHEDULE,
@@ -21,7 +21,7 @@ final class RemoteSchedule {
             case .success((let data, _)):
                 do {
                     // convert data into [SemeterScheduleModel]
-                    let schedules = try JSONDecoder().decode([SemeterScheduleModel].self, from: data)
+                    let schedules = try JSONDecoder().decode([ScheduleRemoteData].self, from: data)
                     completion(.success(schedules))
                 } catch {
                     completion(.failure(error))

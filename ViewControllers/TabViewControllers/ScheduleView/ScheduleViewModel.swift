@@ -9,25 +9,28 @@ import Foundation
 
 final class ScheduleViewModel {
     
-    var updatePickerView: (([SemeterScheduleModel]?) -> Void)?
+    var updatePickerView: (([ScheduleRemoteData]?) -> Void)?
     
     // this for demo, cus when sync you need to sync with remote (in background) then convert
     // to local storage, you always get data from local storage
-    private var listSemeter: [SemeterScheduleModel]? {
+    private var listSemeter: [ScheduleRemoteData]? {
         didSet {
             updatePickerView?(listSemeter)
         }
     }
-    private var currentSelectedRow: Int = 0
+    private var currentSemeterIndex: Int = 0
     private var subjectCellData: [SubjectCellModel]?
-    
-    public func getListSemeter() {
+}
+
+// MARK: - Get
+extension ScheduleViewModel {
+    public func getListRemoteSemeter() {
         // call api here
         if let mybkToken = SSOServiceManager.shared.mybkToken {
             RemoteSchedule.shared.getSchedules(token: mybkToken) { [weak self] result in
                 switch result {
                 case .success(let listSched):
-                    self?.listSemeter = listSched
+                    self?.listSemeter = listSched.sorted { $0.semeterCode ?? "1" > $1.semeterCode ?? "0" }
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
@@ -35,22 +38,38 @@ final class ScheduleViewModel {
         }
     }
     
+    public func getNumberOfSubjectInSemeter(in index: Int) -> Int {
+        return listSemeter?[index].schedules?.count ?? 0
+    }
+    
+    public func getListSubjectInSemeter(in index: Int) -> [CourseScheduleRemoteData] {
+        return listSemeter?[index].schedules ?? []
+    }
+    
+    public func getSubjectAtIndex(in semeterIndex: Int, with courseIndex: Int) -> CourseScheduleRemoteData? {
+        return listSemeter?[semeterIndex].schedules?[courseIndex]
+    }
+    
+    public func getSubjectCount(at index: Int) -> Int {
+        return listSemeter?[index].schedules?.count ?? 0
+    }
+    
     public func getNumOfPickerItem() -> Int {
-        return self.listSemeter?.count ?? 0
+        return listSemeter?.count ?? 0
     }
     
-    public func getSelectedRow() -> Int {
-        return currentSelectedRow
+    public func getSelectedSemeterIndex() -> Int {
+        return currentSemeterIndex
     }
     
-    public func setSelectedRow(index: Int) {
-        self.currentSelectedRow = index
+    public func getSemeter(at index: Int) -> ScheduleRemoteData? {
+        return listSemeter?[index]
     }
-    
-    public func getSelectedSemeter(index: Int) -> SemeterScheduleModel? {
-        if let listSemeter = listSemeter {
-            return listSemeter[index]
-        }
-        return nil
+}
+
+// MARK: - Set
+extension ScheduleViewModel {
+    public func setSemeterIndex(index: Int) {
+        self.currentSemeterIndex = index
     }
 }

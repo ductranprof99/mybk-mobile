@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailSubjectViewController" customModule="MybkMobile" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="zSw-0M-FEO" id="qF5-KQ-Mqu"/>
                 <outlet property="itemTitle" destination="0IC-u1-CoN" id="9It-Ip-Wvx"/>
                 <outlet property="subjectNameLabel" destination="1ic-S4-O2P" id="PgH-DI-KwG"/>
                 <outlet property="tableView" destination="VAl-FE-xt1" id="fbx-ek-0Hp"/>
