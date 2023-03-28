@@ -9,7 +9,7 @@ import UIKit
 
 enum SubjectCellType {
     case scoreBottom(data: SubjectCellModel)
-    case testBottom(data: SubjectCellModel)
+    case examBottom(data: CourseExamRemoteData)
     case schedBottom(data: CourseScheduleRemoteData)
 }
 
@@ -19,7 +19,7 @@ final class SubjectScheduleCell: CustomCell {
     
     @IBOutlet private weak var subjectCodeLabel: UILabel!
     
-    @IBOutlet private weak var classLabel: UILabel!
+    @IBOutlet private weak var groupLabel: UILabel!
     
     @IBOutlet private weak var creditLabel: UILabel!
     
@@ -55,7 +55,7 @@ final class SubjectScheduleCell: CustomCell {
         case .scoreBottom:
             addBottomView(view: scoreBottomView)
             scoreBottomView.setContent(data: cellData)
-        case .testBottom:
+        case .examBottom:
             addBottomView(view: testSceduleBottomView)
             testSceduleBottomView.setContent(data: cellData)
         case .schedBottom:
@@ -76,16 +76,22 @@ final class SubjectScheduleCell: CustomCell {
     
     private func setTopView(data: SubjectCellType) {
         switch data {
-        case .scoreBottom(let data), .testBottom(let data):
+        case .scoreBottom(let data):
             self.subjectNameLabel.text = data.subjectName
             self.subjectCodeLabel.text = data.subjectCode
-            self.classLabel.text = data.classRoomCode
+            self.groupLabel.text = data.classRoomCode
+            self.creditLabel.isHidden = true
+            self.detailButton.isHidden = true
+        case .examBottom(let data):
+            self.subjectNameLabel.text = data.subjectName
+            self.subjectCodeLabel.text = data.subjectCode
+            self.groupLabel.text = data.subGroup
             self.creditLabel.isHidden = true
             self.detailButton.isHidden = true
         case .schedBottom(let data):
             self.subjectNameLabel.text = data.subjectName
             self.subjectCodeLabel.text = data.subjectCode
-            self.classLabel.text = data.classRoom
+            self.groupLabel.text = data.subGroup
             self.creditLabel.text = String(data.semeterCredit ?? 0.0)
         }
     }

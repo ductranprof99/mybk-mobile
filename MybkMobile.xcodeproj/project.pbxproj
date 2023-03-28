@@ -22,6 +22,7 @@
 		526ECB6829C21447006D9B3D /* NetworkAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526ECB6729C21447006D9B3D /* NetworkAssistant.swift */; };
 		52844B2229D21154005849A7 /* UpdateDateFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52844B2029D21154005849A7 /* UpdateDateFooterView.swift */; };
 		52844B2329D21154005849A7 /* UpdateDateFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52844B2129D21154005849A7 /* UpdateDateFooterView.xib */; };
+		528530D529D2DFED004DBDC2 /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528530D429D2DFED004DBDC2 /* Decodable.swift */; };
 		5287970929C0633E000BA20F /* DetailSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287970729C0633E000BA20F /* DetailSubjectViewController.swift */; };
 		5287970A29C0633E000BA20F /* DetailSubjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5287970829C0633E000BA20F /* DetailSubjectViewController.xib */; };
 		5287970C29C065F5000BA20F /* DetailSubjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287970B29C065F5000BA20F /* DetailSubjectViewModel.swift */; };
@@ -51,7 +52,7 @@
 		52A47E8929CDF08F00CD07D1 /* SemeterGradeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E8829CDF08F00CD07D1 /* SemeterGradeModel.swift */; };
 		52A47E8B29CDF14700CD07D1 /* ScheduleLocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E8A29CDF14700CD07D1 /* ScheduleLocalData.swift */; };
 		52A47E8D29CDF25800CD07D1 /* ScheduleRemoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E8C29CDF25800CD07D1 /* ScheduleRemoteData.swift */; };
-		52A47E9129CDF51C00CD07D1 /* SemeterExamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E9029CDF51C00CD07D1 /* SemeterExamModel.swift */; };
+		52A47E9129CDF51C00CD07D1 /* ExamRemoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E9029CDF51C00CD07D1 /* ExamRemoteData.swift */; };
 		52A47E9529CE75EB00CD07D1 /* RemoteExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E9429CE75EB00CD07D1 /* RemoteExam.swift */; };
 		52A47E9729CE765600CD07D1 /* RemoteGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E9629CE765600CD07D1 /* RemoteGrade.swift */; };
 		52A47E9929CE766900CD07D1 /* RemoteSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E9829CE766900CD07D1 /* RemoteSchedule.swift */; };
@@ -120,6 +121,7 @@
 		526ECB6729C21447006D9B3D /* NetworkAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAssistant.swift; sourceTree = "<group>"; };
 		52844B2029D21154005849A7 /* UpdateDateFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDateFooterView.swift; sourceTree = "<group>"; };
 		52844B2129D21154005849A7 /* UpdateDateFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateDateFooterView.xib; sourceTree = "<group>"; };
+		528530D429D2DFED004DBDC2 /* Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decodable.swift; sourceTree = "<group>"; };
 		5287970729C0633E000BA20F /* DetailSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSubjectViewController.swift; sourceTree = "<group>"; };
 		5287970829C0633E000BA20F /* DetailSubjectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailSubjectViewController.xib; sourceTree = "<group>"; };
 		5287970B29C065F5000BA20F /* DetailSubjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSubjectViewModel.swift; sourceTree = "<group>"; };
@@ -153,7 +155,7 @@
 		52A47E8829CDF08F00CD07D1 /* SemeterGradeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemeterGradeModel.swift; sourceTree = "<group>"; };
 		52A47E8A29CDF14700CD07D1 /* ScheduleLocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLocalData.swift; sourceTree = "<group>"; };
 		52A47E8C29CDF25800CD07D1 /* ScheduleRemoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRemoteData.swift; sourceTree = "<group>"; };
-		52A47E9029CDF51C00CD07D1 /* SemeterExamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemeterExamModel.swift; sourceTree = "<group>"; };
+		52A47E9029CDF51C00CD07D1 /* ExamRemoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamRemoteData.swift; sourceTree = "<group>"; };
 		52A47E9429CE75EB00CD07D1 /* RemoteExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteExam.swift; sourceTree = "<group>"; };
 		52A47E9629CE765600CD07D1 /* RemoteGrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGrade.swift; sourceTree = "<group>"; };
 		52A47E9829CE766900CD07D1 /* RemoteSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteSchedule.swift; sourceTree = "<group>"; };
@@ -261,8 +263,8 @@
 			isa = PBXGroup;
 			children = (
 				52A47E8C29CDF25800CD07D1 /* ScheduleRemoteData.swift */,
+				52A47E9029CDF51C00CD07D1 /* ExamRemoteData.swift */,
 				52A47E8829CDF08F00CD07D1 /* SemeterGradeModel.swift */,
-				52A47E9029CDF51C00CD07D1 /* SemeterExamModel.swift */,
 			);
 			path = RemoteDataObject;
 			sourceTree = "<group>";
@@ -509,17 +511,18 @@
 				5246822729BB67EA00124A6A /* UICollectionViewCell.swift */,
 				52BA48E029BD8236006C6CA5 /* UITableView.swift */,
 				5208F47329C477D600A754F1 /* HTMLutils.swift */,
+				528530D429D2DFED004DBDC2 /* Decodable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		529A2B2629B953DC004631C5 /* ScheduleView */ = {
+		529A2B2629B953DC004631C5 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
 				5214923229B4370000A7522B /* ScheduleViewController.swift */,
 				52F064ED29BA29B500D07D72 /* ScheduleViewModel.swift */,
 			);
-			path = ScheduleView;
+			path = Schedule;
 			sourceTree = "<group>";
 		};
 		52A04DE929D1A3FE00194772 /* WeekCell */ = {
@@ -593,21 +596,21 @@
 			children = (
 				5264423229BE92A70099F48E /* Profile */,
 				52BA48CF29BCB26C006C6CA5 /* Transcript */,
-				52F1B46929BBFD130003178D /* ExamSchedules */,
-				529A2B2629B953DC004631C5 /* ScheduleView */,
+				52F1B46929BBFD130003178D /* Exam */,
+				529A2B2629B953DC004631C5 /* Schedule */,
 				52A0D00429B46405003B8952 /* MainTabBarController.storyboard */,
 				52A0D00C29B48E5C003B8952 /* MainTabBarController.swift */,
 			);
 			path = TabViewControllers;
 			sourceTree = "<group>";
 		};
-		52F1B46929BBFD130003178D /* ExamSchedules */ = {
+		52F1B46929BBFD130003178D /* Exam */ = {
 			isa = PBXGroup;
 			children = (
 				52A0D00629B46470003B8952 /* ExamViewController.swift */,
 				52F1B46A29BBFD470003178D /* ExamViewViewModel.swift */,
 			);
-			path = ExamSchedules;
+			path = Exam;
 			sourceTree = "<group>";
 		};
 		55A6E05240A2401D11D7026F /* Frameworks */ = {
@@ -889,6 +892,7 @@
 				5287970C29C065F5000BA20F /* DetailSubjectViewModel.swift in Sources */,
 				52BA48D129BCB283006C6CA5 /* TranscriptViewModel.swift in Sources */,
 				52C9A27029AA567300F2B8C1 /* CustomThumbView.swift in Sources */,
+				528530D529D2DFED004DBDC2 /* Decodable.swift in Sources */,
 				5208F47429C477D600A754F1 /* HTMLutils.swift in Sources */,
 				5208F47029C417D400A754F1 /* String.swift in Sources */,
 				525A2D6029BFDED300C9887B /* PolicyViewController.swift in Sources */,
@@ -923,7 +927,7 @@
 				52373E9E29B795CB00AA4383 /* UIColor.swift in Sources */,
 				52C9A26129AA43D600F2B8C1 /* UICollectionView.swift in Sources */,
 				528958A229AA036B0049EE07 /* SubjectScheduleCell.swift in Sources */,
-				52A47E9129CDF51C00CD07D1 /* SemeterExamModel.swift in Sources */,
+				52A47E9129CDF51C00CD07D1 /* ExamRemoteData.swift in Sources */,
 				52A0D00729B46470003B8952 /* ExamViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

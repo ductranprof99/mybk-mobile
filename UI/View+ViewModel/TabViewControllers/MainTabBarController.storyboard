@@ -117,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6k4-CF-62H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1981" y="-911"/>
+            <point key="canvasLocation" x="-802" y="-911"/>
         </scene>
         <!--Giờ học-->
         <scene sceneID="Sas-P1-O8S">
@@ -214,7 +214,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="STN-9W-Xjt">
-                                <rect key="frame" x="20" y="190.66666666666669" width="353" height="548.33333333333326"/>
+                                <rect key="frame" x="20" y="204.33333333333331" width="353" height="534.66666666666674"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="20" minimumInteritemSpacing="20" id="TSs-Ib-vZ0">
                                     <size key="itemSize" width="300" height="128"/>
@@ -235,16 +235,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXS-qQ-ZJM" customClass="CustomButton" customModule="MybkMobile" customModuleProvider="target">
-                                <rect key="frame" x="12" y="144.33333333333334" width="369" height="34.333333333333343"/>
+                                <rect key="frame" x="12" y="146" width="369" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="RGU-M9-cSK"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button">
-                                    <color key="baseForegroundColor" red="0.066666666669999999" green="0.25882352939999997" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </buttonConfiguration>
+                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.066666666669999999" green="0.25882352939999997" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="9"/>
+                                        <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -252,7 +256,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_arrow_down" translatesAutoresizingMaskIntoConstraints="NO" id="mkD-xA-KvA">
-                                <rect key="frame" x="341" y="149" width="25" height="25"/>
+                                <rect key="frame" x="341" y="156" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="mkD-xA-KvA" secondAttribute="height" multiplier="1:1" id="26T-09-ieM"/>
                                     <constraint firstAttribute="height" constant="25" id="BRP-Nn-csT"/>
@@ -262,10 +266,10 @@
                         <viewLayoutGuide key="safeArea" id="3Qr-aJ-Ci5"/>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="STN-9W-Xjt" firstAttribute="top" secondItem="YXS-qQ-ZJM" secondAttribute="bottom" constant="12" id="6B6-8s-f47"/>
-                            <constraint firstItem="YXS-qQ-ZJM" firstAttribute="top" secondItem="slp-32-z7A" secondAttribute="bottom" constant="24" id="CDN-N1-PPA"/>
+                            <constraint firstItem="STN-9W-Xjt" firstAttribute="top" secondItem="YXS-qQ-ZJM" secondAttribute="bottom" constant="10.333333333333314" id="6B6-8s-f47"/>
+                            <constraint firstItem="YXS-qQ-ZJM" firstAttribute="top" secondItem="slp-32-z7A" secondAttribute="bottom" constant="25.666666666666657" id="CDN-N1-PPA"/>
                             <constraint firstItem="slp-32-z7A" firstAttribute="top" secondItem="3Qr-aJ-Ci5" secondAttribute="top" constant="24" id="JAW-IB-TMW"/>
-                            <constraint firstItem="mkD-xA-KvA" firstAttribute="centerY" secondItem="YXS-qQ-ZJM" secondAttribute="centerY" id="KMp-X5-7XN"/>
+                            <constraint firstItem="mkD-xA-KvA" firstAttribute="centerY" secondItem="YXS-qQ-ZJM" secondAttribute="centerY" constant="-1.5" id="KMp-X5-7XN"/>
                             <constraint firstItem="YXS-qQ-ZJM" firstAttribute="trailing" secondItem="mkD-xA-KvA" secondAttribute="trailing" constant="15" id="V3C-R4-TE0"/>
                             <constraint firstItem="3Qr-aJ-Ci5" firstAttribute="trailing" secondItem="STN-9W-Xjt" secondAttribute="trailing" constant="20" id="XbY-B5-wDT"/>
                             <constraint firstItem="YXS-qQ-ZJM" firstAttribute="leading" secondItem="3Qr-aJ-Ci5" secondAttribute="leading" constant="12" id="Z6g-qh-1P2"/>
@@ -285,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opb-CT-7Xt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-975" y="-911"/>
+            <point key="canvasLocation" x="-1821" y="-911"/>
         </scene>
         <!--Cá nhân-->
         <scene sceneID="DwK-hb-6BP">
@@ -567,7 +571,7 @@
     </scenes>
     <designables>
         <designable name="YXS-qQ-ZJM">
-            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
+            <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="kwk-kR-Adu">
             <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>

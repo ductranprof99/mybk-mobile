@@ -1,5 +1,5 @@
 //
-//  ScheduleViewController.swift
+//  ExamViewController.swift
 //  MybkMobile
 //
 //  Created by DucTran on 05/03/2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ScheduleViewController: UIViewController {
+final class ExamViewController: UIViewController {
     
     @IBOutlet weak var pickerButton: UIButton!
     
@@ -72,6 +72,8 @@ final class ScheduleViewController: UIViewController {
                 self.collectionView.reloadData()
             }
         }
+        // TODO: Call view model to trigger model auto update
+        // Fix later
         viewModel.getListRemoteSemeter()
     }
     
@@ -90,12 +92,11 @@ final class ScheduleViewController: UIViewController {
         collectionView.register(footer: UpdateDateFooterView.self)
     }
     
-    public let viewModel = ScheduleViewModel()
+    public let viewModel = ExamViewViewModel()
 }
 
-extension ScheduleViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension ExamViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // TODO: something to do with view model here
         return viewModel.getNumberOfSubjectInSemeter(in: viewModel.getSelectedSemeterIndex())
     }
     
@@ -106,10 +107,7 @@ extension ScheduleViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(SubjectScheduleCell.self,for: indexPath)
         if let cellData = viewModel.getSubjectAtIndex(in: viewModel.getSelectedSemeterIndex(), with: indexPath.item) {
-            cell.setCellContent(cellData: .schedBottom(data: cellData))
-        }
-        cell.handleCellTap = { [weak self] vc in
-            self?.navigationController?.pushViewController(vc, animated: false)
+            cell.setCellContent(cellData: .examBottom(data: cellData))
         }
         return cell
     }
@@ -124,9 +122,10 @@ extension ScheduleViewController: UICollectionViewDataSource, UICollectionViewDe
             return UICollectionReusableView()
         }
     }
+    
 }
 
-extension ScheduleViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension ExamViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return self.viewModel.getNumOfPickerItem()
     }
@@ -150,7 +149,7 @@ extension ScheduleViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // bind model here
         viewModel.setSemeterIndex(index: row)
     }
+    
 }

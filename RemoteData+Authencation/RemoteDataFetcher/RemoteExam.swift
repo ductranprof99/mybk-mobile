@@ -11,17 +11,8 @@ final class RemoteExam {
     
     public static let shared: RemoteExam = .init()
     
-    // this private struct just for faster decode
-    private struct SemeterExamDataWrapper: Decodable {
-        var lichthi: [SemeterExamModel]
-        
-        enum CodingKeys: String, CodingKey {
-            case lichthi
-        }
-    }
-
     public func getExams(token: String,
-                         completion: @escaping (Result<[SemeterExamModel], Error>) -> Void) {
+                         completion: @escaping (Result<[ExamRemoteData], Error>) -> Void) {
         var requestBodyComponent = URLComponents()
         requestBodyComponent.queryItems = [URLQueryItem(name: "_token", value: token)]
         postRequest(url: Constant.MYBK_EXAM,
@@ -29,11 +20,15 @@ final class RemoteExam {
             switch result {
             case .success((let data, _)):
                 do {
-                    let decoder = JSONDecoder()
-                    let semeterExamDataWrapper = try decoder.decode(SemeterExamDataWrapper.self, from: data)
-                    let examList = semeterExamDataWrapper.lichthi
-                    completion(.success(examList))
+                    if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                        let sortedDictionary = dictionary.sorted(by: { $0.key > $1.key }).compactMap {
+                            return $0.value as? [String: Any]
+                        }
+                        // cast nsdictionary into nsdata
+                        completion(.success(sortedDictionary.compactMap{ try? ExamRemoteData.init($0)}))
+                    }
                 } catch {
+                    print(error.localizedDescription)
                     completion(.failure(error))
                 }
             case .failure(let error):

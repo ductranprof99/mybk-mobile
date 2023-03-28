@@ -102,9 +102,9 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="bottomContainerView" destination="6kL-ei-cPe" id="jiG-WS-L8s"/>
-                <outlet property="classLabel" destination="h5o-FA-7Y9" id="rDy-eh-j4E"/>
                 <outlet property="creditLabel" destination="ggg-j2-tha" id="NOG-Xy-myB"/>
                 <outlet property="detailButton" destination="I31-Ze-Huv" id="6Ke-cG-yiw"/>
+                <outlet property="groupLabel" destination="h5o-FA-7Y9" id="52u-rg-8zA"/>
                 <outlet property="subjectCodeLabel" destination="Ycz-tR-e83" id="TeM-v5-zwU"/>
                 <outlet property="subjectNameLabel" destination="HGx-BD-gu7" id="u4V-d6-fZq"/>
                 <outlet property="topContainerView" destination="qRS-Ch-Eh5" id="Hvx-10-0Fz"/>
