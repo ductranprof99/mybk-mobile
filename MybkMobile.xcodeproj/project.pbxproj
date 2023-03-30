@@ -49,7 +49,7 @@
 		52A0D00929B46C60003B8952 /* TranscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0D00829B46C60003B8952 /* TranscriptViewController.swift */; };
 		52A0D00B29B47002003B8952 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0D00A29B47002003B8952 /* ProfileViewController.swift */; };
 		52A0D00D29B48E5C003B8952 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0D00C29B48E5C003B8952 /* MainTabBarController.swift */; };
-		52A47E8929CDF08F00CD07D1 /* SemeterGradeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E8829CDF08F00CD07D1 /* SemeterGradeModel.swift */; };
+		52A47E8929CDF08F00CD07D1 /* GradeRemoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E8829CDF08F00CD07D1 /* GradeRemoteData.swift */; };
 		52A47E8B29CDF14700CD07D1 /* ScheduleLocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E8A29CDF14700CD07D1 /* ScheduleLocalData.swift */; };
 		52A47E8D29CDF25800CD07D1 /* ScheduleRemoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E8C29CDF25800CD07D1 /* ScheduleRemoteData.swift */; };
 		52A47E9129CDF51C00CD07D1 /* ExamRemoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E9029CDF51C00CD07D1 /* ExamRemoteData.swift */; };
@@ -152,7 +152,7 @@
 		52A0D00829B46C60003B8952 /* TranscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptViewController.swift; sourceTree = "<group>"; };
 		52A0D00A29B47002003B8952 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		52A0D00C29B48E5C003B8952 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		52A47E8829CDF08F00CD07D1 /* SemeterGradeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemeterGradeModel.swift; sourceTree = "<group>"; };
+		52A47E8829CDF08F00CD07D1 /* GradeRemoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeRemoteData.swift; sourceTree = "<group>"; };
 		52A47E8A29CDF14700CD07D1 /* ScheduleLocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLocalData.swift; sourceTree = "<group>"; };
 		52A47E8C29CDF25800CD07D1 /* ScheduleRemoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRemoteData.swift; sourceTree = "<group>"; };
 		52A47E9029CDF51C00CD07D1 /* ExamRemoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamRemoteData.swift; sourceTree = "<group>"; };
@@ -264,7 +264,7 @@
 			children = (
 				52A47E8C29CDF25800CD07D1 /* ScheduleRemoteData.swift */,
 				52A47E9029CDF51C00CD07D1 /* ExamRemoteData.swift */,
-				52A47E8829CDF08F00CD07D1 /* SemeterGradeModel.swift */,
+				52A47E8829CDF08F00CD07D1 /* GradeRemoteData.swift */,
 			);
 			path = RemoteDataObject;
 			sourceTree = "<group>";
@@ -916,7 +916,7 @@
 				52BA48D729BD5DF9006C6CA5 /* TranscriptCollectionViewHeaderCell.swift in Sources */,
 				52ED1AA629B3B55800DC1429 /* SceneDelegate.swift in Sources */,
 				5264423429BE9CE90099F48E /* ProfileViewModel.swift in Sources */,
-				52A47E8929CDF08F00CD07D1 /* SemeterGradeModel.swift in Sources */,
+				52A47E8929CDF08F00CD07D1 /* GradeRemoteData.swift in Sources */,
 				526ECB6829C21447006D9B3D /* NetworkAssistant.swift in Sources */,
 				52486F9929C15AAB004FB208 /* Constant.swift in Sources */,
 				52BA48D329BCB455006C6CA5 /* TranscriptAdditionalModel.swift in Sources */,

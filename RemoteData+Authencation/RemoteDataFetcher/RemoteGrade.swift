@@ -11,17 +11,8 @@ final class RemoteGrade {
     
     public static let shared: RemoteGrade = .init()
     
-    // this private struct just for faster decode
-    private struct SemeterGradeDataWrapper: Decodable {
-        var diem: [SemeterGradeModel]
-        
-        enum CodingKeys: String, CodingKey {
-            case diem
-        }
-    }
-
     public func getGrades(token: String,
-                          completion: @escaping (Result<[SemeterGradeModel], Error>) -> Void) {
+                          completion: @escaping (Result<[GradeRemoteData], Error>) -> Void) {
         var requestBodyComponent = URLComponents()
         requestBodyComponent.queryItems = [URLQueryItem(name: "_token", value: token)]
         postRequest(url: Constant.MYBK_GRADE,
@@ -29,11 +20,14 @@ final class RemoteGrade {
             switch result {
             case .success((let data, _)):
                 do {
-                    let decoder = JSONDecoder()
-                    let semeterGradeDataWrapper = try decoder.decode(SemeterGradeDataWrapper.self, from: data)
-                    let gradeList = semeterGradeDataWrapper.diem
-                    completion(.success(gradeList))
+                    if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                        let sortedDictionary = dictionary.sorted(by: { $0.key > $1.key }).compactMap {
+                            return $0.value as? [String: Any]
+                        }
+                        completion(.success(sortedDictionary.compactMap{ try? GradeRemoteData.init($0)}))
+                    }
                 } catch {
+                    print(error.localizedDescription)
                     completion(.failure(error))
                 }
             case .failure(let error):

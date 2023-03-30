@@ -20,6 +20,9 @@ final class TranscriptViewController: UIViewController {
         vc.view.addSubview(pickerView)
         pickerView.setConstrain(to: vc.view) { make in
             make.append(.centerY(centerY: 0))
+            make.append(.leading(leading: 0))
+            make.append(.trailing(trailing: 0))
+            make.append(.height(height: 200))
         }
         
         let alert = UIAlertController(title: nil, message: "", preferredStyle: .actionSheet)
@@ -32,10 +35,13 @@ final class TranscriptViewController: UIViewController {
         }))
         
         alert.addAction(UIAlertAction(title: "Chọn học kì", style: .default, handler: { [weak self] (UIAlertAction) in
-            if let selectedRow = self?.viewModel.currentSelectedRow,
-               let buttonName = self?.viewModel.getListSemeter()[selectedRow] {
-                self?.pickerView.selectedRow(inComponent: selectedRow)
-                self?.pickerButton.setTitle(buttonName, for: .normal)
+            if let semeterIndex = self?.viewModel.getSelectedSemeterIndex(),
+               let buttonInfo = self?.viewModel.getSemeter(at: semeterIndex) {
+                self?.pickerView.selectRow(semeterIndex, inComponent: 0, animated: true)
+                self?.pickerButton.setTitle(buttonInfo.semeterName ?? "error", for: .normal)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self?.collectionView.reloadSections(IndexSet(integer: 0))
+                }
             }
         }))
         
@@ -43,10 +49,7 @@ final class TranscriptViewController: UIViewController {
     }
     
     lazy var pickerView: UIPickerView = {
-        let pickerView = UIPickerView(frame: .init(x: 0,
-                                                   y: 0,
-                                                   width: view.bounds.width,
-                                                   height: 100))
+        let pickerView = UIPickerView(frame: .zero)
         pickerView.dataSource = self
         pickerView.delegate = self
         return pickerView
@@ -54,12 +57,24 @@ final class TranscriptViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupPickerView()
+        setupViewModel()
         setupCollectionView()
     }
     
-    private func setupPickerView() {
-        // select 1st item in row when init
+    private func setupViewModel() {
+        viewModel.updatePickerView =  { _ in
+            DispatchQueue.main.async {
+                self.pickerView.reloadAllComponents()
+                if let buttonInfo = self.viewModel.getSemeter(at: 0) {
+                    self.pickerView.selectRow(0, inComponent: 0, animated: true)
+                    self.pickerButton.setTitle(buttonInfo.semeterName ?? "error", for: .normal)
+                }
+                self.collectionView.reloadData()
+            }
+        }
+        // TODO: Call view model to trigger model auto update
+        // Fix later
+        viewModel.getListRemoteSemeter()
     }
     
     private func setupCollectionView() {
@@ -85,7 +100,7 @@ final class TranscriptViewController: UIViewController {
 
 extension TranscriptViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return viewModel.getNumberOfSubjectInSemeter(in: viewModel.getSelectedSemeterIndex())
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -94,7 +109,9 @@ extension TranscriptViewController: UICollectionViewDataSource, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(SubjectScheduleCell.self,for: indexPath)
-        cell.setCellContent(cellData: .scoreBottom(data: .init()))
+        if let cellData = viewModel.getSubjectAtIndex(in: viewModel.getSelectedSemeterIndex(), with: indexPath.item) {
+            cell.setCellContent(cellData: .scoreBottom(data: cellData))
+        }
         return cell
     }
     
@@ -102,7 +119,9 @@ extension TranscriptViewController: UICollectionViewDataSource, UICollectionView
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             let header = collectionView.dequeue(header: TranscriptCollectionViewHeaderCell.self, forIndexPath: indexPath)
-            header.setUpContent(viewModel: viewModel.getHeaderSectionData())
+            if let headerData = viewModel.getHeaderSectionData() {
+                header.setUpContent(viewModel: headerData)
+            }
             return header
         case UICollectionView.elementKindSectionFooter:
             let footer = collectionView.dequeue(footer: TranscriptCollectionViewFooterCell.self, forIndexPath: indexPath)
@@ -131,7 +150,7 @@ extension TranscriptViewController: UIPickerViewDelegate, UIPickerViewDataSource
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width - 20, height: 30))
         if viewModel.getNumOfPickerItem() > 0 {
-            label.text = viewModel.getListSemeter()[row]
+            label.text = viewModel.getSemeter(at: row)?.semeterName
         }
         label.font = .systemFont(ofSize: 14, weight: .semibold)
         label.sizeToFit()
@@ -139,14 +158,7 @@ extension TranscriptViewController: UIPickerViewDelegate, UIPickerViewDataSource
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // bind model here
-        let _ = self.viewModel.updateListSchedule {
-            self.collectionView.performBatchUpdates({
-                    self.collectionView.reloadData()
-            }, completion: { _ in
-                self.collectionView.invalidateIntrinsicContentSize()
-            })
-        }
+        viewModel.setSemeterIndex(index: row)
         
     }
     

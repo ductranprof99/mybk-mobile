@@ -7,55 +7,57 @@
 
 import Foundation
 
-struct ListInfoModel {
-    typealias RowData = (title: String, detail: String?, crucial: String?)
-    var title: String
-    var detail: [RowData]
-    
-    func numOfRow() -> Int {
-        return detail.count
-    }
-    
-    func dataOfRow(in row: Int) -> RowData? {
-        if row < detail.count {
-            return detail[row]
-        }
-        return nil
-    }
-    
-    static let mockDataNoDetail = ListInfoModel(title: "Tong ket",
-                                        detail: [("So tin chi dang ki", nil, "16"),
-                                                 ("So tin chi dang ki", nil, "16"),
-                                                 ("So tin chi dang ki", nil, "16"),
-                                                 ("So tin chi dang ki", nil, "16"),
-                                                 ("So tin chi dang ki", nil, "16"),
-                                                 ("So tin chi dang ki", nil, "16"),
-                                                 ("So tin chi dang ki", nil, "16")])
-    
-    static let mockDataDetail = ListInfoModel(title: "Tong ket",
-                                        detail: [("So tin chi dang ki", "16", nil),
-                                                 ("So tin chi dang ki", "16", nil),
-                                                 ("So tin chi dang ki", "16", nil),
-                                                 ("So tin chi dang ki", "16", nil),
-                                                 ("So tin chi dang ki", "16", nil),
-                                                 ("So tin chi dang ki", "16", nil),
-                                                 ("So tin chi dang ki", "16", nil)])
+enum HeaderSectionType: Int {
+    case summarize = 0
+    case scholarship
 }
-
+enum HeaderSectionData {
+    case summarize(info: [(title: String, detail: String)]?)
+    case scholarship(info: [(title: String, detail: String)]?)
+}
 
 struct TranscriptHeaderModel {
     
-    var sectionsData: [ListInfoModel] = [.mockDataNoDetail, .mockDataNoDetail]
+    private var summarizeData: [(title: String, detail: String)]?
+    
+    private var scholarshipData: [(title: String, detail: String)]?
     
     func numOfSection() -> Int {
-        return sectionsData.count
+        return 2
     }
     
-    func getSectionData(section: Int) -> ListInfoModel? {
-        if section < sectionsData.count {
-            return sectionsData[section]
+    func getSectionData(section: HeaderSectionType) -> HeaderSectionData {
+        switch section {
+        case .summarize:
+            return .summarize(info: self.summarizeData)
+        case .scholarship:
+            return .scholarship(info: self.scholarshipData)
         }
-        return nil
+    }
+    
+    func getSectionTitle(section: HeaderSectionType) -> String {
+        switch section {
+        case .summarize:
+            return "Tổng kết"
+        case .scholarship:
+            return "Thông tin xét học bổng khuyến khích"
+        }
+    }
+    
+    mutating func setHeaderData(with headerData: GradeRemoteData) {
+        self.summarizeData = [("Số tín chỉ đăng ký học kỳ", headerData.numOfRegisteredCreditInSemeter ?? "--"),
+                              ("Số tín chỉ tích lũy học kỳ", headerData.numOfPassCreditInSemeter ?? "--"),
+                              ("Điểm trung bình học kỳ", headerData.avgSemeterScore ?? "--"),
+                              ("Số tín chỉ tích lũy", headerData.numOfTotalPassCredit ?? "--"),
+                              ("Điểm trung bình tích lũy", headerData.avgTotalScore ?? "--")]
+        
+        self.scholarshipData = [("ĐTB 1 học kỳ", headerData.avgSemeterScore ?? "--"),
+                                ("Điểm rèn luyện", headerData.actionScore ?? "--"),
+                                ("Số TC đạt trong học kỳ", headerData.numOfPassCreditInSemeter ?? "--"),
+                                ("Số TC tích lũy", headerData.numOfTotalPassCredit ?? "--"),
+                                ("Điều kiện xét HBKK", headerData.scholashipCondition ?? "--"),
+                                ("Kết quả xét HBKK", headerData.scholarshipResult ?? "--"),
+                                ("Ngày cập nhật", headerData.scholarsipDate  ?? "--")]
     }
 }
 

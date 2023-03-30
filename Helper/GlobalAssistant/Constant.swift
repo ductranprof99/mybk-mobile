@@ -20,7 +20,7 @@ struct Constant {
     static let SSO_MYBK_LOGOUT_URL = "https://sso.hcmut.edu.vn/cas/logout"
     
     static let MYBK_SCHEDULE = "https://mybk.hcmut.edu.vn/stinfo/lichthi/ajax_lichhoc"
-    static let MYBK_GRADE = "https://mybk.hcmut.edu.vn/stinfo/lichthi/ajax_grade"
+    static let MYBK_GRADE = "https://mybk.hcmut.edu.vn/stinfo/grade/ajax_grade"
     static let MYBK_EXAM = "https://mybk.hcmut.edu.vn/stinfo/lichthi/ajax_lichthi"
     struct Key {
         static let mybkToken = "key.mybkToken"

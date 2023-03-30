@@ -54,16 +54,28 @@ final class TranscriptCollectionViewHeaderCell: UICollectionReusableView {
 
 extension TranscriptCollectionViewHeaderCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let sectionData = viewModel?.getSectionData(section: section) else { return 0 }
-        return sectionData.numOfRow()
+        guard let sectionType = HeaderSectionType(rawValue: section),
+              let sectionData = viewModel?.getSectionData(section: sectionType) else { return 0 }
+        switch sectionData {
+        case .summarize(let info):
+            return info?.count ?? 0
+        case .scholarship(let info):
+            return info?.count ?? 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellData = viewModel?.getSectionData(section: indexPath.section)?.dataOfRow(in: indexPath.item)
-        let cell = tableView.dequeueReusableCell(of: InfoDetailCell.self, for: indexPath) { cell in
-            cell.setContent(title: cellData?.title ?? "No title == foul",
-                            content: cellData?.detail,
-                            crucialInfo: cellData?.crucial)
+        var cell: UITableViewCell?
+        if let sectionType = HeaderSectionType(rawValue: indexPath.section),
+           let sectionData = viewModel?.getSectionData(section: sectionType) {
+            cell = tableView.dequeueReusableCell(of: InfoDetailCell.self, for: indexPath) { cell in
+                switch sectionData {
+                case .summarize(let info), .scholarship(let info):
+                    cell.setContent(title: info?[indexPath.item].title ?? "No title == foul",
+                                    content: info?[indexPath.item].detail,
+                                    crucialInfo: nil)
+                }
+            }
         }
         return cell ?? UITableViewCell()
     }
@@ -75,9 +87,10 @@ extension TranscriptCollectionViewHeaderCell: UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
         let label = UILabel()
+        guard let sectionType =  HeaderSectionType(rawValue: section) else { return nil }
         label.font = .systemFont(ofSize: 15, weight: .semibold)
         label.textColor = UIColor(rgb: 0x1297C1)
-        label.text = viewModel?.getSectionData(section: section)?.title
+        label.text = viewModel?.getSectionTitle(section: sectionType)
         view.addSubview(label)
         label.setConstrain(to: view) { make in
             make.append(.centerY(centerY: 0))

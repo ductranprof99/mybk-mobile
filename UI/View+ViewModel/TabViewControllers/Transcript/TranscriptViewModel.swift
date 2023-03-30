@@ -8,53 +8,81 @@
 import Foundation
 
 final class TranscriptViewModel {
-    public func getHeaderSectionData() -> TranscriptHeaderModel {
-        return .init()
+    
+    var updatePickerView: (([GradeRemoteData]?) -> Void)?
+    
+    // this for demo, cus when sync you need to sync with remote (in background) then convert
+    // to local storage, you always get data from local storage
+    private var listSemeter: [GradeRemoteData]? {
+        didSet {
+            updatePickerView?(listSemeter)
+        }
+    }
+    private var currentSemeterIndex: Int = 0
+}
+
+// MARK: - Get
+extension TranscriptViewModel {
+    public func getListRemoteSemeter() {
+        // call api here
+        if let mybkToken = SSOServiceManager.shared.mybkToken {
+            RemoteGrade.shared.getGrades(token: mybkToken) { [weak self] result in
+                switch result {
+                case .success(let listSched):
+                    self?.listSemeter = listSched
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    public func getNumberOfSubjectInSemeter(in index: Int) -> Int {
+        return listSemeter?[index].scores?.count ?? 0
+    }
+    
+    public func getListSubjectInSemeter(in index: Int) -> [CourseGradeRemoteData] {
+        return listSemeter?[index].scores ?? []
+    }
+    
+    public func getSubjectAtIndex(in semeterIndex: Int, with courseIndex: Int) -> CourseGradeRemoteData? {
+        return listSemeter?[semeterIndex].scores?[courseIndex]
+    }
+    
+    public func getSubjectCount(at index: Int) -> Int {
+        return listSemeter?[index].scores?.count ?? 0
+    }
+    
+    public func getNumOfPickerItem() -> Int {
+        return listSemeter?.count ?? 0
+    }
+    
+    public func getSelectedSemeterIndex() -> Int {
+        return currentSemeterIndex
+    }
+    
+    public func getSemeter(at index: Int) -> GradeRemoteData? {
+        return listSemeter?[index]
+    }
+    
+    public func getHeaderSectionData() -> TranscriptHeaderModel? {
+        if let currentHeaderData = listSemeter?[currentSemeterIndex] {
+            var res: TranscriptHeaderModel = .init()
+            res.setHeaderData(with: currentHeaderData)
+            return res
+        }
+        return nil
     }
     
     public func getFooterSectionData() -> TranscriptFooterModel {
         return .mockData
     }
-    
-    var listSemeter: [String]? = ["ba", "ba", "ba", "ba"]
-    var currentSelectedRow: Int = 0
-    var subjectCellData: [SubjectCellModel]?
-    
-    public func getListSemeter() -> [String] {
-        if let listSemeter = listSemeter {
-            return listSemeter
-        } else {
-            // call api here
-            return []
-        }
-    }
-    
-    public func getNumOfPickerItem() -> Int {
-        return self.listSemeter?.count ?? 0
-    }
-    
-    public func getSelectedRow() -> Int {
-        return currentSelectedRow
-    }
-    
-    public func setSelectedRow(index: Int) {
-        self.currentSelectedRow = index
-    }
-    
-    public func getListSchedule() -> Int {
-        if let subjectCellData = subjectCellData {
-            return subjectCellData.count
-        } else {
-            // call api here
-            subjectCellData = updateListSchedule {
-                
-            }
-            return  10
-        }
-    }
-    
-    public func updateListSchedule(completion: () -> Void) -> [SubjectCellModel] {
-        // request here
-        return []
+}
+
+// MARK: - Set
+extension TranscriptViewModel {
+    public func setSemeterIndex(index: Int) {
+        self.currentSemeterIndex = index
     }
 }
+

@@ -24,12 +24,12 @@ final class TestScheduleBottomView: UIView {
     
     public func setContent(data cellData: SubjectCellType) {
         if case let .examBottom(data) = cellData {
-            midTermDateLabel.text = data.midTermExamDate
-            midTermTimeLabel.text = data.midTermExamTime
-            midTermLocationLabel.text = data.midTermExamLocation
-            endTermDateLabel.text = data.endTermExamDate
-            endTermTimeLabel.text = data.endTermExamTime
-            endTermLocationLabel.text = data.endTermExamLocation
+            midTermDateLabel.text = data.midTermExamDate ?? "--"
+            midTermTimeLabel.text = data.midTermExamTime ?? "--"
+            midTermLocationLabel.text = data.midTermExamLocation ?? "--"
+            endTermDateLabel.text = data.endTermExamDate ?? "--"
+            endTermTimeLabel.text = data.endTermExamTime ?? "--"
+            endTermLocationLabel.text = data.endTermExamLocation ?? "--"
         }
     }
 }
