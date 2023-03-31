@@ -72,8 +72,7 @@ extension TranscriptCollectionViewHeaderCell: UITableViewDelegate, UITableViewDa
                 switch sectionData {
                 case .summarize(let info), .scholarship(let info):
                     cell.setContent(title: info?[indexPath.item].title ?? "No title == foul",
-                                    content: info?[indexPath.item].detail,
-                                    crucialInfo: nil)
+                                    crucialInfo: info?[indexPath.item].detail ?? "")
                 }
             }
         }

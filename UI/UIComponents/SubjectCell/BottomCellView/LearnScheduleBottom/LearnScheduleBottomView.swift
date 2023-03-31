@@ -31,7 +31,7 @@ final class LearnScheduleBottomView: UIView {
     
     public func setContent(data cellData: SubjectCellType) {
         if case let .schedBottom(data) = cellData {
-            self.weekDayLabel.text = (data.lessonDate != nil) ? "Thứ \(data.lessonDate!)" : Constant.String.all
+            self.weekDayLabel.text = (data.lessonDate != nil) ? "Thứ \(data.lessonDate!)" : Constant.LearnScheduleView.all
             self.hoursLabel.text = "\(data.timeStart ?? "") - \(data.timeEnd ?? "")"
             self.locationLabel.text = data.locationCode.rawValue
             self.data = data

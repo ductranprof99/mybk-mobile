@@ -7,20 +7,6 @@
 
 import UIKit
 
-/*
- var customSwitch: CustomSwitch = {
-         let customSwitch = CustomSwitch()
-         customSwitch.translatesAutoresizingMaskIntoConstraints = false
-         customSwitch.onTintColor = UIColor.orange
-         customSwitch.offTintColor = UIColor.darkGray
-         customSwitch.cornerRadius = 0.1
-         customSwitch.thumbCornerRadius = 0.1
-         customSwitch.thumbTintColor = UIColor.white
-         customSwitch.animationDuration = 0.25
-         return customSwitch
-     }()
- */
-
 @IBDesignable
 public class CustomSwitch: UIControl {
     
@@ -33,6 +19,8 @@ public class CustomSwitch: UIControl {
     @IBInspectable public var isOn:Bool = true
     
     public var animationDuration: Double = 0.5
+    
+    public var toggleActionHandler: ((Bool) -> Void)?
     
     @IBInspectable  public var padding: CGFloat = 1 {
         didSet {
@@ -239,6 +227,7 @@ extension CustomSwitch {
             self.setupViewsOnAction()
             self.completeAction()
         }
+        toggleActionHandler?(on)
     }
     
     fileprivate func animate(on:Bool? = nil) {

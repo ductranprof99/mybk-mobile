@@ -15,7 +15,7 @@ final class RemoteExam {
                          completion: @escaping (Result<[ExamRemoteData], Error>) -> Void) {
         var requestBodyComponent = URLComponents()
         requestBodyComponent.queryItems = [URLQueryItem(name: "_token", value: token)]
-        postRequest(url: Constant.MYBK_EXAM,
+        postRequest(url: Constant.Network.MYBK_EXAM,
                     body: requestBodyComponent ) { result in
             switch result {
             case .success((let data, _)):

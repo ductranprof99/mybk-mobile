@@ -8,28 +8,19 @@
 import Foundation
 import UIKit
 
+
 final class LoginViewModel {
-    func login(username: String?, password: String?, completion: @escaping (Bool) -> Void) {
-        SSOServiceManager.shared.login(username: username, password: password) { state in
-            if case .LOGGED_IN = state {
-                self.mybkToken {
-                    completion($0)
-                }
-            } else {
-                completion(false)
-            }
-        }
+    
+    func login(username: String?, password: String?, completion: @escaping (LoginStatus) -> Void) {
+        SSOServiceManager
+            .shared
+            .login(username: username,
+                   password: password,
+                   ssoCompletion: { completion($0.asLoginStatus()) },
+                   myBKCompletion: { completion($0.asLoginStatus()) })
     }
     
-    func mybkToken(completion: @escaping (Bool) -> Void) {
-        SSOServiceManager.shared.getMyBKToken { (str, state) in
-            if case .LOGGED_IN = state, str != nil {
-                completion(true)
-            } else {
-                completion(false)
-            }
-        }
-    }
+    
     
     func getBioMetricUIImage() -> UIImage? {
         let type = BioMetric.shared.bioMetricType
@@ -43,15 +34,10 @@ final class LoginViewModel {
         }
     }
     
-    func biometricLogin(completion: @escaping (Bool) -> Void) {
-        SSOServiceManager.shared.login { state in
-            if case .LOGGED_IN = state {
-                self.mybkToken {
-                    completion($0)
-                }
-            } else {
-                completion(false)
-            }
-        }
+    func biometricLogin(completion: @escaping (LoginStatus) -> Void) {
+        SSOServiceManager
+            .shared
+            .login (ssoCompletion: { completion($0.asLoginStatus()) },
+                    myBKCompletion: { completion($0.asLoginStatus()) })
     }
 }

@@ -31,12 +31,10 @@ final class SubjectScheduleCell: CustomCell {
     
     @IBAction func detailButtonHandler(_ sender: Any) {
         let vc = DetailSubjectViewController.loadFromNib()
-        // pass cell data here (with set cell content things below
-        vc.viewModel = DetailSubjectViewModel()
         handleCellTap?(vc)
     }
     
-    var handleCellTap: ((UIViewController) -> Void)?
+    var handleCellTap: ((DetailSubjectViewController) -> Void)?
     private var learningSchedBottomView: LearnScheduleBottomView = .fromNib()
     
     private var testSceduleBottomView: TestScheduleBottomView = .fromNib()

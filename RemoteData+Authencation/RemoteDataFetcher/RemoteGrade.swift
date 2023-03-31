@@ -15,7 +15,7 @@ final class RemoteGrade {
                           completion: @escaping (Result<[GradeRemoteData], Error>) -> Void) {
         var requestBodyComponent = URLComponents()
         requestBodyComponent.queryItems = [URLQueryItem(name: "_token", value: token)]
-        postRequest(url: Constant.MYBK_GRADE,
+        postRequest(url: Constant.Network.MYBK_GRADE,
                     body: requestBodyComponent ) { result in
             switch result {
             case .success((let data, _)):

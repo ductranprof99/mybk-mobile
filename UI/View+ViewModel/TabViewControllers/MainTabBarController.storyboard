@@ -58,6 +58,7 @@
                                     <constraint firstAttribute="height" constant="48" id="Lgv-jg-Ice"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.066666666669999999" green="0.25882352939999997" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -558,12 +559,12 @@
                     <connections>
                         <outlet property="appSaveDataSwitch" destination="aCh-5M-nHI" id="Kp9-9P-0Vu"/>
                         <outlet property="externalLinkButton" destination="ack-2K-zJ8" id="RzY-fO-cNl"/>
+                        <outlet property="facultyLabel" destination="6NU-yc-FqU" id="y7J-80-l0v"/>
                         <outlet property="infoButton" destination="Fqb-RE-dxf" id="GYv-lX-xhu"/>
                         <outlet property="logoutButton" destination="0xs-S5-zYL" id="JR9-M9-L3r"/>
                         <outlet property="policyButton" destination="fOr-fD-GeX" id="xYg-om-tcU"/>
-                        <outlet property="userMailLabel" destination="1C5-4j-Jh7" id="6Ac-Yl-XB4"/>
-                        <outlet property="userMajorLabel" destination="6NU-yc-FqU" id="kic-Wq-GUW"/>
-                        <outlet property="userNameLabel" destination="s1G-9e-P9x" id="F2l-OC-0KD"/>
+                        <outlet property="studentNameLabel" destination="s1G-9e-P9x" id="daH-T8-Sr7"/>
+                        <outlet property="usernameLabel" destination="1C5-4j-Jh7" id="2tU-33-VJU"/>
                         <outlet property="versionLabel" destination="QjP-Ts-g9i" id="TC1-Bs-cs7"/>
                     </connections>
                 </viewController>

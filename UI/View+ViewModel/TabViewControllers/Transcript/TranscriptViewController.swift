@@ -34,7 +34,7 @@ final class TranscriptViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (UIAlertAction) in
         }))
         
-        alert.addAction(UIAlertAction(title: "Chọn học kì", style: .default, handler: { [weak self] (UIAlertAction) in
+        alert.addAction(UIAlertAction(title: Constant.MainTabView.popUpSeletectButtonTitle, style: .default, handler: { [weak self] (UIAlertAction) in
             if let semeterIndex = self?.viewModel.getSelectedSemeterIndex(),
                let buttonInfo = self?.viewModel.getSemeter(at: semeterIndex) {
                 self?.pickerView.selectRow(semeterIndex, inComponent: 0, animated: true)

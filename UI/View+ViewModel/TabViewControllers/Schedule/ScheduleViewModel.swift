@@ -19,7 +19,6 @@ final class ScheduleViewModel {
         }
     }
     private var currentSemeterIndex: Int = 0
-    private var subjectCellData: [SubjectCellModel]?
 }
 
 // MARK: - Get

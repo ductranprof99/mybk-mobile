@@ -52,11 +52,19 @@ enum BioMetricAuthenError: Error, LocalizedError, Identifiable {
 fileprivate struct Credential: Codable {
     var username: String
     var password: String
+    var faculty: String
+    var studentName: String
     
-    init(username: String, password: String) {
+    init(username: String,
+         password: String,
+         faculty: String,
+         studentName: String) {
         self.username = username
         self.password = password
+        self.faculty = faculty
+        self.studentName = studentName
     }
+    
 }
 
 final class BioMetric {
@@ -118,9 +126,12 @@ final class BioMetric {
     }
     
     
-    func createBioProtectedEntry(key: String, username: String, password: String) -> Bool {
+    func createBioProtectedEntry(key: String, username: String, password: String, faculty: String, studentName: String) -> Bool {
         let encoder = JSONEncoder()
-        if let data = try? encoder.encode(Credential(username: username, password: password)) {
+        if let data = try? encoder.encode(Credential(username: username,
+                                                     password: password,
+                                                     faculty: faculty,
+                                                     studentName: studentName)) {
             let query = [
                 kSecClass as String       : kSecClassGenericPassword as String,
                 kSecAttrAccount as String : key,
@@ -134,7 +145,7 @@ final class BioMetric {
         return false
     }
     
-    func getEntryFromBioProtected(key: String, completion: @escaping ((username: String, password: String)?) -> Void) {
+    func getEntryFromBioProtected(key: String, completion: @escaping ((username: String, password: String, faculty: String, studentName: String)?) -> Void) {
         checkBiometryState { success in
             guard success else {
                 // Biometric authentication is not available
@@ -144,7 +155,7 @@ final class BioMetric {
                 let decoder = JSONDecoder()
                 if let data = self.loadBioProtected(key: key) ,
                    let decoded = try? decoder.decode(Credential.self, from: data) {
-                    completion((username: decoded.username, password: decoded.password))
+                    completion((username: decoded.username, password: decoded.password, faculty: decoded.faculty, studentName: decoded.studentName))
                 } else {
                     completion(nil)
                 }

@@ -15,7 +15,7 @@ final class RemoteSchedule {
                          completion: @escaping (Result<[ScheduleRemoteData], Error>) -> Void) {
         var requestBodyComponent = URLComponents()
         requestBodyComponent.queryItems = [URLQueryItem(name: "_token", value: token)]
-        postRequest(url: Constant.MYBK_SCHEDULE,
+        postRequest(url: Constant.Network.MYBK_SCHEDULE,
                     body: requestBodyComponent ) { result in
             switch result {
             case .success((let data, _)):

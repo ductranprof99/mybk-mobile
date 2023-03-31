@@ -34,7 +34,7 @@ final class ScheduleViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (UIAlertAction) in
         }))
         
-        alert.addAction(UIAlertAction(title: "Chọn học kì", style: .default, handler: { [weak self] (UIAlertAction) in
+        alert.addAction(UIAlertAction(title: Constant.MainTabView.popUpSeletectButtonTitle, style: .default, handler: { [weak self] (UIAlertAction) in
             if let semeterIndex = self?.viewModel.getSelectedSemeterIndex(),
                let buttonInfo = self?.viewModel.getSemeter(at: semeterIndex) {
                 self?.pickerView.selectRow(semeterIndex, inComponent: 0, animated: true)
@@ -108,9 +108,10 @@ extension ScheduleViewController: UICollectionViewDataSource, UICollectionViewDe
         let cell = collectionView.dequeueCell(SubjectScheduleCell.self,for: indexPath)
         if let cellData = viewModel.getSubjectAtIndex(in: viewModel.getSelectedSemeterIndex(), with: indexPath.item) {
             cell.setCellContent(cellData: .schedBottom(data: cellData))
-        }
-        cell.handleCellTap = { [weak self] vc in
-            self?.navigationController?.pushViewController(vc, animated: false)
+            cell.handleCellTap = { [weak self] vc in
+                vc.viewModel = .init(data: cellData)
+                self?.navigationController?.pushViewController(vc, animated: false)
+            }
         }
         return cell
     }

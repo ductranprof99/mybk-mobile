@@ -10,8 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailSubjectViewController" customModule="MybkMobile" customModuleProvider="target">
             <connections>
-                <outlet property="backButton" destination="zSw-0M-FEO" id="qF5-KQ-Mqu"/>
                 <outlet property="itemTitle" destination="0IC-u1-CoN" id="9It-Ip-Wvx"/>
+                <outlet property="navigationItems" destination="UnU-nH-QKn" id="HSe-7M-FpQ"/>
                 <outlet property="subjectNameLabel" destination="1ic-S4-O2P" id="PgH-DI-KwG"/>
                 <outlet property="tableView" destination="VAl-FE-xt1" id="fbx-ek-0Hp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -30,8 +30,12 @@
                         <color key="textColor" red="0.070588235289999995" green="0.59215686270000001" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
                     </textAttributes>
                     <items>
-                        <navigationItem title="Title" id="UnU-nH-QKn">
-                            <barButtonItem key="leftBarButtonItem" image="top_nav_back" landscapeImage="top_nav_back" largeContentSizeImage="top_nav_back" id="zSw-0M-FEO"/>
+                        <navigationItem id="UnU-nH-QKn">
+                            <barButtonItem key="leftBarButtonItem" image="top_nav_back" landscapeImage="top_nav_back" largeContentSizeImage="top_nav_back" id="zSw-0M-FEO">
+                                <connections>
+                                    <action selector="backButtonHandler:" destination="-1" id="PuH-M9-LR3"/>
+                                </connections>
+                            </barButtonItem>
                         </navigationItem>
                     </items>
                 </navigationBar>
@@ -50,9 +54,10 @@
                             <color key="textColor" red="0.066666666669999999" green="0.25882352939999997" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VAl-FE-xt1">
+                        <tableView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" style="plain" separatorStyle="default" separatorInsetReference="fromAutomaticInsets" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VAl-FE-xt1">
                             <rect key="frame" x="20" y="97" width="353" height="598"/>
                             <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <color key="sectionIndexBackgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="nrR-vA-rRY"/>

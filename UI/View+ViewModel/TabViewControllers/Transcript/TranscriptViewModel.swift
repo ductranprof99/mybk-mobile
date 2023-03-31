@@ -75,7 +75,7 @@ extension TranscriptViewModel {
     }
     
     public func getFooterSectionData() -> TranscriptFooterModel {
-        return .mockData
+        return .init()
     }
 }
 

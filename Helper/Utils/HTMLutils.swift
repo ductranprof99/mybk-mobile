@@ -38,7 +38,7 @@ final class HTMLutils {
             let doc: Document = try SwiftSoup.parse(str)
             var xpath = ""
             xpath += element ?? ""
-            xpath += "[@class$='\(className)']"
+            xpath += "[class$='\(className)']"
             guard let ele: Element = try doc.select(xpath).first() else {
                 return nil
             }
@@ -70,6 +70,7 @@ final class HTMLutils {
             }
             return try ele.text()
         } catch {
+            print(error.localizedDescription)
             print("cannot find element")
         }
         return nil

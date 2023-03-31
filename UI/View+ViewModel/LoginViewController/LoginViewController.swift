@@ -60,7 +60,8 @@ final class LoginViewController: UIViewController {
     @objc private func login() {
         viewModel.login(username: userNameField.text,
                         password: passwordField.text) {
-            if $0 {
+            // TODO: Doing more here, like show toast or navigate
+            if $0 == .Successful {
                 DispatchQueue.main.async {
                     self.navigateToMainScreen()
                 }

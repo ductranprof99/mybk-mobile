@@ -10,11 +10,11 @@ import MessageUI
 
 final class ProfileViewController: UIViewController, MFMailComposeViewControllerDelegate{
     
-    @IBOutlet private weak var userNameLabel: UILabel!
+    @IBOutlet private weak var studentNameLabel: UILabel!
     
-    @IBOutlet private weak var userMailLabel: UILabel!
+    @IBOutlet private weak var usernameLabel: UILabel!
     
-    @IBOutlet private weak var userMajorLabel: UILabel!
+    @IBOutlet private weak var facultyLabel: UILabel!
     
     @IBOutlet private weak var versionLabel: UILabel!
     
@@ -32,18 +32,19 @@ final class ProfileViewController: UIViewController, MFMailComposeViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         setupContent()
         setupGesture()
     }
     
     private func setupContent() {
-        appSaveDataSwitch.isOn = viewModel.getToggleState()
+        appSaveDataSwitch.isOn = viewModel.getSaveDataMode()
+        appSaveDataSwitch.toggleActionHandler = { [weak self] isSave in
+            self?.viewModel.setSaveDataMode(isSave: isSave)
+        }
         let userInfo = viewModel.getUserInfomation()
-        userNameLabel.text = userInfo.userName
-        userMailLabel.text = userInfo.userMail
-        userMajorLabel.text = userInfo.userMajor
+        studentNameLabel.text = userInfo?.studentName
+        usernameLabel.text = userInfo?.username
+        facultyLabel.text = userInfo?.faculty
         versionLabel.text = viewModel.getVersion()
     }
     
@@ -77,22 +78,15 @@ final class ProfileViewController: UIViewController, MFMailComposeViewController
     }
     
     @objc func informDevForError(_ sender: UITapGestureRecognizer? = nil) {
-        let recipientEmail = "maillungtung@gmail.com"
-        let subject = "Multi client email support"
-        let body = "I want to inform you some information about some error happenned in iOS version of myBK"
-        
-        // Show default mail composer
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
-            mail.setToRecipients([recipientEmail])
-            mail.setSubject(subject)
-            mail.setMessageBody(body, isHTML: false)
+            mail.setToRecipients([Constant.ProfileView.recipentEmail])
+            mail.setSubject(Constant.ProfileView.emalSubject)
+            mail.setMessageBody(Constant.ProfileView.emailBody, isHTML: false)
             
             present(mail, animated: true)
-            
-            // Show third party email composer if default Mail app is not present
-        } else if let emailUrl = viewModel.createEmailUrl(to: recipientEmail, subject: subject, body: body) {
+        } else if let emailUrl = viewModel.createEmailUrl() {
             UIApplication.shared.open(emailUrl)
         }
     }

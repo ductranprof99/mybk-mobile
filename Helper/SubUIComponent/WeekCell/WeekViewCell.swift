@@ -19,7 +19,7 @@ final class WeekViewCell: UICollectionViewCell {
     
     public func setCellContent(week: String) {
         if week.contains("-") {
-            cellBackgroundView.backgroundColor = .white
+            cellBackgroundView.backgroundColor = .clear
             cellContent.textColor = UIColor(rgb: 0xCECECE)
         } else {
             cellBackgroundView.backgroundColor = UIColor(rgb: 0x1297C1).withAlphaComponent(0.2)
