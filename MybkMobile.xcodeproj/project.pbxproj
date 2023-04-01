@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5208F47029C417D400A754F1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F46F29C417D400A754F1 /* String.swift */; };
 		5208F47229C43D6900A754F1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F47129C43D6900A754F1 /* LoginViewModel.swift */; };
 		5208F47429C477D600A754F1 /* HTMLutils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208F47329C477D600A754F1 /* HTMLutils.swift */; };
 		5214923429B4370000A7522B /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214923229B4370000A7522B /* ScheduleViewController.swift */; };
@@ -33,6 +32,9 @@
 		528958AA29AA0A090049EE07 /* TestScheduleBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528958A929AA0A090049EE07 /* TestScheduleBottomView.xib */; };
 		528958B029AA14160049EE07 /* ScoreBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528958AE29AA14160049EE07 /* ScoreBottomView.xib */; };
 		528958B129AA14160049EE07 /* ScoreBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528958AF29AA14160049EE07 /* ScoreBottomView.swift */; };
+		528C256F29D7EA8900EAFFD4 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C256E29D7EA8900EAFFD4 /* Data.swift */; };
+		528C257129D7F32400EAFFD4 /* RemoteProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C257029D7F32400EAFFD4 /* RemoteProfile.swift */; };
+		528C257329D7F44F00EAFFD4 /* ProfileRemoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C257229D7F44F00EAFFD4 /* ProfileRemoteData.swift */; };
 		528FF61229A9E13E00C25137 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FF61129A9E13E00C25137 /* AppDelegate.swift */; };
 		528FF61B29A9E13F00C25137 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 528FF61A29A9E13F00C25137 /* Assets.xcassets */; };
 		528FF61E29A9E13F00C25137 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528FF61C29A9E13F00C25137 /* LaunchScreen.storyboard */; };
@@ -106,7 +108,6 @@
 		1E3E96EB34776CABB91E6A20 /* Pods-MybkMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MybkMobileTests.release.xcconfig"; path = "Target Support Files/Pods-MybkMobileTests/Pods-MybkMobileTests.release.xcconfig"; sourceTree = "<group>"; };
 		31D63A0A6D89228163808344 /* Pods-MybkMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MybkMobile.release.xcconfig"; path = "Target Support Files/Pods-MybkMobile/Pods-MybkMobile.release.xcconfig"; sourceTree = "<group>"; };
 		47CFEFA3FFB4769F0AD4A206 /* Pods-MybkMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MybkMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-MybkMobileTests/Pods-MybkMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5208F46F29C417D400A754F1 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		5208F47129C43D6900A754F1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		5208F47329C477D600A754F1 /* HTMLutils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLutils.swift; sourceTree = "<group>"; };
 		5214923229B4370000A7522B /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +133,9 @@
 		528958A929AA0A090049EE07 /* TestScheduleBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestScheduleBottomView.xib; sourceTree = "<group>"; };
 		528958AE29AA14160049EE07 /* ScoreBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoreBottomView.xib; sourceTree = "<group>"; };
 		528958AF29AA14160049EE07 /* ScoreBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreBottomView.swift; sourceTree = "<group>"; };
+		528C256E29D7EA8900EAFFD4 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		528C257029D7F32400EAFFD4 /* RemoteProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteProfile.swift; sourceTree = "<group>"; };
+		528C257229D7F44F00EAFFD4 /* ProfileRemoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRemoteData.swift; sourceTree = "<group>"; };
 		528FF60E29A9E13E00C25137 /* MybkMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MybkMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		528FF61129A9E13E00C25137 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		528FF61A29A9E13F00C25137 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -273,6 +277,7 @@
 				52A47E8C29CDF25800CD07D1 /* ScheduleRemoteData.swift */,
 				52A47E9029CDF51C00CD07D1 /* ExamRemoteData.swift */,
 				52A47E8829CDF08F00CD07D1 /* GradeRemoteData.swift */,
+				528C257229D7F44F00EAFFD4 /* ProfileRemoteData.swift */,
 			);
 			path = RemoteDataObject;
 			sourceTree = "<group>";
@@ -507,7 +512,6 @@
 		528FF65529A9F11000C25137 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				5208F46F29C417D400A754F1 /* String.swift */,
 				528FF65629A9F11F00C25137 /* Constrain.swift */,
 				52C9A25E29AA434D00F2B8C1 /* UIView.swift */,
 				52C9A26029AA43D600F2B8C1 /* UICollectionView.swift */,
@@ -518,6 +522,7 @@
 				52BA48E029BD8236006C6CA5 /* UITableView.swift */,
 				5208F47329C477D600A754F1 /* HTMLutils.swift */,
 				528530D429D2DFED004DBDC2 /* Decodable.swift */,
+				528C256E29D7EA8900EAFFD4 /* Data.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -546,6 +551,7 @@
 				52A47E9829CE766900CD07D1 /* RemoteSchedule.swift */,
 				52A47E9429CE75EB00CD07D1 /* RemoteExam.swift */,
 				52A47E9629CE765600CD07D1 /* RemoteGrade.swift */,
+				528C257029D7F32400EAFFD4 /* RemoteProfile.swift */,
 			);
 			path = RemoteDataFetcher;
 			sourceTree = "<group>";
@@ -894,13 +900,13 @@
 				52BA48E729BDC719006C6CA5 /* TranscriptCollectionViewFooterCell.swift in Sources */,
 				52A47E9529CE75EB00CD07D1 /* RemoteExam.swift in Sources */,
 				52F064EE29BA29B500D07D72 /* ScheduleViewModel.swift in Sources */,
+				528C256F29D7EA8900EAFFD4 /* Data.swift in Sources */,
 				52BA48E429BDC5FE006C6CA5 /* SpecialScoreViewCell.swift in Sources */,
 				5287970C29C065F5000BA20F /* DetailSubjectViewModel.swift in Sources */,
 				52BA48D129BCB283006C6CA5 /* TranscriptViewModel.swift in Sources */,
 				52C9A27029AA567300F2B8C1 /* CustomThumbView.swift in Sources */,
 				528530D529D2DFED004DBDC2 /* Decodable.swift in Sources */,
 				5208F47429C477D600A754F1 /* HTMLutils.swift in Sources */,
-				5208F47029C417D400A754F1 /* String.swift in Sources */,
 				525A2D6029BFDED300C9887B /* PolicyViewController.swift in Sources */,
 				5214923429B4370000A7522B /* ScheduleViewController.swift in Sources */,
 				52A0D00929B46C60003B8952 /* TranscriptViewController.swift in Sources */,
@@ -917,6 +923,7 @@
 				5287970929C0633E000BA20F /* DetailSubjectViewController.swift in Sources */,
 				52A0D00B29B47002003B8952 /* ProfileViewController.swift in Sources */,
 				528FF65329A9EF8B00C25137 /* BottomBarItem.swift in Sources */,
+				528C257129D7F32400EAFFD4 /* RemoteProfile.swift in Sources */,
 				52A47E8B29CDF14700CD07D1 /* ScheduleLocalData.swift in Sources */,
 				52C9A25D29AA3DA700F2B8C1 /* LearnScheduleBottomView.swift in Sources */,
 				52BA48D729BD5DF9006C6CA5 /* TranscriptCollectionViewHeaderCell.swift in Sources */,
@@ -929,6 +936,7 @@
 				52A0D00D29B48E5C003B8952 /* MainTabBarController.swift in Sources */,
 				52BA48E129BD8236006C6CA5 /* UITableView.swift in Sources */,
 				52C9A26E29AA561000F2B8C1 /* CustomToggle.swift in Sources */,
+				528C257329D7F44F00EAFFD4 /* ProfileRemoteData.swift in Sources */,
 				52F1B46B29BBFD470003178D /* ExamViewViewModel.swift in Sources */,
 				52373E9E29B795CB00AA4383 /* UIColor.swift in Sources */,
 				52C9A26129AA43D600F2B8C1 /* UICollectionView.swift in Sources */,

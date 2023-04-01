@@ -24,15 +24,12 @@ final class TranscriptViewModel {
 // MARK: - Get
 extension TranscriptViewModel {
     public func getListRemoteSemeter() {
-        // call api here
-        if let mybkToken = SSOServiceManager.shared.mybkToken {
-            RemoteGrade.shared.getGrades(token: mybkToken) { [weak self] result in
-                switch result {
-                case .success(let listSched):
-                    self?.listSemeter = listSched
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
+        RemoteGrade.shared.getGrades() { [weak self] result in
+            switch result {
+            case .success(let listSched):
+                self?.listSemeter = listSched
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }

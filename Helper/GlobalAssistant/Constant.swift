@@ -16,13 +16,12 @@ struct Constant {
         static let HTML_LOGIN_SUCCESS = "<h2>Log In Successful</h2>"
         static let HTML_WRONG_CREDENTIAL =
         "The credentials you provided cannot be determined to be authentic"
-        static let STINFO_URL =
-        "https://mybk.hcmut.edu.vn/stinfo/"
         static let SSO_MYBK_LOGOUT_URL = "https://sso.hcmut.edu.vn/cas/logout"
         
         static let MYBK_SCHEDULE = "https://mybk.hcmut.edu.vn/stinfo/lichthi/ajax_lichhoc"
         static let MYBK_GRADE = "https://mybk.hcmut.edu.vn/stinfo/grade/ajax_grade"
         static let MYBK_EXAM = "https://mybk.hcmut.edu.vn/stinfo/lichthi/ajax_lichthi"
+        static let MYBK_PROFILE = "https://mybk.hcmut.edu.vn/stinfo/profile/profiledata"
     }
     
     struct Key {

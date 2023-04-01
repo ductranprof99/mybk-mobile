@@ -7,19 +7,16 @@
 
 import Foundation
 import SwiftSoup
-import CryptoSwift
 
 final class SSOServiceManager {
     
     static public let shared: SSOServiceManager = .init()
     
-    var username: String?
-    var password: String?
-    var faculty: String?
-    var studentName: String?
-    var serviceEncryptIV: String?
-    var mybkToken: String?
-    var JSSESSIONID: String?
+    private var username: String?
+    private var password: String?
+    private var serviceEncryptIV: String?
+    private var mybkToken: String?
+    private var JSSESSIONID: String?
     
     func login(username: String? = nil,
                password: String? = nil,
@@ -28,8 +25,9 @@ final class SSOServiceManager {
         if let username = username, let password = password {
             SSOLogin(username: username, password: password) { state in
                 if state == .LOGGED_IN {
+                    self.username = username
+                    self.password = password
                     self.getMyBKToken {
-                        self.saveTemporaryCredential()
                         myBKCompletion($0)
                     }
                 } else {
@@ -44,8 +42,9 @@ final class SSOServiceManager {
                 }
                 self.SSOLogin(username: result.username, password: result.password){ state in
                     if state == .LOGGED_IN {
+                        self.username = result.username
+                        self.password = result.password
                         self.getMyBKToken {
-                            self.saveTemporaryCredential()
                             myBKCompletion($0)
                         }
                     } else {
@@ -71,23 +70,18 @@ final class SSOServiceManager {
         completion(false)
     }
     
+    func getMyBKToken() -> String? {
+        return mybkToken
+    }
+    
     func saveToBioMetric(completion: @escaping (Bool) -> Void) {
-        if let result = self.decryptCredential() {
+        if let username = username, let password = password {
             let res = BioMetric.shared.createBioProtectedEntry(key: Constant.Key.bioMetric,
-                                                               username: result.username,
-                                                               password: result.password,
-                                                               faculty: result.faculty,
-                                                               studentName: result.studentName)
+                                                               username: username,
+                                                               password: password)
             completion(res)
         }
         completion(false)
-    }
-    
-    func getCurrentCredential() -> (username: String,faculty: String,studentName: String)? {
-        if let result = self.decryptCredential() {
-            return(result.username, result.faculty, result.studentName)
-        }
-        return nil
     }
     
     func clearBioMetric() {
@@ -114,22 +108,14 @@ extension SSOServiceManager {
                        completion: @escaping (SSOState) -> Void) {
         self.getSSOSession() {
             let (state, lt, execution) = $0
-            if case .UNAUTHORIZED = state {
+            if .UNAUTHORIZED == state {
                 self.postSSOForm(username: username,
                                  password: password,
                                  lt: lt,
                                  execution: execution) {
-                    if case .LOGGED_IN = $0 {
-                        self.username = username
-                        self.password = password
-                    }
                     completion($0)
                 }
             } else {
-                if case .LOGGED_IN = state {
-                    self.username = username
-                    self.password = password
-                }
                 completion(state)
             }
         }
@@ -157,7 +143,6 @@ extension SSOServiceManager {
                 guard let htmlString = String(data: data, encoding: .ascii),
                       let token = HTMLutils.getHeaderMetaContent(of: htmlString, attribute: ["name": "_token"]),
                       let httpResponse = response as? HTTPURLResponse,
-                      let (faculty, studentName) = self.getProfileInfo(responseBody: htmlString),
                       httpResponse.statusCode == 200 else {
                     completion(.UNKNOWN)
                     return
@@ -166,8 +151,6 @@ extension SSOServiceManager {
                     self.JSSESSIONID = cookie
                 }
                 self.mybkToken = token
-                self.faculty = faculty
-                self.studentName = studentName
                 completion(.LOGGED_IN)
                 
             case .failure(let error):
@@ -179,16 +162,6 @@ extension SSOServiceManager {
 
 // MARK: - Network authorize Ultility
 extension SSOServiceManager {
-    private func getProfileInfo(responseBody: String) -> (fullName: String, faculty: String)? {
-        if let fullName = HTMLutils.getContentWithFullXpath(of: responseBody, xpath: "div[class$='top-avatar2'] div"),
-           let faculty = HTMLutils.getContentWithFullXpath(of: responseBody, xpath: "div[class$='top-avatar2'] p") {
-            return (fullName, faculty)
-        } else {
-            print("cannot get profile")
-            return nil
-        }
-    }
-    
     private func postSSOForm(username: String,
                              password: String,
                              lt: String,
@@ -245,59 +218,4 @@ extension SSOServiceManager {
             return (.UNKNOWN,lt,execution)
         }
     }
-    
-    private func saveTemporaryCredential() {
-        // get generate temporary key
-        guard let username = self.username,
-              let password = self.password,
-              let faculty = self.faculty,
-              let studentName = self.studentName else { return }
-        print("credential loaded -------- ")
-        self.serviceEncryptIV = String.randomString(length: 16)
-        do {
-            let keyString = String(decoding: UUID().uuidString.toFixedUInt8Array(), as: UTF8.self)
-            let ivString = String(decoding: serviceEncryptIV!.toFixedUInt8Array(), as: UTF8.self)
-            let aes = try AES(key: keyString,
-                              iv: ivString )
-            let encryptedUsername = try aes.encrypt(username.bytes)
-            let encryptedPassword = try aes.encrypt(password.bytes)
-            let encryptedFaculty = try aes.encrypt(faculty.bytes)
-            let encryptedStudentName = try aes.encrypt(studentName.bytes)
-            self.username = String(decoding: encryptedUsername, as: UTF8.self)
-            self.password = String(decoding: encryptedPassword, as: UTF8.self)
-            self.faculty = String(decoding: encryptedFaculty, as: UTF8.self)
-            self.studentName = String(decoding: encryptedStudentName, as: UTF8.self)
-        } catch {
-            print("cannot encrypt credential")
-        }
-    }
-    
-    private func decryptCredential() -> (username: String, password: String, faculty: String, studentName: String)? {
-        guard let username = username,
-              let password = password,
-              let faculty = faculty,
-              let studentName = studentName,
-              let temporaryIV = serviceEncryptIV else {
-            return nil
-        }
-        // decrypt to save
-        do {
-            let keyString = String(decoding: UUID().uuidString.toFixedUInt8Array(), as: UTF8.self)
-            let ivString = String(decoding: temporaryIV.toFixedUInt8Array(), as: UTF8.self)
-            let aes = try AES(key: keyString,
-                              iv: ivString )
-            let usernameDecrypted = try aes.decrypt(username.bytes)
-            let passwordDecrypted = try aes.decrypt(password.bytes)
-            let facultyDecrypted = try aes.decrypt(faculty.bytes)
-            let studentNameDecrypted = try aes.decrypt(studentName.bytes)
-            let convertedUsername = String(decoding: usernameDecrypted, as: UTF8.self)
-            let convertedPassword = String(decoding: passwordDecrypted, as: UTF8.self)
-            let convertedFaculty = String(decoding: facultyDecrypted, as: UTF8.self)
-            let convertedStudentName = String(decoding: studentNameDecrypted, as: UTF8.self)
-            return (convertedUsername, convertedPassword, convertedFaculty, convertedStudentName)
-        } catch {
-            return nil
-        }
-    }
-    
 }

@@ -9,11 +9,21 @@ import Foundation
 import UIKit
 
 final class ProfileViewModel {
-    func getUserInfomation() -> (studentName: String, username: String, faculty: String)? {
-        if let credential = SSOServiceManager.shared.getCurrentCredential() {
-            return (credential.studentName, credential.username, credential.faculty)
+    
+    var updateProfileScreen: ((ProfileRemoteData?) -> Void)?
+    
+    private var userProfile: ProfileRemoteData? {
+        didSet {
+            updateProfileScreen?(userProfile)
         }
-        return nil
+    }
+    
+    func fetchUserInfo() {
+        RemoteProfile.shared.getProfile() {
+            if case let .success(data) = $0 {
+                self.userProfile = data
+            }
+        }
     }
     
     func getGithubLink() -> String{

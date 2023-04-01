@@ -18,11 +18,9 @@ final class LearnScheduleBottomView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // TODO: add register
         collectionView.register(WeekViewCell.self)
     }
     
-    // TODO: fix type here
     var data: CourseScheduleRemoteData? {
         didSet {
             collectionView.reloadData()

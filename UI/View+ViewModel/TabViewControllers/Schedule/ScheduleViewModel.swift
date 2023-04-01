@@ -11,8 +11,6 @@ final class ScheduleViewModel {
     
     var updatePickerView: (([ScheduleRemoteData]?) -> Void)?
     
-    // this for demo, cus when sync you need to sync with remote (in background) then convert
-    // to local storage, you always get data from local storage
     private var listSemeter: [ScheduleRemoteData]? {
         didSet {
             updatePickerView?(listSemeter)
@@ -24,15 +22,12 @@ final class ScheduleViewModel {
 // MARK: - Get
 extension ScheduleViewModel {
     public func getListRemoteSemeter() {
-        // call api here
-        if let mybkToken = SSOServiceManager.shared.mybkToken {
-            RemoteSchedule.shared.getSchedules(token: mybkToken) { [weak self] result in
-                switch result {
-                case .success(let listSched):
-                    self?.listSemeter = listSched.sorted { $0.semeterCode ?? "1" > $1.semeterCode ?? "0" }
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
+        RemoteSchedule.shared.getSchedules() { [weak self] result in
+            switch result {
+            case .success(let listSched):
+                self?.listSemeter = listSched.sorted { $0.semeterCode ?? "1" > $1.semeterCode ?? "0" }
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }

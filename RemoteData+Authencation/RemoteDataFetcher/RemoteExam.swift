@@ -11,8 +11,8 @@ final class RemoteExam {
     
     public static let shared: RemoteExam = .init()
     
-    public func getExams(token: String,
-                         completion: @escaping (Result<[ExamRemoteData], Error>) -> Void) {
+    public func getExams(completion: @escaping (Result<[ExamRemoteData], Error>) -> Void) {
+        guard let token = SSOServiceManager.shared.getMyBKToken() else { return }
         var requestBodyComponent = URLComponents()
         requestBodyComponent.queryItems = [URLQueryItem(name: "_token", value: token)]
         postRequest(url: Constant.Network.MYBK_EXAM,

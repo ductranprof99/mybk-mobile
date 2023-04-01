@@ -23,15 +23,12 @@ final class ExamViewViewModel {
 // MARK: - Get
 extension ExamViewViewModel {
     public func getListRemoteSemeter() {
-        // call api here
-        if let mybkToken = SSOServiceManager.shared.mybkToken {
-            RemoteExam.shared.getExams(token: mybkToken) { [weak self] result in
-                switch result {
-                case .success(let listSched):
-                    self?.listSemeter = listSched
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
+        RemoteExam.shared.getExams() { [weak self] result in
+            switch result {
+            case .success(let listSched):
+                self?.listSemeter = listSched
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }

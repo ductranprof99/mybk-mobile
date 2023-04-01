@@ -11,8 +11,8 @@ final class RemoteGrade {
     
     public static let shared: RemoteGrade = .init()
     
-    public func getGrades(token: String,
-                          completion: @escaping (Result<[GradeRemoteData], Error>) -> Void) {
+    public func getGrades(completion: @escaping (Result<[GradeRemoteData], Error>) -> Void) {
+        guard let token = SSOServiceManager.shared.getMyBKToken() else { return }
         var requestBodyComponent = URLComponents()
         requestBodyComponent.queryItems = [URLQueryItem(name: "_token", value: token)]
         postRequest(url: Constant.Network.MYBK_GRADE,

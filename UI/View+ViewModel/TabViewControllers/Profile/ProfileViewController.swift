@@ -32,8 +32,20 @@ final class ProfileViewController: UIViewController, MFMailComposeViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViewModel()
         setupContent()
         setupGesture()
+    }
+    private func setupViewModel() {
+        viewModel.updateProfileScreen = { [weak self] data in
+            DispatchQueue.main.async {
+                self?.studentNameLabel.text = data?.studentDetail?.name
+                self?.usernameLabel.text = data?.email
+                self?.facultyLabel.text = data?.majorName
+            }
+        }
+        versionLabel.text = viewModel.getVersion()
+        viewModel.fetchUserInfo()
     }
     
     private func setupContent() {
@@ -41,11 +53,6 @@ final class ProfileViewController: UIViewController, MFMailComposeViewController
         appSaveDataSwitch.toggleActionHandler = { [weak self] isSave in
             self?.viewModel.setSaveDataMode(isSave: isSave)
         }
-        let userInfo = viewModel.getUserInfomation()
-        studentNameLabel.text = userInfo?.studentName
-        usernameLabel.text = userInfo?.username
-        facultyLabel.text = userInfo?.faculty
-        versionLabel.text = viewModel.getVersion()
     }
     
     private func setupGesture() {
