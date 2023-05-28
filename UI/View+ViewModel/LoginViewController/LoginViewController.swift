@@ -15,10 +15,28 @@ final class LoginViewController: UIViewController {
     
     @IBOutlet weak var policyLabel: UILabel!
     
-    @IBOutlet weak var autoCredentialButton: UIImageView!
+    @IBOutlet weak var autoCredentialButton: UIButton!
     
     @IBAction func signUpHandler(_ sender: Any) {
-        login()
+        viewModel.login(username: userNameField.text,
+                        password: passwordField.text) { [weak self] status in
+            // TODO: Doing more here, like show toast or navigate
+            if status == .Successful {
+                DispatchQueue.main.async {
+                    self?.navigateToMainScreen()
+                }
+            } else {
+                self?.showToast(msg: "not granted")
+            }
+        }
+    }
+    
+    @IBAction func bioMetricLoginHandler(_ sender: Any) {
+        viewModel.biometricLogin(completion: { [weak self] status in
+            self?.showToast(msg: "Biometric fail")
+        }, bioFiller: { [weak self] (username, password) in
+            self?.fillInfoByBioMetric(username, password)
+        })
     }
     
     @objc func navigateToPolicy() {
@@ -46,9 +64,7 @@ final class LoginViewController: UIViewController {
         policyLabel.addGestureRecognizer(gestureRecognizer)
         
         if let iconBio = viewModel.getBioMetricUIImage() {
-            autoCredentialButton.image = iconBio
-            let gestureRecognier = UITapGestureRecognizer(target: self, action: #selector(login))
-            autoCredentialButton.addGestureRecognizer(gestureRecognier)
+            autoCredentialButton.imageView?.image = iconBio
         } else {
             autoCredentialButton.isHidden = true
         }
@@ -57,17 +73,14 @@ final class LoginViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
     }
     
-    @objc private func login() {
-        viewModel.login(username: userNameField.text,
-                        password: passwordField.text) {
-            // TODO: Doing more here, like show toast or navigate
-            if $0 == .Successful {
-                DispatchQueue.main.async {
-                    self.navigateToMainScreen()
-                }
-            } else {
-                print("not granted")
-            }
+    private func showToast(msg: String) {
+        print(msg)
+    }
+    
+    private func fillInfoByBioMetric(_ username: String, _ password: String) {
+        DispatchQueue.main.async {
+            self.userNameField.text = username
+            self.passwordField.text = password
         }
     }
 }

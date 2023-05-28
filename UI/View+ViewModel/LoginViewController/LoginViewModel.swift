@@ -20,6 +20,19 @@ final class LoginViewModel {
                    myBKCompletion: { completion($0.asLoginStatus()) })
     }
     
+    func biometricLogin(completion: @escaping (LoginStatus) -> Void, bioFiller: @escaping (String,String) -> Void) {
+        SSOServiceManager
+            .shared
+            .login(username: "",
+                   password: "",
+                   ssoCompletion: { completion($0.asLoginStatus()) },
+                   myBKCompletion: {
+                        if case let .BIOMETRIC(username, password) = $0 {
+                            bioFiller(username, password)
+                        }
+                   })
+    }
+    
     
     
     func getBioMetricUIImage() -> UIImage? {

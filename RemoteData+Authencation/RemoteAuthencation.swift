@@ -22,7 +22,7 @@ final class SSOServiceManager {
                password: String? = nil,
                ssoCompletion: @escaping (SSOState) -> Void,
                myBKCompletion: @escaping (MybkState) -> Void) {
-        if let username = username, let password = password {
+        if let username = username, let password = password, !username.isEmpty, !password.isEmpty {
             SSOLogin(username: username, password: password) { state in
                 if state == .LOGGED_IN {
                     self.username = username
@@ -40,17 +40,7 @@ final class SSOServiceManager {
                     ssoCompletion(.NO_CREDENTIALS)
                     return
                 }
-                self.SSOLogin(username: result.username, password: result.password){ state in
-                    if state == .LOGGED_IN {
-                        self.username = result.username
-                        self.password = result.password
-                        self.getMyBKToken {
-                            myBKCompletion($0)
-                        }
-                    } else {
-                        ssoCompletion(state)
-                    }
-                }
+                myBKCompletion(.BIOMETRIC(username: result.username, password: result.password))
             }
         }
     }

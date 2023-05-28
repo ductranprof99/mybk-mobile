@@ -135,6 +135,7 @@ enum MybkState {
     case LOGGED_IN
     case SSO_REQUIRED
     case UNKNOWN
+    case BIOMETRIC(username: String, password: String)
     
     func asLoginStatus() -> LoginStatus {
         switch self {
