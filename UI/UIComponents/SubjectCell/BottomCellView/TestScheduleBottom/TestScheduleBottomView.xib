@@ -149,7 +149,7 @@
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="LFf-nt-qdD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="4wd-xJ-JjB"/>
                 <constraint firstItem="TwS-8e-R74" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="8DA-Id-l7i"/>
