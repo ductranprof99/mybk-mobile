@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="21G72" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="LocationCodeLocalData" representedClassName=".LocationCodeLocalData" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="schedule" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ScheduleLocalData" inverseName="location" inverseEntity="ScheduleLocalData"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="ScheduleLocalData" representedClassName=".ScheduleLocalData" syncable="YES">
+        <attribute name="classRoom" optional="YES" attributeType="String"/>
+        <attribute name="courseTime" optional="YES" attributeType="String"/>
+        <attribute name="endLessonTime" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="groupCode" optional="YES" attributeType="String"/>
+        <attribute name="lessonDate" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="semeterCredit" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="semeterName" optional="YES" attributeType="String"/>
+        <attribute name="startLessonTime" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="startSemeter" optional="YES" attributeType="String"/>
+        <attribute name="studentCode" optional="YES" attributeType="String"/>
+        <attribute name="subGroup" optional="YES" attributeType="String"/>
+        <attribute name="subjectCode" optional="YES" attributeType="String"/>
+        <attribute name="subjectCredit" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="subjectName" optional="YES" attributeType="String"/>
+        <attribute name="timeEnd" optional="YES" attributeType="String"/>
+        <attribute name="timeStart" optional="YES" attributeType="String"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocationCodeLocalData" inverseName="schedule" inverseEntity="LocationCodeLocalData"/>
+        <relationship name="scheduleSemeter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ScheduleSemeterLocalData" inverseName="schedules" inverseEntity="ScheduleSemeterLocalData"/>
+    </entity>
+    <entity name="ScheduleSemeterLocalData" representedClassName=".ScheduleSemeterLocalData" syncable="YES">
+        <attribute name="semeterCode" optional="YES" attributeType="String"/>
+        <attribute name="semeterName" optional="YES" attributeType="String"/>
+        <attribute name="updateDate" optional="YES" attributeType="String"/>
+        <relationship name="schedules" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ScheduleLocalData" inverseName="scheduleSemeter" inverseEntity="ScheduleLocalData"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="semeterCode"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+</model>

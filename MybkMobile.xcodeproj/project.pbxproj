@@ -20,6 +20,8 @@
 		525A2D6129BFDED300C9887B /* PolicyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525A2D5F29BFDED300C9887B /* PolicyViewController.xib */; };
 		5264423429BE9CE90099F48E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264423329BE9CE90099F48E /* ProfileViewModel.swift */; };
 		526ECB6829C21447006D9B3D /* NetworkAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526ECB6729C21447006D9B3D /* NetworkAssistant.swift */; };
+		527CB9EB2A23564600B93E78 /* ScheduleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527CB9EA2A23564600B93E78 /* ScheduleRepository.swift */; };
+		527CB9ED2A2356A300B93E78 /* RepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527CB9EC2A2356A300B93E78 /* RepositoryInterface.swift */; };
 		52844B2229D21154005849A7 /* UpdateDateFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52844B2029D21154005849A7 /* UpdateDateFooterView.swift */; };
 		52844B2329D21154005849A7 /* UpdateDateFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52844B2129D21154005849A7 /* UpdateDateFooterView.xib */; };
 		528530D529D2DFED004DBDC2 /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528530D429D2DFED004DBDC2 /* Decodable.swift */; };
@@ -44,6 +46,24 @@
 		528FF65129A9EC7C00C25137 /* BottomBarItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528FF65029A9EC7C00C25137 /* BottomBarItem.xib */; };
 		528FF65329A9EF8B00C25137 /* BottomBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FF65229A9EF8B00C25137 /* BottomBarItem.swift */; };
 		528FF65729A9F11F00C25137 /* Constrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FF65629A9F11F00C25137 /* Constrain.swift */; };
+		529866F32A2380D600331C3A /* ScheduleSemeterLocalData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529866ED2A2380D600331C3A /* ScheduleSemeterLocalData+CoreDataClass.swift */; };
+		529866F42A2380D600331C3A /* ScheduleSemeterLocalData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529866ED2A2380D600331C3A /* ScheduleSemeterLocalData+CoreDataClass.swift */; };
+		529866F52A2380D600331C3A /* ScheduleSemeterLocalData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529866ED2A2380D600331C3A /* ScheduleSemeterLocalData+CoreDataClass.swift */; };
+		529866F62A2380D600331C3A /* ScheduleSemeterLocalData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529866EE2A2380D600331C3A /* ScheduleSemeterLocalData+CoreDataProperties.swift */; };
+		529866F72A2380D600331C3A /* ScheduleSemeterLocalData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529866EE2A2380D600331C3A /* ScheduleSemeterLocalData+CoreDataProperties.swift */; };
+		529866F82A2380D600331C3A /* ScheduleSemeterLocalData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529866EE2A2380D600331C3A /* ScheduleSemeterLocalData+CoreDataProperties.swift */; };
+		529866F92A2380D600331C3A /* LocationCodeLocalData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529866EF2A2380D600331C3A /* LocationCodeLocalData+CoreDataClass.swift */; };
+		529866FA2A2380D600331C3A /* LocationCodeLocalData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529866EF2A2380D600331C3A /* LocationCodeLocalData+CoreDataClass.swift */; };
+		529866FB2A2380D600331C3A /* LocationCodeLocalData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529866EF2A2380D600331C3A /* LocationCodeLocalData+CoreDataClass.swift */; };
+		529866FC2A2380D600331C3A /* LocationCodeLocalData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529866F02A2380D600331C3A /* LocationCodeLocalData+CoreDataProperties.swift */; };
+		529866FD2A2380D600331C3A /* LocationCodeLocalData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529866F02A2380D600331C3A /* LocationCodeLocalData+CoreDataProperties.swift */; };
+		529866FE2A2380D600331C3A /* LocationCodeLocalData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529866F02A2380D600331C3A /* LocationCodeLocalData+CoreDataProperties.swift */; };
+		529866FF2A2380D600331C3A /* ScheduleLocalData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529866F12A2380D600331C3A /* ScheduleLocalData+CoreDataClass.swift */; };
+		529867002A2380D600331C3A /* ScheduleLocalData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529866F12A2380D600331C3A /* ScheduleLocalData+CoreDataClass.swift */; };
+		529867012A2380D600331C3A /* ScheduleLocalData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529866F12A2380D600331C3A /* ScheduleLocalData+CoreDataClass.swift */; };
+		529867022A2380D600331C3A /* ScheduleLocalData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529866F22A2380D600331C3A /* ScheduleLocalData+CoreDataProperties.swift */; };
+		529867032A2380D600331C3A /* ScheduleLocalData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529866F22A2380D600331C3A /* ScheduleLocalData+CoreDataProperties.swift */; };
+		529867042A2380D600331C3A /* ScheduleLocalData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529866F22A2380D600331C3A /* ScheduleLocalData+CoreDataProperties.swift */; };
 		529CA78029D600F8002C3ED4 /* GradeFooterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529CA77F29D600F8002C3ED4 /* GradeFooterViewModel.swift */; };
 		52A04DF029D1A43800194772 /* WeekViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A04DEE29D1A43800194772 /* WeekViewCell.swift */; };
 		52A04DF129D1A43800194772 /* WeekViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A04DEF29D1A43800194772 /* WeekViewCell.xib */; };
@@ -53,7 +73,6 @@
 		52A0D00B29B47002003B8952 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0D00A29B47002003B8952 /* ProfileViewController.swift */; };
 		52A0D00D29B48E5C003B8952 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0D00C29B48E5C003B8952 /* MainTabBarController.swift */; };
 		52A47E8929CDF08F00CD07D1 /* GradeRemoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E8829CDF08F00CD07D1 /* GradeRemoteData.swift */; };
-		52A47E8B29CDF14700CD07D1 /* ScheduleLocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E8A29CDF14700CD07D1 /* ScheduleLocalData.swift */; };
 		52A47E8D29CDF25800CD07D1 /* ScheduleRemoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E8C29CDF25800CD07D1 /* ScheduleRemoteData.swift */; };
 		52A47E9129CDF51C00CD07D1 /* ExamRemoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E9029CDF51C00CD07D1 /* ExamRemoteData.swift */; };
 		52A47E9529CE75EB00CD07D1 /* RemoteExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A47E9429CE75EB00CD07D1 /* RemoteExam.swift */; };
@@ -81,7 +100,7 @@
 		52ED1AAE29B3B6ED00DC1429 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED1AAD29B3B6ED00DC1429 /* UIViewController.swift */; };
 		52F064EE29BA29B500D07D72 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F064ED29BA29B500D07D72 /* ScheduleViewModel.swift */; };
 		52F1B46B29BBFD470003178D /* ExamViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F1B46A29BBFD470003178D /* ExamViewViewModel.swift */; };
-		52FAA94929CCAD8700228ACC /* Storaged.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA94729CCAD8700228ACC /* Storaged.xcdatamodeld */; };
+		52FAA94929CCAD8700228ACC /* LocalStoraged.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA94729CCAD8700228ACC /* LocalStoraged.xcdatamodeld */; };
 		5DF5BD7634AD8E745E862F34 /* Pods_MybkMobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6C01F0768372E7B50A67FC /* Pods_MybkMobileTests.framework */; };
 		CA15242B7EB444CB53E44562 /* Pods_MybkMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA51BFDC10F73C0CE4F58E58 /* Pods_MybkMobile.framework */; };
 		F0C344E22D0A423B6A126EDE /* Pods_MybkMobile_MybkMobileUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 832C92A93C35177F4D677D13 /* Pods_MybkMobile_MybkMobileUITests.framework */; };
@@ -121,6 +140,8 @@
 		525A2D5F29BFDED300C9887B /* PolicyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PolicyViewController.xib; sourceTree = "<group>"; };
 		5264423329BE9CE90099F48E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		526ECB6729C21447006D9B3D /* NetworkAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAssistant.swift; sourceTree = "<group>"; };
+		527CB9EA2A23564600B93E78 /* ScheduleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRepository.swift; sourceTree = "<group>"; };
+		527CB9EC2A2356A300B93E78 /* RepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInterface.swift; sourceTree = "<group>"; };
 		52844B2029D21154005849A7 /* UpdateDateFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDateFooterView.swift; sourceTree = "<group>"; };
 		52844B2129D21154005849A7 /* UpdateDateFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateDateFooterView.xib; sourceTree = "<group>"; };
 		528530D429D2DFED004DBDC2 /* Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decodable.swift; sourceTree = "<group>"; };
@@ -149,6 +170,12 @@
 		528FF65029A9EC7C00C25137 /* BottomBarItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomBarItem.xib; sourceTree = "<group>"; };
 		528FF65229A9EF8B00C25137 /* BottomBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarItem.swift; sourceTree = "<group>"; };
 		528FF65629A9F11F00C25137 /* Constrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constrain.swift; sourceTree = "<group>"; };
+		529866ED2A2380D600331C3A /* ScheduleSemeterLocalData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleSemeterLocalData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		529866EE2A2380D600331C3A /* ScheduleSemeterLocalData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleSemeterLocalData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		529866EF2A2380D600331C3A /* LocationCodeLocalData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCodeLocalData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		529866F02A2380D600331C3A /* LocationCodeLocalData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCodeLocalData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		529866F12A2380D600331C3A /* ScheduleLocalData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleLocalData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		529866F22A2380D600331C3A /* ScheduleLocalData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleLocalData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		529CA77F29D600F8002C3ED4 /* GradeFooterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeFooterViewModel.swift; sourceTree = "<group>"; };
 		52A04DEE29D1A43800194772 /* WeekViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekViewCell.swift; sourceTree = "<group>"; };
 		52A04DEF29D1A43800194772 /* WeekViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekViewCell.xib; sourceTree = "<group>"; };
@@ -158,7 +185,6 @@
 		52A0D00A29B47002003B8952 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		52A0D00C29B48E5C003B8952 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		52A47E8829CDF08F00CD07D1 /* GradeRemoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeRemoteData.swift; sourceTree = "<group>"; };
-		52A47E8A29CDF14700CD07D1 /* ScheduleLocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLocalData.swift; sourceTree = "<group>"; };
 		52A47E8C29CDF25800CD07D1 /* ScheduleRemoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRemoteData.swift; sourceTree = "<group>"; };
 		52A47E9029CDF51C00CD07D1 /* ExamRemoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamRemoteData.swift; sourceTree = "<group>"; };
 		52A47E9429CE75EB00CD07D1 /* RemoteExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteExam.swift; sourceTree = "<group>"; };
@@ -285,7 +311,12 @@
 		52844B1C29D20BD3005849A7 /* LocalDataObject */ = {
 			isa = PBXGroup;
 			children = (
-				52A47E8A29CDF14700CD07D1 /* ScheduleLocalData.swift */,
+				529866ED2A2380D600331C3A /* ScheduleSemeterLocalData+CoreDataClass.swift */,
+				529866EE2A2380D600331C3A /* ScheduleSemeterLocalData+CoreDataProperties.swift */,
+				529866EF2A2380D600331C3A /* LocationCodeLocalData+CoreDataClass.swift */,
+				529866F02A2380D600331C3A /* LocationCodeLocalData+CoreDataProperties.swift */,
+				529866F12A2380D600331C3A /* ScheduleLocalData+CoreDataClass.swift */,
+				529866F22A2380D600331C3A /* ScheduleLocalData+CoreDataProperties.swift */,
 			);
 			path = LocalDataObject;
 			sourceTree = "<group>";
@@ -374,11 +405,13 @@
 			path = ScoreBottom;
 			sourceTree = "<group>";
 		};
-		528958AC29AA13120049EE07 /* Models */ = {
+		528958AC29AA13120049EE07 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				527CB9EA2A23564600B93E78 /* ScheduleRepository.swift */,
+				527CB9EC2A2356A300B93E78 /* RepositoryInterface.swift */,
 			);
-			path = Models;
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		528FF60529A9E13E00C25137 = {
@@ -387,7 +420,7 @@
 				528FF64329A9E20000C25137 /* Helper */,
 				52A47E9329CE75C400CD07D1 /* RemoteData+Authencation */,
 				52844B1A29D20B91005849A7 /* LocalData+Authencation */,
-				528958AC29AA13120049EE07 /* Models */,
+				528958AC29AA13120049EE07 /* Repository */,
 				52844B1D29D20D6D005849A7 /* UI */,
 				528FF61029A9E13E00C25137 /* MybkMobile */,
 				528FF62729A9E13F00C25137 /* MybkMobileTests */,
@@ -416,7 +449,7 @@
 				528FF61A29A9E13F00C25137 /* Assets.xcassets */,
 				528FF61C29A9E13F00C25137 /* LaunchScreen.storyboard */,
 				528FF61F29A9E13F00C25137 /* Info.plist */,
-				52FAA94729CCAD8700228ACC /* Storaged.xcdatamodeld */,
+				52FAA94729CCAD8700228ACC /* LocalStoraged.xcdatamodeld */,
 			);
 			path = MybkMobile;
 			sourceTree = "<group>";
@@ -896,7 +929,7 @@
 				5246822829BB67EA00124A6A /* UICollectionViewCell.swift in Sources */,
 				528FF61229A9E13E00C25137 /* AppDelegate.swift in Sources */,
 				52373EA029B79CA700AA4383 /* CustomButton.swift in Sources */,
-				52FAA94929CCAD8700228ACC /* Storaged.xcdatamodeld in Sources */,
+				52FAA94929CCAD8700228ACC /* LocalStoraged.xcdatamodeld in Sources */,
 				52BA48E729BDC719006C6CA5 /* TranscriptCollectionViewFooterCell.swift in Sources */,
 				52A47E9529CE75EB00CD07D1 /* RemoteExam.swift in Sources */,
 				52F064EE29BA29B500D07D72 /* ScheduleViewModel.swift in Sources */,
@@ -910,9 +943,12 @@
 				525A2D6029BFDED300C9887B /* PolicyViewController.swift in Sources */,
 				5214923429B4370000A7522B /* ScheduleViewController.swift in Sources */,
 				52A0D00929B46C60003B8952 /* TranscriptViewController.swift in Sources */,
+				529866F32A2380D600331C3A /* ScheduleSemeterLocalData+CoreDataClass.swift in Sources */,
+				529866FC2A2380D600331C3A /* LocationCodeLocalData+CoreDataProperties.swift in Sources */,
 				52844B2229D21154005849A7 /* UpdateDateFooterView.swift in Sources */,
 				52A47E9729CE765600CD07D1 /* RemoteGrade.swift in Sources */,
 				52CD462A29CFF53F00410F8C /* BioMetricAuthencation.swift in Sources */,
+				529866FF2A2380D600331C3A /* ScheduleLocalData+CoreDataClass.swift in Sources */,
 				528958A829AA094E0049EE07 /* TestScheduleBottomView.swift in Sources */,
 				528FF65729A9F11F00C25137 /* Constrain.swift in Sources */,
 				52486F9B29C1681E004FB208 /* RemoteAuthencation.swift in Sources */,
@@ -924,19 +960,22 @@
 				52A0D00B29B47002003B8952 /* ProfileViewController.swift in Sources */,
 				528FF65329A9EF8B00C25137 /* BottomBarItem.swift in Sources */,
 				528C257129D7F32400EAFFD4 /* RemoteProfile.swift in Sources */,
-				52A47E8B29CDF14700CD07D1 /* ScheduleLocalData.swift in Sources */,
 				52C9A25D29AA3DA700F2B8C1 /* LearnScheduleBottomView.swift in Sources */,
+				529866F62A2380D600331C3A /* ScheduleSemeterLocalData+CoreDataProperties.swift in Sources */,
 				52BA48D729BD5DF9006C6CA5 /* TranscriptCollectionViewHeaderCell.swift in Sources */,
 				52ED1AA629B3B55800DC1429 /* SceneDelegate.swift in Sources */,
 				5264423429BE9CE90099F48E /* ProfileViewModel.swift in Sources */,
 				52A47E8929CDF08F00CD07D1 /* GradeRemoteData.swift in Sources */,
 				526ECB6829C21447006D9B3D /* NetworkAssistant.swift in Sources */,
 				52486F9929C15AAB004FB208 /* Constant.swift in Sources */,
+				527CB9ED2A2356A300B93E78 /* RepositoryInterface.swift in Sources */,
 				52BA48D329BCB455006C6CA5 /* GradeHeaderViewModel.swift in Sources */,
 				52A0D00D29B48E5C003B8952 /* MainTabBarController.swift in Sources */,
+				529867022A2380D600331C3A /* ScheduleLocalData+CoreDataProperties.swift in Sources */,
 				52BA48E129BD8236006C6CA5 /* UITableView.swift in Sources */,
 				52C9A26E29AA561000F2B8C1 /* CustomToggle.swift in Sources */,
 				528C257329D7F44F00EAFFD4 /* ProfileRemoteData.swift in Sources */,
+				529866F92A2380D600331C3A /* LocationCodeLocalData+CoreDataClass.swift in Sources */,
 				52F1B46B29BBFD470003178D /* ExamViewViewModel.swift in Sources */,
 				52373E9E29B795CB00AA4383 /* UIColor.swift in Sources */,
 				52C9A26129AA43D600F2B8C1 /* UICollectionView.swift in Sources */,
@@ -944,6 +983,7 @@
 				529CA78029D600F8002C3ED4 /* GradeFooterViewModel.swift in Sources */,
 				52A47E9129CDF51C00CD07D1 /* ExamRemoteData.swift in Sources */,
 				52A0D00729B46470003B8952 /* ExamViewController.swift in Sources */,
+				527CB9EB2A23564600B93E78 /* ScheduleRepository.swift in Sources */,
 				524D634C29D70D8100F32C5E /* WeekInfoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -952,7 +992,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				529867002A2380D600331C3A /* ScheduleLocalData+CoreDataClass.swift in Sources */,
+				529866F42A2380D600331C3A /* ScheduleSemeterLocalData+CoreDataClass.swift in Sources */,
+				529866FA2A2380D600331C3A /* LocationCodeLocalData+CoreDataClass.swift in Sources */,
 				528FF62929A9E13F00C25137 /* MybkMobileTests.swift in Sources */,
+				529866FD2A2380D600331C3A /* LocationCodeLocalData+CoreDataProperties.swift in Sources */,
+				529866F72A2380D600331C3A /* ScheduleSemeterLocalData+CoreDataProperties.swift in Sources */,
+				529867032A2380D600331C3A /* ScheduleLocalData+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -960,8 +1006,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				529866FB2A2380D600331C3A /* LocationCodeLocalData+CoreDataClass.swift in Sources */,
+				529866FE2A2380D600331C3A /* LocationCodeLocalData+CoreDataProperties.swift in Sources */,
+				529867042A2380D600331C3A /* ScheduleLocalData+CoreDataProperties.swift in Sources */,
 				528FF63329A9E14000C25137 /* MybkMobileUITests.swift in Sources */,
+				529866F52A2380D600331C3A /* ScheduleSemeterLocalData+CoreDataClass.swift in Sources */,
+				529866F82A2380D600331C3A /* ScheduleSemeterLocalData+CoreDataProperties.swift in Sources */,
 				528FF63529A9E14000C25137 /* MybkMobileUITestsLaunchTests.swift in Sources */,
+				529867012A2380D600331C3A /* ScheduleLocalData+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1294,13 +1346,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		52FAA94729CCAD8700228ACC /* Storaged.xcdatamodeld */ = {
+		52FAA94729CCAD8700228ACC /* LocalStoraged.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				52FAA94829CCAD8700228ACC /* Storaged.xcdatamodel */,
 			);
 			currentVersion = 52FAA94829CCAD8700228ACC /* Storaged.xcdatamodel */;
-			path = Storaged.xcdatamodeld;
+			path = LocalStoraged.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

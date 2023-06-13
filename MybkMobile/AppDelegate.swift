@@ -63,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Storaged")
+        let container = NSPersistentContainer(name: "LocalStoraged")
         container.loadPersistentStores {
             if let error = $1 {
                 print("Load local db error: \(error.localizedDescription)")
